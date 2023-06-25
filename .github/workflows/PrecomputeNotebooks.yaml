@@ -51,7 +51,7 @@ jobs:
                   import PlutoSliderServer
 
                   PlutoSliderServer.github_action("src";
-                    Export_output_dir="_statequest"
+                    Export_output_dir="_staterequest",
                     Precompute_enabled=true,
                     Precompute_max_filesize_per_group=2e9
                     # more parameters can go here
