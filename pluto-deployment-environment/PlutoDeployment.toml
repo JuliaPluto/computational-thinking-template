@@ -21,7 +21,4 @@ exclude=[
     "PlutoPages.jl",
     
     # notebooks not interactive
-
-    # don't run homeworks
-    "*/hw*.jl",
 ]
