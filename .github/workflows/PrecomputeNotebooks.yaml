@@ -1,8 +1,9 @@
-name: Export Pluto notebooks
+name: Precompute Pluto notebooks
 on:
     push:
         branches:
             - main
+    pull_request:
     workflow_dispatch:
 
 # When two jobs run in parallel, cancel the older ones, to make sure that the website is generated from the most recent commit.
