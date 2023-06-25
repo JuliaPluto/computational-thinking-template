@@ -1,4 +1,5 @@
 [Export]
+slider_server_url="https://precomputed-staterequests--serene-pixie-862a4a.netlify.app/"
 baked_state = false
 baked_notebookfile = false
 offer_binder = true
