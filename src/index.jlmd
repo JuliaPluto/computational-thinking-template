@@ -1,4 +1,4 @@
 ---
 tags: ["homepage"]
-layout: "welcome.md"
+layout: "welcome.jlmd"
 ---

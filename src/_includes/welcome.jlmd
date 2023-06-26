@@ -1,0 +1,22 @@
+---
+layout: "layout.jlhtml"
+---
+
+<link rel="stylesheet" href="$(root_url)/assets/styles/homepage.css" type="text/css" />
+
+<div id="title" class="banner">
+    <h1>$(metadata["homepage"]["title"])</h1>
+</div>
+
+$(isempty(get(metadata["homepage"], "disclaimer", "")) ? nothing : @htl("""<blockquote class="banner"><p>$(metadata["homepage"]["disclaimer"])</p></blockquote>"""))
+
+<main class="homepage">
+$(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_highlights.jl")))
+$(Base.include(@__MODULE__, joinpath(@__DIR__, "..", "assets", "scripts", "get_subjects.jl")))
+<div class="page-foot">
+    <div class="copyright">
+        <a href="$(metadata["course_info"]["repo"])"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+        Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+</div>
+</main>

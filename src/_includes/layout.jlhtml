@@ -95,7 +95,6 @@ $(pluto_head)
                     <h2>Choose your track:</h2>
                     <select>
                         <option value="">Choose...</option>
-                        <!-- FIXME: define your tracks -->
                         $([
                             @htl("""<option value="$track_id">$track_name</option> """)
                             for (track_id, track_name) in metadata["tracks"]
