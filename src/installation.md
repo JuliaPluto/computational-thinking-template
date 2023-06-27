@@ -3,6 +3,7 @@ title: "Software installation"
 tags: ["welcome"]
 order: 1
 layout: "md.jlmd"
+youtube_id: "OOjKEgbt8AI"
 ---
 
 $(
@@ -17,10 +18,6 @@ $(
 )
 
 # First-time setup: Install Julia & Pluto
-
-**Video version:**
-
-<iframe style="width: 100%; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/OOjKEgbt8AI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 \\
 \\

@@ -14,4 +14,4 @@ main a img {
 
 # Course logistics
 
-FIXME: course logistics. 
+Describe here the logistics of your class.

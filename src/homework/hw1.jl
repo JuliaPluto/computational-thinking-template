@@ -2,40 +2,193 @@
 # v0.19.25
 
 #> [frontmatter]
-#> chapter = 1
-#> section = 2.5
 #> order = 2.5
 #> homework_number = 1
-#> title = "Images and Arrays"
+#> title = "Example homework"
 #> layout = "layout.jlhtml"
-#> tags = ["homework", "module1", "image", "track_julia", "track_math", "track_climate", "track_data", "programming", "interactive", "type", "matrix"]
-#> description = "Practice Julia basics by working with arrays of colors. At the end of this homework, you can see all of your filters applied to your webcam image!"
+#> tags = ["module2", "track_julia", "homeworks", "pluto", "PlutoTeachingTools.jl"]
 
 using Markdown
 using InteractiveUtils
 
-# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
-macro bind(def, element)
-    quote
-        local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
-        local el = $(esc(element))
-        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
-        el
-    end
-end
+# ╔═╡ 8c8388cf-9891-423c-8db2-d40d870bb38e
+using PlutoUI
 
-# ╔═╡ 65780f00-ed6b-11ea-1ecf-8b35523a7ac0
+# ╔═╡ 54778212-3702-467d-8a96-4fa18b3ccd63
+using LinearAlgebra
+
+# ╔═╡ ea28bf57-ba62-41ce-8be6-d38ca2c5caa3
+
+
+# ╔═╡ 8efcaaeb-4900-404b-ae59-65db0bde8790
+
+
+# ╔═╡ a5be0775-68de-41ce-95cd-1465723d099b
+
+
+# ╔═╡ 4abec609-09cd-4f86-8d86-a7d02325cc7b
+
+
+# ╔═╡ 32e073bb-943f-4fa9-b15f-5ec18feecf15
+
+
+# ╔═╡ d221c61c-a4ab-4a82-b89d-52735d957cae
+
+
+# ╔═╡ c3d49b98-a9c1-4aba-becc-7fa84f4bbc75
+
+
+# ╔═╡ 7b33c09c-2ef2-4b97-b5a5-5fdf9268f76b
+
+
+# ╔═╡ 615b88b6-8505-11eb-0a7c-294ee5ae7474
 begin
-	import ImageMagick
-	using Images
-	using PlutoUI
-	using HypertextLiteral
+	struct FirstRankOneMatrix
+		# Your code here
+		v::Vector{Float64}
+		w::Vector{Float64}
+	end
+	
+	# Add the extra constructor here
+	FirstRankOneMatrix(v) = FirstRankOneMatrix(v, v)
+
 end
 
-# ╔═╡ ac8ff080-ed61-11ea-3650-d9df06123e1f
+# ╔═╡ b0db7388-850c-11eb-0915-597f1fa5ab93
+ten_twelve = missing # Your code here
+
+# ╔═╡ 2dfc2ef9-3efa-4b82-960f-f2ef0171e9eb
+sqrt === Base.sqrt
+
+# ╔═╡ d4a0baea-cc02-4d91-a938-8181dea7b47a
+filter === Base.filter
+
+# ╔═╡ 7adbcbab-66e7-4b58-b197-5c220ba1e9a2
+# methods(size)
+
+# ╔═╡ fada4734-8505-11eb-3f2b-d1f1ef391ba4
+function Base.size(M::FirstRankOneMatrix)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ 590dfe1a-8506-11eb-0069-d7cd91f02a65
+function Base.getindex(M::FirstRankOneMatrix, i, j)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ 941b6b10-8ae9-11eb-3bf8-b732f5f60af3
+ten_twelve
+
+# ╔═╡ a243a400-8af3-11eb-0637-cf8f80aae86d
+ones(10, 12) # An example matrix (two-dimensional array)
+
+# ╔═╡ c7a15c5e-8505-11eb-3af2-2fa84b74b590
+function print_as_matrix(M::FirstRankOneMatrix)
+	
+	# Your code here
+	
+end
+
+# ╔═╡ b0a0b9a4-850b-11eb-30f1-11f5270efe02
+print_as_matrix(ten_twelve)
+
+# ╔═╡ b577420c-8501-11eb-267a-719125315fe1
+begin
+	struct RankOneMatrix{T} <: AbstractMatrix{T}
+		v::AbstractVector{T}
+		w::AbstractVector{T}
+	end
+	
+	# Add the two extra constructors
+	# (Should we make these missing by default? if so - remove hint below)
+	RankOneMatrix(v) = RankOneMatrix(v, v)
+end
+
+# ╔═╡ eb612772-8b06-44bb-a36a-827435cbb2ee
+
+
+# ╔═╡ d3e7c8d1-4b4a-47b6-9c96-150333078f42
+
+
+# ╔═╡ f2d8b45c-8501-11eb-1c6a-5f819c240d9d
+function Base.size(M::RankOneMatrix)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ ed72e880-8afa-11eb-3a4a-175a838188d9
+function Base.getindex(M::RankOneMatrix, i, j)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ 7b3fb0ef-9a9e-401c-8c09-e5615134a4ad
+R2 = RankOneMatrix([1,2], [3,4,5])
+
+# ╔═╡ fc962c72-8501-11eb-2821-cbb7a52d5f61
+M = RankOneMatrix(1:10) # missing # Your code here
+
+# ╔═╡ 0887ee78-0e8a-41c7-90e7-44237acc1477
+collect(M)
+
+# ╔═╡ 1705dc7b-9f93-440b-acbb-ecb362d08125
+typeof(collect(M))
+
+# ╔═╡ ee58251a-8511-11eb-074c-5b1e27c4ebd4
+function matvec(M::RankOneMatrix, x)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ ba3cb45a-8502-11eb-2141-6369b0e08807
+begin
+	struct RankTwoMatrix{T} <: AbstractMatrix{T}
+		# Your code here
+		A::RankOneMatrix{T}
+		B::RankOneMatrix{T}
+	end
+	
+	# Add a constructor that uses two vectors/ranges
+	RankTwoMatrix(v1, v2) = RankTwoMatrix(RankOneMatrix(v1), RankOneMatrix(v2))
+end
+
+# ╔═╡ f5a95dd8-850d-11eb-2aa7-2dcb1868577f
+
+
+# ╔═╡ c784e02c-8502-11eb-3efa-7f4c45f4274c
+function Base.getindex(M::RankTwoMatrix, i, j)
+
+	return missing # Your code here
+end
+
+# ╔═╡ 0bab818e-8503-11eb-02b3-178098599847
+function Base.size(M::RankTwoMatrix)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ b6717812-8503-11eb-2729-39bfdc1fd2f9
+struct LowRankMatrix <: AbstractMatrix{Float64}
+	# Your code here
+	Ms::Vector{RankOneMatrix}
+	rank::Int
+end
+
+# ╔═╡ c49e350e-8503-11eb-15de-7308dd03dc08
+function Base.getindex(M::LowRankMatrix, i, j)
+	
+	return missing # Your code here
+end
+
+# ╔═╡ eadb174e-2c1d-48c8-9de2-99cdc2b38d32
+md"_homework 5, version 3_"
+
+# ╔═╡ 082542fe-f89d-4774-be20-1e1a78f21291
 md"""
 
-# **Homework 1** - _images and arrays_
+# **Homework 5**: _Structure_
 `18.S191`, Fall 2023
 
 This notebook contains _built-in, live answer checks_! In some exercises you will see a coloured box, which runs a test case on your code, and provides feedback based on the result. Simply edit the code, run it, and the check runs again.
@@ -43,806 +196,512 @@ This notebook contains _built-in, live answer checks_! In some exercises you wil
 Feel free to ask questions!
 """
 
-# ╔═╡ 5f95e01a-ee0a-11ea-030c-9dba276aba92
+# ╔═╡ aaa41509-a62d-417b-bca7-a120e3a5e5b2
 md"""
 #### Initializing packages
-
 _When running this notebook for the first time, this could take up to 15 minutes. Hang in there!_
 """
 
-# ╔═╡ 540ccfcc-ee0a-11ea-15dc-4f8120063397
+# ╔═╡ ac35c6b3-a142-4b7a-921b-a2bfe1d84713
 md"""
-## **Exercise 1** - _Manipulating vectors (1D images)_
+## **Exercise 1:** _When is zero not quite zero?_
+Students used to pure math are sometimes surprised to see numbers like `1e-15`, `1e-16`, or `1e-17` appearing in computations when `0` might have been expected. At first glance, this behaviour seems 'random' or 'noisy', but in this exercise, we will try to demonstrate some structure behind floating point artihmetic.
 
-A `Vector` is a 1D array. We can think of that as a 1D image.
-
-"""
-
-# ╔═╡ 467856dc-eded-11ea-0f83-13d939021ef3
-example_vector = [0.5, 0.4, 0.3, 0.2, 0.1, 0.0, 0.7, 0.0, 0.7, 0.9]
-
-# ╔═╡ ad6a33b0-eded-11ea-324c-cfabfd658b56
-md"""
-$(html"<br>")
 #### Exercise 1.1
-👉 Make a random vector `random_vect` of length 10 using the `rand` function.
+👉 Find all integers $j$ with $1 ≤ j ≤ 1000$ for which Julia's result satisfies `j*(1/j) ≠ 1`.
+
 """
 
-# ╔═╡ f51333a6-eded-11ea-34e6-bfbb3a69bcb0
-random_vect = missing # replace `missing` with your code!
-
-# ╔═╡ 5da8cbe8-eded-11ea-2e43-c5b7cc71e133
-begin
-	colored_line(x::Vector) = hcat(Gray.(Float64.(x)))'
-	colored_line(x::Any) = nothing
-end
-
-# ╔═╡ 56ced344-eded-11ea-3e81-3936e9ad5777
-colored_line(example_vector)
-
-# ╔═╡ b18e2c54-edf1-11ea-0cbf-85946d64b6a2
-colored_line(random_vect)
-
-# ╔═╡ 77adb065-bfd4-4680-9c2a-ad4d92689dbf
-md"#### Exercise 1.2
-👉 Make a function `my_sum` using a `for` loop, which computes the total of a vector of numbers."
-
-# ╔═╡ bd907ee1-5253-4cae-b5a5-267dac24362a
-function my_sum(xs)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 6640110a-d171-4b32-8d12-26979a36b718
-my_sum([1,2,3])
-
-# ╔═╡ cf738088-eded-11ea-2915-61735c2aa990
-md"#### Exercise 1.3
-👉 Use your `my_sum` function to write a function `mean`, which computes the mean/average of a vector of numbers."
-
-# ╔═╡ 0ffa8354-edee-11ea-2883-9d5bfea4a236
-function mean(xs)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 1f104ce4-ee0e-11ea-2029-1d9c817175af
-mean([1, 2, 3])
-
-# ╔═╡ 1f229ca4-edee-11ea-2c56-bb00cc6ea53c
-md"👉 Define `m` to be the mean of `random_vect`."
-
-# ╔═╡ 2a391708-edee-11ea-124e-d14698171b68
-m = missing # replace `missing` with your code!
-
-# ╔═╡ e2863d4c-edef-11ea-1d67-332ddca03cc4
-md"""#### Exercise 1.4
-👉 Write a function `demean`, which takes a vector `xs` and subtracts the mean from each value in `xs`. Use your `mean` function!"""
-
-# ╔═╡ ea8d92f8-159c-4161-8c54-bab7bc00f290
+# ╔═╡ a5901f93-007f-4a30-97fc-29b367ec47c6
 md"""
-> ### Note about _mutation_
-> There are two ways to think about this exercise, you could _modify_ the original vector, or you can _create a new vector_. We often prefer the second version, so that the original data is preserved. We generally only use code of the first variant in the most performance-sensitive parts of a program, as it requires more care to write and use correctly. _**Be careful not to get carried away in optimizing code**, especially when learning a new language!_
-> 
-> There is a convention among Julians that functions that modify their argument have a `!` in their name. For example, `sort(x)` returns a sorted _copy_ of `x`, while `sort!(x)` _modifies_ `x` to be sorted.
-> 
-> #### Tips for writing non-mutating code
-> 1. _Rewriting_ an existing mutating function to be non-mutating can feel like a 'tedious' and 'inefficient' process. Often, instead of trying to **rewrite** a mutating function, it's best to take a step back and try to think of your problem as _constructing something new_. Instead of a `for` loop, it might make more sense to use **descriptive** primitives like [broadcasting with the dot syntax](https://docs.julialang.org/en/v1/manual/functions/#man-vectorized) (also for [math operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#man-dot-operators)), and [map and filter](https://www.youtube.com/watch?v=_O-HBDZMLrM).
-> 
-> 
-> 2. If a mutating algorithm makes the most sense for your problem, then you can first use `copy` to create a copy of an array, and then modify that copy.
-> 
-> We will cover this topic more in the later exercises!
+Notice that when you re-run the computation, the result does not change. Floating-point arithmetic is not random!
 
+#### Exercise 1.2
+
+👉 Take the smallest number `j` you found above and compute the error, i.e. the distance between `j*(1/j)` and `1`.  
+
+Is this an integer power of 2?  Which one? (`log2` might help.)
 """
 
-# ╔═╡ ec5efe8c-edef-11ea-2c6f-afaaeb5bc50c
-function demean(xs)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ d6ddafdd-1a44-48c7-b49a-554073cdf331
-test_vect = let
-	
-	# feel free to change your test case here!
-	to_create = [-1.0, -1.5, 8.5]
-	
-	
-	####
-	# this cell is a bit funky to deal with a common pitfall from last year
-	# it regenerates the vector if you accidentally wrote a mutating function
-	
-	# don't worry about how it works for this exercise!
-	
-	demean
-	to_create
-end
-
-# ╔═╡ 29e10640-edf0-11ea-0398-17dbf4242de3
-md"To verify our function, let's check that the mean of the `demean(test_vect)` is 0: (_Due to floating-point round-off error it may *not* be *exactly* 0._)"
-
-# ╔═╡ 38155b5a-edf0-11ea-3e3f-7163da7433fb
-demeaned_test_vect = demean(test_vect)
-
-# ╔═╡ 1267e961-5b75-4b55-8080-d45316a03b9b
-mean(demeaned_test_vect)
-
-# ╔═╡ a5f8bafe-edf0-11ea-0da3-3330861ae43a
+# ╔═╡ 7d1e1724-cd1a-483b-af40-f24ae5301849
 md"""
-#### Exercise 1.5
-
-👉 Generate a vector of 100 elements. Where:
-- the center 20 elements are set to `1`, and
-- all other elements are `0`.
+#### Exercise 1.3
+Caculate all of the following:
+* 32 * 23  - 736
+* 3.2 * 23 - 73.6
+* 3.2 * 2.3 - 7.36
 """
 
-# ╔═╡ b6b65b94-edf0-11ea-3686-fbff0ff53d08
-function create_bar()
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 4a5e9d2c-dd90-4bb0-9e31-3f5c834406b4
-create_bar()
-
-# ╔═╡ d862fb16-edf1-11ea-36ec-615d521e6bc0
-colored_line(create_bar())
-
-# ╔═╡ 59414833-a108-4b1e-9a34-0f31dc907c6e
-url = "https://user-images.githubusercontent.com/6933510/107239146-dcc3fd00-6a28-11eb-8c7b-41aaf6618935.png" 
-
-# ╔═╡ c5484572-ee05-11ea-0424-f37295c3072d
-philip_filename = download(url) # download to a local file. The filename is returned
-
-# ╔═╡ c8ecfe5c-ee05-11ea-322b-4b2714898831
-philip = load(philip_filename)
-
-# ╔═╡ e86ed944-ee05-11ea-3e0f-d70fc73b789c
-md"_Hi there Philip_"
-
-# ╔═╡ 6ccd8902-0dd9-4335-a11a-ee7f9a1a6c09
-philip_head = philip[470:800, 140:410]
-
-# ╔═╡ 15088baa-c337-405d-8885-19a6e2bfd6aa
+# ╔═╡ 224acb51-c0db-4f04-b865-8349d6a28e98
 md"""
-Recall from [Section 1.1](https://computationalthinking.mit.edu/Spring21/week1/) that in Julia, an _image_ is just a 2D array of color objects:
+We wanted to show you that floating point arithmetic has structure to it.  It is not the fuzz or slop that you may have seen as experimental errors in maybe a chemistry or physics class.  If you are interested, we may show more later in the semester.
 """
 
-# ╔═╡ 7ad4f6bc-588e-44ab-8ca9-c87cd1048442
-typeof(philip)
-
-# ╔═╡ a55bb5ca-600b-4aa0-b95f-7ece20845c9b
+# ╔═╡ a7e9ab20-8501-11eb-2a7a-af8fd495b21e
 md"""
-Every pixel (i.e. _element of the 2D array_) is of the `RGB` type:
+## **Exercise 2:** _Rank-one matrices_
+In this exercise we will go into some more detail about how to define types in Julia in order to make a structured-matrix type, similar to the `OneHotVector` type from class.
+
+To begin, we will make a type to represent a rank-1 matrix. A *rank-1 matrix* is a matrix whose columns are all multiples of each other. This already tells us a lot about the matrix; in fact, we can represent any such matrix as the outer product of two vectors `v` and `w`. *Only* the two vectors will be stored; the matrix elements will be *calculated* on demand, i.e. when we *index* into the object.
 """
 
-# ╔═╡ c5dc0cc8-9305-47e6-8b20-a9f8ef867799
-philip_pixel = philip[100,100]
-
-# ╔═╡ de772e21-0bea-4fd2-868a-9a7d32550bc9
-typeof(philip_pixel)
-
-# ╔═╡ 21bdc692-91ee-474d-ae98-455913a2342e
-md"""
-To get the values of its individual color channels, use the `r`, `g` and `b` _attributes_:
-"""
-
-# ╔═╡ 2ae3f379-96ce-435d-b863-deba4586ec71
-philip_pixel.r, philip_pixel.g, philip_pixel.b
-
-# ╔═╡ c49ba901-d798-489a-963c-4cc113c7abfd
-md"""
-And to create an `RGB` object yourself:
-"""
-
-# ╔═╡ 93451c37-77e1-4d4f-9788-c2a3da1401ee
-RGB(0.1, 0.4, 0.7)
-
-# ╔═╡ f52e4914-2926-4a42-9e45-9caaace9a7db
+# ╔═╡ 8ce8c4bc-8505-11eb-2357-c50a70b8745c
 md"""
 #### Exercise 2.1
-👉 Write a function **`get_red`** that takes a single pixel, and returns the value of its red channel.
+Let's make a `FirstRankOneMatrix` type that contains two vectors of floats, `v` and `w`. Here `v` represents a column and `w` the multipliers for each column.
+
+We include (in the same cell, due to requirements of Pluto) a constructor that takes a single vector `v` and duplicates it.
 """
 
-# ╔═╡ a8b2270a-600c-4f83-939e-dc5ab35f4735
-function get_red(pixel::AbstractRGB)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ c320b39d-4cea-4fa1-b1ce-053c898a67a6
-get_red(RGB(0.8, 0.1, 0.0))
-
-# ╔═╡ d8cf9bd5-dbf7-4841-acf9-eef7e7cabab3
+# ╔═╡ 9f534aa0-8505-11eb-3476-4d326fb19d42
 md"""
-#### Exercise 2.2
-👉 Write a function **`get_reds`** (note the extra `s`) that accepts a 2D color array called `image`, and returns a 2D array with the red channel value of each pixel. (The result should be a 2D array of _numbers_.) Use your function `get_red` from the previous exercise.
+👉 Create an object of type `FirstRankOneMatrix` representing the multiplication table of the numbers from 1 to 10 and the numbers from 1 to 12. Call it `ten_twelve`.
 """
 
-# ╔═╡ ebe1d05c-f6aa-437d-83cb-df0ba30f20bf
-function get_reds(image::AbstractMatrix)
-	# your code here!
-	return missing
-end
+# ╔═╡ 7aac43b3-49ce-46ea-854b-d292ac0591c7
+md"""
+#### Exercise 2.2 - _extending Base methods_
+Right now, our `FirstRankOneMatrix` is just a container for two arrays. To make it _behave_ like a matrix, we add methods to functions in `Base`, Julia's standard set of functions. Most of the functions you have used so far come from base, for example:
+"""
 
-# ╔═╡ c427554a-6f6a-43f1-b03b-f83239887cee
-get_reds(philip_head)
+# ╔═╡ ce6e648c-ade5-4882-9f92-1ae3f878a5a3
+md"""
+These are built-in functions, and each function comes with a set of methods pre-defined (in Julia's source code _(which is mostly written in Julia)_). Uncomment the next cell to see the full list of methods for `size`. We will add a method to this list!
+"""
 
-# ╔═╡ 4fd07e01-2f8b-4ec9-9f4f-8a9e5ff56fb6
+# ╔═╡ 87fce3d8-765c-410c-a059-4dd51bd97254
 md"""
 
-Great! By extracting the red channel value of each pixel, we get a 2D array of numbers. We went from an image (2D array of RGB colors) to a matrix (2D array of numbers).
+Let's extend the `size` and `getindex` methods so that they can also work with our rank-1 matrices. This will allow us to easily access the size and entries of the matrix.
+"""
 
+# ╔═╡ e86d8ab6-8505-11eb-1995-137dfbff0191
+md"""
+👉 Extend `Base.size` for the type `FirstRankOneMatrix` to return the size as a tuple of values corresponding to each direction.
+"""
+
+# ╔═╡ 545a5916-8506-11eb-1a31-078957d791f8
+md"""
+👉 Extend `Base.getindex` for the type `FirstRankOneMatrix` to return the $(i, j)$th entry of the outer product.
+"""
+
+# ╔═╡ fe6df9bf-6059-4b76-af39-385d395ece72
+Base.getindex(ten_twelve, 5, 11)
+
+# ╔═╡ b9cb6192-8505-11eb-3d2c-790654bbc9a1
+md"""
 #### Exercise 2.3
-Let's try to visualize this matrix. Right now, it is displayed in text form, but because the image is quite large, most rows and columns don't fit on the screen. Instead, a better way to visualize it is to **view a number matrix as an image**.
 
-This is easier than you might think! We just want to map each number to an `RGB` object, and the result will be a 2D array of `RGB` objects, which Julia will display as an image.
+If you ask Julia to display the value of an object of type `FirstRankOneMatrix`, you will notice that it doesn't do what we are used to, which is probably to display the whole matrix that it corresponds to. Let's see:
+""" 
 
-First, let's define a function that turns a _number_ into a _color_.
-"""
-
-# ╔═╡ 97c15896-6d99-4292-b7d7-4fcd2353656f
-function value_as_color(x)
-	
-	return RGB(x, 0, 0)
-end
-
-# ╔═╡ cbb9bf41-4c21-42c7-b0e0-fc1ce29e0eb1
-value_as_color(0.0), value_as_color(0.6), value_as_color(1.0)
-
-# ╔═╡ 3f1a670b-44c2-4cab-909c-65f4ae9ed14b
+# ╔═╡ 1b3cc404-9da8-4acd-9df5-5815ce167c34
 md"""
-👉 Use the functions `get_reds` and `value_as_color` to visualize the red channel values of `philip_head`. Tip: Like in previous exercises, use broadcasting ('dot syntax') to apply a function _element-wise_.
-
-Use the ➕ button at the bottom left of this cell to add more cells.
+This is what matrices normally look like in Julia:
 """
 
-# ╔═╡ 21ba6e75-55a2-4614-9b5d-ea6378bf1d98
-
-
-# ╔═╡ f7825c18-ff28-4e23-bf26-cc64f2f5049a
+# ╔═╡ 4e926bfe-8734-11eb-1355-e1d1d9b36929
 md"""
+One possible workaround for this is to create a new function specifically to display a matrix of our custom type.
 
-#### Exercise 2.4
-👉 Write four more functions, `get_green`, `get_greens`, `get_blue` and `get_blues`, to be the equivalents of `get_red` and `get_reds`. Use the ➕ button at the bottom left of this cell to add new cells.
+👉 Make a function `print_as_matrix` that prints the entries of a matrix of type `FirstRankOneMatrix` in a grid format. We'll test that it works below with the matrix `R` we already created.
 """
 
-# ╔═╡ d994e178-78fd-46ab-a1bc-a31485423cad
+# ╔═╡ 9eb846c0-8737-11eb-101b-0191f715d8c9
+md"""
+We should now be able to see our `FirstRankOneMatrix`-type matrix displayed in the terminal!
+"""
 
+# ╔═╡ a75f3c76-8506-11eb-1d83-cf5781b656a3
+md"""
+#### Exercise 2.4 - _AbstractMatrix_
+In fact, Julia (together with Pluto) can do some of this work for us! Julia provides facilities to make our life easier when we tell Julia that our type *behaves like* an array. We do so by making the type a *subtype of* `AbstractMatrix`. This will let our type **inherit** the methods and attributes that come with the `AbstractMatrix` type by default - including some display functions that Pluto notebooks use.
 
-# ╔═╡ c54ccdea-ee05-11ea-0365-23aaf053b7d7
+Let's do all this on a new rank-one matrix type: `RankOneMatrix`. As we do this, we will also remove the restriction to `Float64`-type entries by using a *parametrised type* `T`. Parametrised types allow us flexibility to handle different types of entries without repeating a lot of code; we won't go too in-depth about these for now.
+"""
+
+# ╔═╡ 1d16e228-850e-11eb-1dca-41df85b706da
+md"""
+In the cell above, we added a second ('outer') constructor that takes a single vector as argument. 
+
+👉 Make sure that you can use both constructors by trying them out below.
+"""
+
+# ╔═╡ 3ed18ba0-850b-11eb-3e90-f188c54d9ce9
+md"""
+👉 Add `getindex` and `size` methods for this new type. These will allow us to access entries of our custom matrices with the usual index notation `M[i,j]`, as well as quickly retrieving their dimensions.
+"""
+
+# ╔═╡ 5a6dd3bc-af85-4e7d-b03c-b8c1bc88d850
+Base.getindex(R2, 2, 3)
+
+# ╔═╡ 91b1125a-850b-11eb-1a21-c7af293332fd
+md"""
+👉 Create an object of the new type for the $10 \times 10$ multiplication matrix, using a single range.
+"""
+
+# ╔═╡ 8f5c7c9c-850b-11eb-3d97-bf9c6b5d7d2e
+md"""
+You should see two things: Firstly, the matrix now contains integers, instead of floats (this is thanks to our parametrised type!). And secondly, Julia *automatically* displays the matrix as we wanted, once you have defined `getindex` and `size`, provided you have told Julia that your type is a subtype of `AbstractArray`!
+"""
+
+# ╔═╡ 248ab23e-850c-11eb-396f-5ba365f0f743
+md"""
+Julia also allows us to automatically convert the matrix to a normal ("dense") matrix, using either `collect` or `Array`. Let's try these out. You may need to re-run the cell below after completing the exercises.
+"""
+
+# ╔═╡ 8cab8d7d-32fc-4b43-bd54-fb0c78fa5d00
+md"""
+> Fun fact: we did not define a method for `Base.collect`, and yet it works! This is because we told Julia that our `RankOneMatrix` is a subtype of `AbstractMatrix`, for which `Base.collect` already has a method defined in Julia's source code. This fallback method uses `Base.getindex` and `Base.size`, which we did define.
+"""
+
+# ╔═╡ 6a08cb74-8510-11eb-2212-2f1f676f3d5d
 md"""
 #### Exercise 2.5
-👉 Write a function **`mean_color`** that accepts an object called `image`. It should calculate the mean amounts of red, green and blue in the image and return the average color. Be sure to use functions from previous exercises!
+
+Why do we need a special type to represent special types of structured matrices? One reason is that not only do they give a more efficient representation in space (requiring less memory to store), they can also be more efficient in time, i.e. *faster*.
+
+   For example, let's look at **matrix--vector multiplication**. This is a *fundamental* part of many, *many* algorithms in scientific computing, and because of this, we usually want it to be as fast as possible.
+
+   For a rank-one matrix given by $M = v w^T$, the matrix--vector product $M \cdot x$ is given by $(w \cdot x) v$. Note that $w \cdot x$ is a number (scalar) which is multiplying the vector element by element. This computation is much faster than the usual matrix-vector multiplication: we are taking advantage of structure!
+   
 """
 
-# ╔═╡ f6898df6-ee07-11ea-2838-fde9bc739c11
-function mean_color(image)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 5be9b144-ee0d-11ea-2a8d-8775de265a1d
-mean_color(philip)
-
-# ╔═╡ 5f6635b4-63ed-4a62-969c-bd4084a8202f
+# ╔═╡ 61cbfc80-86f5-11eb-316f-6307cac7cbbb
 md"""
-_At the end of this homework, you can see all of your filters applied to your webcam image!_
+👉 Define a function `matvec` that takes a `RankOneMatrix` `M` and a `Vector` `x` and carries out matrix-vector multiplication. We will be able to compare the result with doing the matrix--vector product using the corresponding dense matrix.
 """
 
-# ╔═╡ 63e8d636-ee0b-11ea-173d-bd3327347d55
-function invert(color::AbstractRGB)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 2cc2f84e-ee0d-11ea-373b-e7ad3204bb00
-md"Let's invert some colors:"
-
-# ╔═╡ b8f26960-ee0a-11ea-05b9-3f4bc1099050
-color_black = RGB(0.0, 0.0, 0.0)
-
-# ╔═╡ 5de3a22e-ee0b-11ea-230f-35df4ca3c96d
-invert(color_black)
-
-# ╔═╡ 4e21e0c4-ee0b-11ea-3d65-b311ae3f98e9
-color_red = RGB(0.8, 0.1, 0.1)
-
-# ╔═╡ 6dbf67ce-ee0b-11ea-3b71-abc05a64dc43
-invert(color_red)
-
-# ╔═╡ 846b1330-ee0b-11ea-3579-7d90fafd7290
-md"👉 Can you invert the picture of Philip?"
-
-# ╔═╡ 943103e2-ee0b-11ea-33aa-75a8a1529931
-philip_inverted = missing # replace `missing` with your code!
-
-# ╔═╡ 55b138b7-19fb-4da1-9eb1-1e8304528251
+# ╔═╡ 4864e4d6-850c-11eb-210c-0318b8660a9a
 md"""
-_At the end of this homework, you can see all of your filters applied to your webcam image!_
+## Exercise 3: Low-rank matrices
 """
 
-# ╔═╡ f68d4a36-ee07-11ea-0832-0360530f102e
+# ╔═╡ 58ce8d2a-850c-11eb-29e9-3fc966e129b1
+md"""
+In this exercise we will combine rank-1 matrices into low-rank matrices, which are sums of rank-1 matrices. Just like in the previous exercise, we will make custom types for these matrices, and we will be able to compute the entries of a matrix on-demand as we request them (instead of storing all of them always).
+"""
+
+# ╔═╡ 9d4d943e-8502-11eb-31cb-e11824b2dce0
+md"""
+#### Exercise 3.1
+
+👉 Make a rank-2 matrix type `RankTwoMatrix` that contains two rank-1 matrices `A` and `B`.  For simplicity, you can use the `FirstRankOneMatrix` type.
+
+   Include in the same cell a constructor for `RankTwoMatrix` that takes two vectors and makes the rank-one matrices from those vectors.
+
+*Note*: In principle we should check when constructing the type that the input matrices have the same dimensions, but we will just assume that they do.
+"""
+
+# ╔═╡ 92a91904-850c-11eb-010e-c58ae218f541
 md"""
 #### Exercise 3.2
-👉 Look up the documentation on the `floor` function. Use it to write a function `quantize(x::Number)` that takes in a value $x$ (which you can assume is between 0 and 1) and "quantizes" it into bins of width 0.1. For example, check that 0.267 gets mapped to 0.2.
+👉 Construct a rank two matrix out of the rank-1 matrix representing the multiplication table of $1.0:10.0$, together with the multiplication table of $0.0:0.1:0.9$.
+
+   (Note that both range arguments must contain floats, so that we can add up entries.)
 """
 
-# ╔═╡ fbd1638d-8d7a-4d12-aff9-9c160cc3fd74
-function quantize(x::Number)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 7720740e-2d2b-47f7-98fd-500ed3eee479
-md"""
-#### Intermezzo: _multiple methods_
-
-In Julia, we often write multiple methods for the same function. When a function is called, the method is chosen based on the input arguments. Let's look at an example:
-
-These are two _methods_ to the same function, because they have 
-
-> **the same name, but different input types**
-"""
-
-# ╔═╡ 90421bca-0804-4d6b-8bd0-3ddbd54cc5fe
-function double(x::Number)
-	
-	return x * 2
-end
-
-# ╔═╡ b2329e4c-6204-453e-8998-2414b869b808
-function double(x::Vector)
-	
-	return [x..., x...]
-end
-
-# ╔═╡ 23fcd65f-0182-41f3-80ec-d85b05136c47
-md"""
-When we call the function `double`, Julia will decide which method to call based on the given input argument!
-"""
-
-# ╔═╡ 5055b74c-b98d-41fa-a0d8-cb36200d82cc
-double(24)
-
-# ╔═╡ 8db17b2b-0cf9-40ba-8f6f-2e53be7b6355
-double([1,2,37])
-
-# ╔═╡ a8a597e0-a01c-40cd-9902-d56430afd938
-md"""
-We call this **multiple dispatch**, and it is one of Julia's key features. Throughout this course, you will see lots of real-world application, and learn to use multiple dispatch to create flexible and readable abstractions!
-"""
-
-# ╔═╡ f6b218c0-ee07-11ea-2adb-1968c4fd473a
+# ╔═╡ dc714540-8afa-11eb-205b-7770074771c8
 md"""
 #### Exercise 3.3
-👉 Write the second **method** of the function `quantize`, i.e. a new *version* of the function with the *same* name. This method will accept a color object called `color`, of the type `AbstractRGB`. 
-    
-Here, `::AbstractRGB` is a **type annotation**. This ensures that this version of the function will be chosen when passing in an object whose type is a **subtype** of the `AbstractRGB` abstract type. For example, both the `RGB` and `RGBX` types satisfy this.
-
-The method you write should return a new `RGB` object, in which each component ($r$, $g$ and $b$) are quantized. Use your previous method for `quantize`!
+👉 As with last time, extend the `getindex` and `size` methods for the `RankTwoMatrix` type. Keep in mind they are already defined for `RankOneMatrix`.
 """
 
-# ╔═╡ 04e6b486-ceb7-45fe-a6ca-733703f16357
-function quantize(color::AbstractRGB)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ f6bf64da-ee07-11ea-3efb-05af01b14f67
+# ╔═╡ aca709f0-8503-11eb-1144-1fc01cb85c39
 md"""
 #### Exercise 3.4
-👉 Write a method `quantize(image::AbstractMatrix)` that quantizes an image by quantizing each pixel in the image. (You may assume that the matrix is a matrix of color objects.)
+
+Making a custom type for rank-2 matrices is a step forward from rank-1 matrices: instead of storing two vectors, we store two rank-1 matrices themselves. What if we want to represent a rank-3 matrix? We would need to store *three* rank-1 matrices, instead of just two. What about rank-4, rank-5, and so on?
+
+We can go even further and make a general custom type `LowRankMatrix` for rank-$k$ matrices, for general (ideally low) $k$. In this case, we should store two main things: the list of rank-1 matrices that our low-rank matrix is made up of, and also the *rank* of the matrix (which is how many rank-1 matrices we are storing).
+
+👉 Complete the definition for the type `LowRankMatrix`. Remember to store both the rank-1 matrices and the rank of the matrix itself.
 """
 
-# ╔═╡ 13e9ec8d-f615-4833-b1cf-0153010ccb65
-function quantize(image::AbstractMatrix)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ f6a655f8-ee07-11ea-13b6-43ca404ddfc7
-quantize(0.267), quantize(0.91)
-
-# ╔═╡ 25dad7ce-ee0b-11ea-3e20-5f3019dd7fa3
-md"Let's apply your method!"
-
-# ╔═╡ 9751586e-ee0c-11ea-0cbb-b7eda92977c9
-quantize(philip)
-
-# ╔═╡ f6d6c71a-ee07-11ea-2b63-d759af80707b
+# ╔═╡ 6e280730-8b00-11eb-04b7-615a389e792f
 md"""
 #### Exercise 3.5
-👉 Write a function `noisify(x::Number, s)` to add randomness of intensity $s$ to a value $x$, i.e. to add a random value between $-s$ and $+s$ to $x$. If the result falls outside the range $[0, 1]$ you should "clamp" it to that range. (Julia has a built-in `clamp` function, or you can write your own function.)
+👉 Extend the `getindex` and `size` methods to work with the `LowRankMatrix` type. As before, remember that these are already defined for `RankOneMatrix`.
 """
 
-# ╔═╡ f38b198d-39cf-456f-a841-1ba08f206010
-function noisify(x::Number, s)
-	# your code here!
-	return missing
+# ╔═╡ dd27f508-8503-11eb-36b9-33f5f99f78b0
+function Base.size(M::LowRankMatrix)
+	
+	return missing # Your code here
 end
 
-# ╔═╡ f6fc1312-ee07-11ea-39a0-299b67aee3d8
-md"""
-👉  Write the second method `noisify(c::AbstractRGB, s)` to add random noise of intensity $s$ to each of the $(r, g, b)$ values in a colour. 
+# ╔═╡ ead4c008-0e7e-4414-aced-d4a576423bd3
+size === Base.size
 
-Use your previous method for `noisify`. _(Remember that Julia chooses which method to use based on the input arguments. So to call the method from the previous exercise, the first argument should be a number.)_
-"""
+# ╔═╡ 0b7c6cbe-57de-419d-adcb-8724791f9c89
+Base.size(ten_twelve)
 
-# ╔═╡ db4bad9f-df1c-4640-bb34-dd2fe9bdce18
-function noisify(color::AbstractRGB, s)
-	# your code here!
-	return missing
+# ╔═╡ 52451232-2c3d-4425-a94a-da1a955cf784
+Base.size(R2)
+
+# ╔═╡ 93a75ea0-8b0c-11eb-3946-3d5d92487fb5
+let
+	comp1, comp2 = RankOneMatrix(1.0:1.0:10.0), RankOneMatrix(0.0:0.1:0.9)
+	ex3 = LowRankMatrix([comp1, comp2], 2)
 end
 
-# ╔═╡ 0000b7f8-4c43-4dd8-8665-0dfe59e74c0a
+# ╔═╡ 1083d5ee-8512-11eb-0fdc-ab3987f94bc5
 md"""
-Noise strength:
-"""
-
-# ╔═╡ 774b4ce6-ee1b-11ea-2b48-e38ee25fc89b
-@bind color_noise Slider(0:0.01:1, show_value=true)
-
-# ╔═╡ 48de5bc2-72d3-11eb-3fd9-eff2b686cb75
-md"""
-> ### Note about _array comprehension_
-> At this point, you already know of a few ways to make a new array based on one that already exists.
-> 1. you can use a for loop to go through a array
-> 1. you can use function broadcasting over a array
-> 1. you can use _**array comprehension**_!
->
-> The third option you are about to see demonstrated below and following the following syntax:
->
-> ```[function_to_apply(args) for args in some_iterable_of_your_choice]```
->
-> This creates a new iterable that matches what you iterate through in the second part of the comprehension. Below is an example with `for` loops through two iterables that creates a 2-dimensional `Array`.
-"""
-
-# ╔═╡ f70823d2-ee07-11ea-2bb3-01425212aaf9
-md"""
-👉 Write the third method `noisify(image::AbstractMatrix, s)` to noisify each pixel of an image. This function should be a single line!
-"""
-
-# ╔═╡ 21a5885d-00ab-428b-96c3-c28c98c4ca6d
-function noisify(image::AbstractMatrix, s)
-	# your code here!
-	return missing
-end
-
-# ╔═╡ 1ea53f41-b791-40e2-a0f8-04e13d856829
-noisify(0.5, 0.1) # edit this test case!
-
-# ╔═╡ 7e4aeb70-ee1b-11ea-100f-1952ba66f80f
-(original=color_red, with_noise=noisify(color_red, color_noise))
-
-# ╔═╡ 8e848279-1b3e-4f32-8c0c-45693d12de96
-[
-	noisify(color_red, strength)
-	for 
-		strength in 0 : 0.05 : 1,
-		row in 1:10
-]'
-
-# ╔═╡ d896b7fd-20db-4aa9-bbcf-81b1cd44ec46
-md"""
-
 #### Exercise 3.6
-Move the slider below to set the amount of noise applied to the image of Philip.
+👉 Extend the method `matvec` to work with our custom type `LowRankMatrix` (and a `Vector`). Remember that `matvec` is already defined for `RankOneMatrix`.
 """
 
-# ╔═╡ e70a84d4-ee0c-11ea-0640-bf78653ba102
-@bind philip_noise Slider(0:0.01:1, show_value=true)
-
-# ╔═╡ ac15e0d0-ee0c-11ea-1eaf-d7f88b5df1d7
-noisify(philip_head, philip_noise)
-
-# ╔═╡ 9604bc44-ee1b-11ea-28f8-7f7af8d0cbb2
-if philip_noise == 1
-	md"""
-	> #### What's this?
-	> 
-	> The noise intensity is `1.0`, but we can still recognise Philip in the picture... 
-	> 
-	> 👉 Modify the definition of the slider to go further than `1.0`.
-	"""
+# ╔═╡ 3fed837a-8512-11eb-1fdd-c1b72b48d07b
+function matvec(M::LowRankMatrix, x)
+	
+	return missing # Your code here
 end
 
-# ╔═╡ f714699e-ee07-11ea-08b6-5f5169861b57
+# ╔═╡ 2d65bd1a-8512-11eb-1bd2-0313588dfa0e
 md"""
-👉 For which noise intensity does it become unrecognisable? 
+#### Exercise 3.7
+One of the big advantages of our rank-1 matrices is its space efficiency: to "store" a $n\times n$ matrix, we only need to *actually* store two vectors of $n$ entries, as opposed of $n^2$ total entries. Rank-2 matrices are a litte less efficient: we store two rank-1 matrices, or four vectors of $n$ vertices. As we increase the rank, we lose space efficiency, at the cost of being able to represent more kinds of matrices.
 
-You may need noise intensities larger than 1. Why?
-
+👉 For what rank will a matrix of rank $k$ need the same amount of storage as the dense version? Explain your answer.
 """
 
-# ╔═╡ bdc2df7c-ee0c-11ea-2e9f-7d2c085617c1
-answer_about_noise_intensity = md"""
-The image is unrecognisable with intensity ...
+# ╔═╡ f9556098-8504-11eb-08a0-39fbe00892da
+answer = md"""
+
+From rank ...
+
+Because ....
 """
 
-# ╔═╡ e87e0d14-43a5-490d-84d9-b14ece472061
+# ╔═╡ 295acdac-880a-402e-9f7e-19b0fc801130
 md"""
-### Results
+## **Exercise 4:** _The SVD for structured matrices_
+In a math class, you may or may not learn about the *singular value decomposition (SVD)*. From a computational thinking point of view, whether you have seen this before or not we hope will not matter.  Here we would like you to _get to "know" the SVD_, through experience, rather than through a math lecture.  This is how we see "computational thinking" after all. (Definitely do not look up some eigenvalue definition.)
 """
 
-# ╔═╡ ee5f21fb-1076-42b6-8926-8bbb6ed0ad67
-function custom_filter(pixel::AbstractRGB)
+# ╔═╡ 3ba3ae50-b9ed-416e-bb47-a14f82eb4e19
+md"""
+#### Exercise 4.1
+
+The `LinearAlgebra` package defines a function `svd` that computes the decomposition for us. Have a look at the result of calling the `svd` function. Try not to get intimidated by the large output (you may need to scroll the cell output), and look at the docs for `svd`.
+"""
+
+# ╔═╡ bdf3954e-2a05-4a0d-899b-1f6f59119550
+biggie = rand(100,100)
+
+# ╔═╡ a58c1c54-4f17-4ca4-ac78-22773b526dfb
+md"""
+👉 What are the _singular values_ of `biggie`?
+"""
+
+# ╔═╡ 210392ff-0a22-4e55-be08-9f58804282cf
+singular_values_of_biggie = missing
+
+# ╔═╡ bb649c89-709c-49c8-8111-53044e8e682a
+md"""
+
+#### Exercise 4.2
+
+If we try to run the `svd` function on a `RankOneMatrix`, you will see that it does not work. The error is telling us that **no `svd` method has been defined for our type**. Let's extend the `svd` function to work on objects of our type.
+"""
+
+# ╔═╡ 6f78b3bb-5440-4f34-849a-fa8e21972fa8
+A = RankOneMatrix(rand(3),rand(4))
+
+# ╔═╡ 44b8fbf1-411f-4ce4-b5d7-e12f2d6be51b
+md"""
+👉 Extend `svd` to work directly on a rank-one matrix, by writing a new method.
+
+Keep things simple. Inside your method, call `LinearAlgebra.svd` on a type that it is _already defined for_.
+
+"""
+
+# ╔═╡ 6c9ae344-084e-459c-841c-8377451507fd
+function LinearAlgebra.svd(A::RankOneMatrix)
 	
-	# your code here!
-	
-	return pixel
+	return missing
 end
 
-# ╔═╡ 9e5a08dd-332a-486b-94ab-15c49e72e522
-function custom_filter(image::AbstractMatrix)
+# ╔═╡ 167b9580-fa18-4248-8643-a0fde723ecc4
+svd(biggie)
+
+# ╔═╡ bbc4a595-a63e-4a12-9690-f39a23b30ae1
+svd(A)
+
+# ╔═╡ 9ae28bc5-d9cb-479d-8c22-7c9248cd5fa0
+LinearAlgebra.svd(A)
+
+# ╔═╡ 0cf29d7e-bd83-4c5f-bd41-e8e7c2587188
+md"""
+#### Exercise 4.3
+👉 Look at the singular values, how many of them are approximately non-zero? Does that make sense?
+"""
+
+# ╔═╡ ed4b7ea5-3266-466d-a817-7ab2cc82ac9c
+
+
+# ╔═╡ 5c6aee48-017b-49ff-af1a-a31af30a45a9
+md"""
+
+This number (the number of singular values that are positive) is something you will (or have) learn(ed) in a linear algebra class: it is known as the *rank* of a matrix, and is usually defined through a complicated elimination procedure.
+
+👉 Write a function `numerical_rank` that calculates the singular values of a matrix `A`, and returns how many of them are approximately zero.
+
+To keep things simple, you can assume that "approximately zero" means: less than `tol=1e5`.
+"""
+
+# ╔═╡ a2b7f0c3-488b-4ce9-aed6-b8ccddac6a57
+function numerical_rank(A::AbstractMatrix; tol=1e-5)
 	
-	return custom_filter.(image)
+	return missing
 end
 
-# ╔═╡ 756d150a-b7bf-4bf5-b372-5b0efa80d987
+# ╔═╡ d3420859-d558-47cb-aaf7-d51a5e2d1f6e
+numerical_rank(A)
+
+# ╔═╡ 207d2f4c-cbe8-4828-ab3f-100809bb93e9
+numerical_rank(rand(3,3))
+
+# ╔═╡ 7fdc110a-a3e3-44e5-a547-b75e03e0d21e
+md"""
+#### Exercise 4.4
+👉 Write a function that takes an argument $k$ and generates the sum of $k$ random rank-one matrices of size mxn, and counts the number of essentially non-zero singular values. 
+
+   Hint: you can do this with a `for` loop, but it can also be done with `sum`, e.g.
+
+   `sum(i for i=1:10)`.
+
+"""
+
+# ╔═╡ 01b12200-2e7e-4f19-96b9-5b6d6cb03233
+function k_rank_ones(k, m, n)
+	
+	return missing
+end
+
+# ╔═╡ e1e1067b-93ba-40df-bd09-7599538e6181
+k_rank_ones(1, 3, 3)
+
+# ╔═╡ 00f5bea8-b808-483a-ad70-332f521481f5
+md"""
+#### Exercise 4.5
+👉 What is the answer when $m$ and $n$ are both $≥ k$?  What if one of $m$ or $n$ is $< k$?
+"""
+
+# ╔═╡ a6bb92f9-0cb2-4fdd-8b67-f286edbbdcb6
+
+
+# ╔═╡ 57c19601-122b-414f-bc99-56f98c794e61
+
+
+# ╔═╡ 9813e9f9-9970-4a8b-b3ca-e6a699e6fda4
+
+
+# ╔═╡ c8829a12-917a-4ff4-87c9-fe2b25aaa99c
+
+
+# ╔═╡ 5aabbec1-a079-4936-9cd1-9c25fe5700e6
 md"## Function library
 
 Just some helper functions used in the notebook."
 
-# ╔═╡ 4bc94bec-da39-4f8a-82ee-9953ed73b6a4
+# ╔═╡ 42d6b87d-b4c3-4ccb-aceb-d1b020135f47
 hint(text) = Markdown.MD(Markdown.Admonition("hint", "Hint", [text]))
 
-# ╔═╡ b1d5ca28-edf6-11ea-269e-75a9fb549f1d
+# ╔═╡ a759c4d5-ca00-4dda-b39c-1093ba9bef0e
 md"""
-You can find out more about any function (like `rand`) by clicking on the Live Docs in the bottom right of this Pluto window, and typing a function name in the top.
+Try writing this without a `for` loop. Ideas:
 
-![image](https://user-images.githubusercontent.com/6933510/107848812-c934df80-6df6-11eb-8a32-663d802f5d11.png)
+☝️ Use `filter`.
 
-
-![image](https://user-images.githubusercontent.com/6933510/107848846-0f8a3e80-6df7-11eb-818a-7271ecb9e127.png)
-
-We recommend that you leave the window open while you work on Julia code. It will continually look up documentation for anything you type!
-
-#### Help, I don't see the Live Docs!
-
-Try the following:
-
-🙋 **Are you viewing a static preview?** The Live Docs only work if you _run_ the notebook. If you are reading this on our course website, then click the button in the top right to run the notebook.
-
-🙋 **Is your screen too small?** Try resizing your window or zooming out.
+☝️ Comprehensions can have `if` clauses, as in `[j for j=1:1000 if 5 < j < 17]`.
 """ |> hint
 
-# ╔═╡ 24090306-7395-4f2f-af31-34f7486f3945
-hint(md"""Check out this page for a refresher on basic Julia syntax:
-	
-	[Basic Julia Syntax](https://computationalthinking.mit.edu/Spring21/basic_syntax/)""")
-
-# ╔═╡ aa1ff74a-4e78-4ef1-8b8d-3a60a168cf6d
+# ╔═╡ e9a53ca0-86f2-11eb-2970-5d0996d1603e
 hint(md"""
-In [Section 1.1](https://computationalthinking.mit.edu/Spring21/week1/), we drew a red square on top of the image Philip with a simple command...
+The extra constructor should have the same name as the type; it should take in a single argument `v`, and use it for both the column and the multipliers.
 """)
 
-# ╔═╡ 50e2b0fb-b06d-4ac1-bdfb-eab833466736
-md"""
-This exercise can be quite difficult if you use a `for` loop or list comprehension. 
+# ╔═╡ 5e85ac82-8734-11eb-2f69-cda569326f68
+hint(md"""
+Check the docs for functions like `print`, `println`, `lpad` and `rpad`. Also, you don't have to know exactly how the `do` keyword works for now, but feel free to read about it - it can be useful with iterating!	
+""")
 
-Instead, you should use the [dot syntax](https://docs.julialang.org/en/v1/manual/functions/#man-vectorized) to apply a function _element-wise_ to an array. For example, this is how you get the square root of `3`:
+# ╔═╡ 7493be50-8738-11eb-37e7-990f1656998a
+hint(md"""
+If you want to specify that your argument is a range, use the `AbstractRange` type.
+""")
 
-```
-sqrt(3)
-```
+# ╔═╡ f7fb3b32-8b00-11eb-0c0e-8f8d68f849a6
+hint(md"""
+How would we implement `matvec` for a rank-2 matrix - making use of the two stored rank-1 matrices? Can you generalize this to the rank-$k$ case, when we have many rank-1 matrices?
+""")
 
-and this is how you get the square roots of 1, 2 and 3:
-
-```
-sqrt.([1, 2, 3])
-```
-
-""" |> hint
-
-# ╔═╡ f6ef2c2e-ee07-11ea-13a8-2512e7d94426
-hint(md"`rand()` generates a (uniformly) random floating-point number between $0$ and $1$.")
-
-# ╔═╡ 8ce6ad06-819c-4af5-bed7-56ecc08c97be
+# ╔═╡ 8fd9e34c-8f20-4979-8f8a-e3e2ae7d6c65
 almost(text) = Markdown.MD(Markdown.Admonition("warning", "Almost there!", [text]))
 
-# ╔═╡ dfa40e89-03fc-4a7a-825e-92d67ee217b2
+# ╔═╡ d375c52d-2126-4594-b819-aba9d34fe77f
 still_missing(text=md"Replace `missing` with your answer.") = Markdown.MD(Markdown.Admonition("warning", "Here we go!", [text]))
 
-# ╔═╡ 086ec1ff-b62d-4566-9973-5b2cc3353409
+# ╔═╡ cd02acd0-8af4-11eb-3726-d7a360b98433
+let
+	example = FirstRankOneMatrix([1,2], [3,4])
+	if ismissing(print_as_matrix(example))
+		still_missing()
+	end
+end
+
+# ╔═╡ 2d7565d4-88da-4e41-aad6-958ed6b3b2e0
 keep_working(text=md"The answer is not quite right.") = Markdown.MD(Markdown.Admonition("danger", "Keep working on it!", [text]))
 
-# ╔═╡ 2f6fb3a6-bb5d-4c7a-9297-84dd4b16c7c3
-yays = [md"Fantastic!", md"Splendid!", md"Great!", md"Yay ❤", md"Great! 🎉", md"Well done!", md"Keep it up!", md"Good job!", md"Awesome!", md"You got the right answer!", md"Let's move on to the next section."]
+# ╔═╡ d7f45d51-f426-4353-af58-858395295ce0
+yays = [md"Fantastic!", md"Splendid!", md"Great!", md"Yay ❤", md"Great! 🎉", md"Well done!", md"Keep it up!", md"Good job!", md"Awesome!", md"You got the right answer!", md"Let's move on to the next question."]
 
-# ╔═╡ c22f688b-dc04-4a94-b541-fe06266c5446
+# ╔═╡ 9b2aa95d-4583-40ec-893c-9fc751ea22a1
 correct(text=rand(yays)) = Markdown.MD(Markdown.Admonition("correct", "Got it!", [text]))
 
-# ╔═╡ 09102183-f9fb-4d89-b4f9-5d76af7b8e90
-let
-	result = get_red(RGB(0.2, 0.3, 0.4))
-	if ismissing(result)
-		still_missing()
-	elseif isnothing(result)
-		keep_working(md"Did you forget to write `return`?")
-	elseif result == 0.2
-		correct()
-	else
-		keep_working()
-	end
-end
-
-# ╔═╡ 63ac142e-6d9d-4109-9286-030a02c900b4
-let
-	test = [RGB(0.2, 0, 0)   RGB(0.6, 0, 0)]
-	result = get_reds(test)
+# ╔═╡ 29db89d6-ac40-4121-b996-e083555bc5db
+try
+	A = RankOneMatrix([1,2,3], [5,6,7])
+	result = LinearAlgebra.svd(A)
 	
-	if ismissing(result)
+	if result isa Missing
 		still_missing()
-	elseif isnothing(result)
-		keep_working(md"Did you forget to write `return`?")
-	elseif result == [ 0.2  0.6 ]
-		correct()
+	elseif !(result isa LinearAlgebra.SVD)
+		almost(md"Like all other `svd` methods (implemented in `LinearAlgebra`), your method should return an SVD factorization (of type `LinearAlgebra.SVD`).")
 	else
-		keep_working()
-	end
-end
-
-# ╔═╡ 80a4cb23-49c9-4446-a3ec-b2203128dc27
-let
-	result = invert(RGB(1.0, 0.5, 0.25)) # I chose these values because they can be represented exactly by Float64
-	shouldbe = RGB(0.0, 0.5, 0.75)
+		reconstructed = result.U[:,1:1] * result.S[1:1] * result.Vt[1:1,:]
 	
-	if ismissing(result)
-		still_missing()
-	elseif isnothing(result)
-		keep_working(md"Did you forget to write `return`?")
-	elseif !(result isa AbstractRGB)
-		keep_working(md"You need to return a _color_, i.e. an object of type `RGB`. Use `RGB(r, g, b)` to create a color with channel values `r`, `g` and `b`.")
-	elseif !(result == shouldbe)
-		keep_working()
-	else
-		correct()
-	end
-end
-
-# ╔═╡ a6d9635b-85ed-4590-ad09-ca2903ea8f1d
-let
-	result = quantize(RGB(.297, .1, .0))
-
-	if ismissing(result)
-		still_missing()
-	elseif isnothing(result)
-		keep_working(md"Did you forget to write `return`?")
-	elseif !(result isa AbstractRGB)
-		keep_working(md"You need to return a _color_, i.e. an object of type `RGB`. Use `RGB(r, g, b)` to create a color with channel values `r`, `g` and `b`.")
-	elseif result != RGB(0.2, .1, .0)
-		keep_working()
-	else
-		correct()
-	end
-end
-
-# ╔═╡ 31ef3710-e4c9-4aa7-bd8f-c69cc9a977ee
-let
-	result = noisify(0.5, 0)
-
-	if ismissing(result)
-		still_missing()
-	elseif isnothing(result)
-		keep_working(md"Did you forget to write `return`?")
-	elseif result == 0.5
-		
-		results = [noisify(0.9, 0.1) for _ in 1:1000]
-		
-		if 0.8 ≤ minimum(results) < 0.81 && 0.99 ≤ maximum(results) ≤ 1
-			result = noisify(5, 3)
-			
-			if result == 1
-				correct()
-			else
-				keep_working(md"The result should be restricted to the range ``[0,1]``.")
-			end
+	
+		if sum(abs.(A .- reconstructed)) < 1e-5
+			correct()
 		else
 			keep_working()
 		end
+	end
+catch e
+	if (e isa MethodError) && e.f === LinearAlgebra.svd
+		still_missing(md"Define a new method for `LinearAlgebra.svd` that takes a `RankOneMatrix` as argument.")
 	else
-		keep_working(md"What should `noisify(0.5, 0)` be?")
-		correct()
+		rethrow(e)
 	end
 end
 
-# ╔═╡ ab3d1b70-88e8-4118-8d3e-601a8a68f72d
+# ╔═╡ 5dca2bb3-24e6-49ae-a6fc-d3912da4f82a
 not_defined(variable_name) = Markdown.MD(Markdown.Admonition("danger", "Oopsie!", [md"Make sure that you define a variable called **$(Markdown.Code(string(variable_name)))**"]))
 
-# ╔═╡ 397941fc-edee-11ea-33f2-5d46c759fbf7
-if !@isdefined(random_vect)
-	not_defined(:random_vect)
-elseif ismissing(random_vect)
-	still_missing()
-elseif !(random_vect isa Vector)
-	keep_working(md"`random_vect` should be a `Vector`.")
-elseif eltype(random_vect) != Float64
-	almost(md"""
-		You generated a vector of random integers. For the remaining exercises, we want a vector of `Float64` numbers. 
-		
-		The (optional) first argument to `rand` specifies the **type** of elements to generate. For example: `rand(Bool, 10)` generates 10 values that are either `true` or `false`. (Try it!)
-		""")
-elseif length(random_vect) != 10
-	keep_working(md"`random_vect` does not have the correct size.")
-elseif length(Set(random_vect)) != 10
-	keep_working(md"`random_vect` is not 'random enough'")
-else
-	correct(md"Well done! You can run your code again to generate a new vector!")
-end
-
-# ╔═╡ e0bfc973-2808-4f84-b065-fb3d05401e30
-if !@isdefined(my_sum)
-	not_defined(:my_sum)
-else
-	let
-		result = my_sum([1,2,3])
-		if ismissing(result)
+# ╔═╡ 30e5a813-9ea1-48d9-9039-012b8b267256
+let
+	if !@isdefined(ten_twelve)
+		not_defined(:ten_twelve)
+	else
+		if ten_twelve isa Missing
 			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif result != 6
-			keep_working()
-		else
-			correct()
-		end
-	end
-end
-
-# ╔═╡ 38dc80a0-edef-11ea-10e9-615255a4588c
-if !@isdefined(mean)
-	not_defined(:mean)
-else
-	let
-		result = mean([1,2,3])
-		if ismissing(result)
-			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif result != 2
-			keep_working()
-		else
-			correct()
-		end
-	end
-end
-
-# ╔═╡ 2b1ccaca-edee-11ea-34b0-c51659f844d0
-if !@isdefined(m)
-	not_defined(:m)
-elseif ismissing(m)
-	still_missing()
-elseif !(m isa Number)
-	keep_working(md"`m` should be a number.")
-elseif m != mean(random_vect)
-	keep_working()
-else
-	correct()
-end
-
-# ╔═╡ adf476d8-a334-4b35-81e8-cc3b37de1f28
-if !@isdefined(mean)
-	not_defined(:mean)
-else
-	let
-		input = Float64[1,2,3]
-		result = demean(input)
-		
-		if input === result
-			almost(md"""
-			It looks like you **modified** `xs` inside the function.
+		elseif !(ten_twelve isa FirstRankOneMatrix)
+			keep_working(md"`ten_twelve` should be a `FirstRankOneMatrix`.")
+		elseif (ten_twelve.v == 1:10 && ten_twelve.w == 1:12) ||
+				(ten_twelve.w == 1:10 && ten_twelve.v == 1:12)
 			
-			It is preferable to avoid mutation inside functions, because you might want to use the original data again. For example, applying `demean` to a dataset of sensor readings would **modify** the original data, and the rest of your analysis would be erroneous.
-			
-			""")
-		elseif ismissing(result)
-			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif !(result isa AbstractVector) || length(result) != 3
-			keep_working(md"Return a vector of the same size as `xs`.")
-		elseif abs(sum(result) / 3) < 1e-10
 			correct()
 		else
 			keep_working()
@@ -850,43 +709,126 @@ else
 	end
 end
 
-# ╔═╡ e3394c8a-edf0-11ea-1bb8-619f7abb6881
-if !@isdefined(create_bar)
-	not_defined(:create_bar)
-else
-	let
-		result = create_bar()
-		if ismissing(result)
-			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif !(result isa Vector) || length(result) != 100
-			keep_working(md"The result should be a `Vector` with 100 elements.")
-		elseif result[[1,50,100]] != [0,1,0]
-			keep_working()
+# ╔═╡ 06040694-b324-4e6b-8314-3bffc7b8010f
+let
+	if !@isdefined(RankOneMatrix)
+		not_defined(:RankOneMatrix)
+	else
+		R2 = FirstRankOneMatrix([1,2], [3,4,5])
+
+
+		if ismissing(Base.size(R2))
+			still_missing()	
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
 		else
 			correct()
 		end
 	end
 end
 
-# ╔═╡ 4d0158d0-ee0d-11ea-17c3-c169d4284acb
-if !@isdefined(mean_color)
-	not_defined(:mean_color)
+# ╔═╡ 4ba8a0f2-850b-11eb-1c09-b7bba1763ed7
+let
+	if !@isdefined(FirstRankOneMatrix)
+		not_defined(:FirstRankOneMatrix)
+	else
+		R2 = FirstRankOneMatrix([1,2], [3,4,5])
+
+
+		if ismissing(Base.getindex(R2, 1, 1))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")	
+		elseif ismissing(Base.size(R2))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			shouldbe = [
+					3 4 5
+					6 8 10
+				]
+			r = all(CartesianIndices(shouldbe)) do I
+				isapprox(R2[Tuple(I)...], shouldbe[I], rtol=1-3)
+			end
+			if r
+				correct()
+			else
+				keep_working(md"`Base.getindex` is not implemented correctly.")
+			end
+		end
+	end
+end
+
+# ╔═╡ 111a8db4-a808-4f37-a75e-08d418bdfc98
+let
+	if !@isdefined(RankOneMatrix)
+		not_defined(:RankOneMatrix)
+	else
+		R2 = RankOneMatrix([1,2], [3,4,5])
+
+
+		if ismissing(Base.size(R2))
+			still_missing()	
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			correct()
+		end
+	end
+end
+
+# ╔═╡ 47f17b30-d87b-4d71-abf1-7a8b7f938095
+let
+	if !@isdefined(RankOneMatrix)
+		not_defined(:RankOneMatrix)
+	else
+		R2 = RankOneMatrix([1,2], [3,4,5])
+
+
+		if ismissing(Base.getindex(R2, 1, 1))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")	
+		elseif ismissing(Base.size(R2))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			shouldbe = [
+					3 4 5
+					6 8 10
+				]
+			r = all(CartesianIndices(shouldbe)) do I
+				isapprox(R2[Tuple(I)...], shouldbe[I], rtol=1-3)
+			end
+			if r
+				correct()
+			else
+				keep_working(md"`Base.getindex` is not implemented correctly.")
+			end
+		end
+	end
+end
+
+# ╔═╡ 3e72f920-8739-11eb-1354-57b18fa53103
+if !@isdefined(matvec)
+	not_defined(:matvec)
 else
 	let
-		input = reshape([RGB(1.0, 1.0, 1.0), RGB(1.0, 1.0, 0.0)], (2, 1))
+		M = RankOneMatrix(1:10)
+
+		if ismissing(matvec(M, ones(10)))
+			still_missing()
+		end
+
+		incorrect = false
+		for i in 1:5
+			r = ones(10).*i
+			for j in 1:10
+				if matvec(M, r)[j] != (collect(M) * r)[j]
+					incorrect = true
+				end
+			end
+		end
 		
-		result = mean_color(input)
-		shouldbe = RGB(1.0, 1.0, 0.5)
-
-		if ismissing(result)
-			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif !(result isa AbstractRGB)
-			keep_working(md"You need to return a _color_, i.e. an object of type `RGB`. Use `RGB(r, g, b)` to create a color with channel values `r`, `g` and `b`.")
-		elseif !(result == shouldbe)
+		if incorrect
 			keep_working()
 		else
 			correct()
@@ -894,360 +836,266 @@ else
 	end
 end
 
-# ╔═╡ c905b73e-ee1a-11ea-2e36-23b8e73bfdb6
-if !@isdefined(quantize)
-	not_defined(:quantize)
-else
-	let
-		result = quantize(.3)
+# ╔═╡ 0d81b3d3-cfb4-4c27-bb00-18a55e00ab7a
+let
+	if !@isdefined(RankTwoMatrix)
+		not_defined(:RankTwoMatrix)
+	else
+		R1 = RankOneMatrix([1,2], [3,4,5])
+		R2 = RankTwoMatrix(R1, R1)
 
-		if ismissing(result)
+
+		if ismissing(Base.size(R2))
+			still_missing()	
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			correct()
+		end
+	end
+end
+
+# ╔═╡ 2e2f503f-c1ad-4d7f-8c0d-cd41fad1f334
+let
+	if !@isdefined(RankTwoMatrix)
+		not_defined(:RankTwoMatrix)
+	else
+		R1a = RankOneMatrix([1,2], [3,4,5])
+		R1b = RankOneMatrix([2,1], [3,4,5])
+		R2 = RankTwoMatrix(R1a, R1b)
+
+		if ismissing(Base.getindex(R2, 1, 1))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")	
+		elseif ismissing(Base.size(R2))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			shouldbe = [
+					3 4 5
+					6 8 10
+				]
+			s2 = shouldbe + shouldbe[[2,1],:]
+			r = all(CartesianIndices(s2)) do I
+				isapprox(R2[Tuple(I)...], s2[I], rtol=1-3)
+			end
+			if r
+				correct()
+			else
+				keep_working(md"`Base.getindex` is not implemented correctly.")
+			end
+		end
+	end
+end
+
+# ╔═╡ 84d7bc07-e211-4296-98e6-f03723481e37
+let
+	if !@isdefined(LowRankMatrix)
+		not_defined(:LowRankMatrix)
+	else
+		R1 = RankOneMatrix([1,2], [3,4,5])
+		R2 = LowRankMatrix([R1, R1],2)
+
+
+		if ismissing(Base.size(R2))
+			still_missing()	
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			correct()
+		end
+	end
+end
+
+# ╔═╡ 4ed7c189-3130-4f6a-b57b-5322fdd4cef6
+let
+	if !@isdefined(LowRankMatrix)
+		not_defined(:LowRankMatrix)
+	else
+		R1a = RankOneMatrix([1,2], [3,4,5])
+		R1b = RankOneMatrix([2,1], [3,4,5])
+		R2 = LowRankMatrix([R1a, R1b],2)
+
+		if ismissing(Base.getindex(R2, 1, 1))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")	
+		elseif ismissing(Base.size(R2))
+			still_missing(md"Implement both `Base.size` and `Base.getindex`.")
+		elseif size(R2) != (2, 3)
+			keep_working(md"`Base.size` is not implemented correctly.")
+		else
+			shouldbe = [
+					3 4 5
+					6 8 10
+				]
+			s2 = shouldbe + shouldbe[[2,1],:]
+			r = all(CartesianIndices(s2)) do I
+				isapprox(R2[Tuple(I)...], s2[I], rtol=1-3)
+			end
+			if r
+				correct()
+			else
+				keep_working(md"`Base.getindex` is not implemented correctly.")
+			end
+		end
+	end
+end
+
+# ╔═╡ 863f4490-8b06-11eb-352b-61cec188ae57
+if !@isdefined(matvec)
+	not_defined(:matvec)
+else
+	
+	let
+		
+		comp1, comp2 = RankOneMatrix(1.0:1.0:10.0), RankOneMatrix(0.0:0.1:0.9)
+		if ismissing(comp1) | ismissing(comp2)
 			still_missing()
-		elseif isnothing(result)
-			keep_working(md"Did you forget to write `return`?")
-		elseif result != .3
-			if quantize(0.35) == .3
-				almost(md"What should quantize(`0.2`) be?")
+		end
+		
+		ex4 = LowRankMatrix([comp1, comp2], 2)
+		if ismissing(ex4)
+			still_missing
+		end
+		
+		if ismissing(matvec(ex4, ones(10)))
+			still_missing()
+		end
+		
+		incorrect = false
+		for i in 1:10
+			r = ones(10).*i
+			v, c = matvec(ex4, r), collect(ex4) * r
+			for j in 1:10
+				if abs(v[j] - c[j]) > 1e-10
+					incorrect = true
+					break
+				end
+			end
+		end
+		
+		if incorrect
+			keep_working()
+		else
+			correct()
+		end
+	end
+end
+
+# ╔═╡ bec548dd-e2b9-4057-b0ac-1ab4e5b441d4
+if !@isdefined(singular_values_of_biggie)
+	not_defined(:singular_values_of_biggie)
+else
+	if singular_values_of_biggie isa Missing
+		still_missing()
+	elseif !(singular_values_of_biggie isa AbstractVector)
+		keep_working(md"Return the singular values as a _vector_.")
+	elseif isapprox(singular_values_of_biggie, svdvals(biggie), rtol=1e-5)
+		correct()
+	else
+		keep_working()
+	end
+end
+
+# ╔═╡ 2f5eadb0-4fdb-45b6-83fd-116dd4c1f9be
+let
+	if !@isdefined(numerical_rank)
+		not_defined(:numerical_rank)
+	else
+		result1 = numerical_rank([
+				1 2 0
+				0 0 1e-10
+				-5 -10 0
+				])
+		
+		if result1 isa Missing
+			still_missing()
+		elseif !(result1 isa Integer)
+			keep_working(md"You should return a number.")
+		elseif result1 != 1
+			keep_working()
+		else
+			result2 = numerical_rank([
+				1 3 0
+				0 0 1e-10
+				-5 -10 0
+				])
+			if result2 == 2
+				correct()
 			else
 				keep_working()
 			end
-		else
-			correct()
 		end
 	end
 end
 
-# ╔═╡ 8cb0aee8-5774-4490-9b9e-ada93416c089
+# ╔═╡ 1276103b-8c58-4757-ae80-5ffb7f870d09
+let
+	if !@isdefined(k_rank_ones)
+		not_defined(:k_rank_ones)
+	else
+		result = k_rank_ones(1, 3, 4)
+		
+		if result isa Missing
+			still_missing()
+		elseif !(result isa AbstractMatrix)
+			keep_working(md"Make sure that you return a matrix.")
+		elseif size(result) != (3, 4)
+			keep_working(md"Make sure that you return a matrix of the correct size.")
+		else
+			
+			numerical_rank(A) = count(>(1e-5), svdvals(A))
+			
+			if numerical_rank(result) == 1
+				correct()
+			else
+				result2 = k_rank_ones(2, 10, 4)
+				
+				if !(result2 isa AbstractMatrix)
+					keep_working(md"Make sure that you return a matrix.")
+				elseif size(result2) != (10, 4)
+					keep_working(md"Make sure that you return a matrix of the correct size.")
+				elseif numerical_rank(result2) == 2
+					correct()
+				else
+					keep_working()
+				end
+			end
+			
+			
+		end
+	end
+end
+
+# ╔═╡ ddf2a828-7823-4fc0-b944-72b60b391247
 todo(text) = HTML("""<div
 	style="background: rgb(220, 200, 255); padding: 2em; border-radius: 1em;"
 	><h1>TODO</h1>$(repr(MIME"text/html"(), text))</div>""")
 
-# ╔═╡ 115ded8c-ee0a-11ea-3493-89487315feb7
+# ╔═╡ a7feaaa4-618b-4afe-8050-4bf7cc609c17
 bigbreak = html"<br><br><br><br><br>";
 
-# ╔═╡ 54056a02-ee0a-11ea-101f-47feb6623bec
+# ╔═╡ 4ce0e43d-63d6-4cb2-88b8-8ba80e17012a
 bigbreak
 
-# ╔═╡ e083b3e8-ed61-11ea-2ec9-217820b0a1b4
-md"""
- $(bigbreak)
-
-## **Exercise 2** - _Manipulating images_
-
-In this exercise we will get familiar with matrices (2D arrays) in Julia, by manipulating images.
-Recall that in Julia images are matrices of `RGB` color objects.
-
-Let's load a picture of Philip again.
-"""
-
-# ╔═╡ f6cc03a0-ee07-11ea-17d8-013991514d42
-md"""
- $(bigbreak)
-
-## Exercise 3 - _More filters_
-
-In the previous exercises, we learned how to use Julia's _dot syntax_ to apply a function _element-wise_ to an array. In this exercise, we will use this to write more image filters, that you can then apply to your own webcam image!
-
-#### Exercise 3.1
-👉 Write a function `invert` that inverts a color, i.e. sends $(r, g, b)$ to $(1 - r, 1-g, 1-b)$.
-"""
-
-# ╔═╡ 4139ee66-ee0a-11ea-2282-15d63bcca8b8
-md"""
-$(bigbreak)
-### Camera input
-"""
-
-# ╔═╡ 87dabfd2-461e-4769-ad0f-132cb2370b88
-md"""
-$(bigbreak)
-### Write your own filter!
-"""
-
-# ╔═╡ 91f4778e-ee20-11ea-1b7e-2b0892bd3c0f
+# ╔═╡ 36a63540-8739-11eb-21b2-a9d5ee60a0e5
 bigbreak
 
-# ╔═╡ dfb7c6be-ee0d-11ea-194e-9758857f7b20
-function camera_input(;max_size=200, default_url="https://i.imgur.com/SUmi94P.png")
-"""
-<span class="pl-image waiting-for-permission">
-<style>
-	
-	.pl-image.popped-out {
-		position: fixed;
-		top: 0;
-		right: 0;
-		z-index: 5;
-	}
+# ╔═╡ 35d22fd9-9cfc-47c5-8adb-a01f14586be3
+bigbreak
 
-	.pl-image #video-container {
-		width: 250px;
-	}
+# ╔═╡ 0d1dac23-bdbd-4a90-ab13-e4c33d83777e
+bigbreak
 
-	.pl-image video {
-		border-radius: 1rem 1rem 0 0;
-	}
-	.pl-image.waiting-for-permission #video-container {
-		display: none;
-	}
-	.pl-image #prompt {
-		display: none;
-	}
-	.pl-image.waiting-for-permission #prompt {
-		width: 250px;
-		height: 200px;
-		display: grid;
-		place-items: center;
-		font-family: monospace;
-		font-weight: bold;
-		text-decoration: underline;
-		cursor: pointer;
-		border: 5px dashed rgba(0,0,0,.5);
-	}
-
-	.pl-image video {
-		display: block;
-	}
-	.pl-image .bar {
-		width: inherit;
-		display: flex;
-		z-index: 6;
-	}
-	.pl-image .bar#top {
-		position: absolute;
-		flex-direction: column;
-	}
-	
-	.pl-image .bar#bottom {
-		background: black;
-		border-radius: 0 0 1rem 1rem;
-	}
-	.pl-image .bar button {
-		flex: 0 0 auto;
-		background: rgba(255,255,255,.8);
-		border: none;
-		width: 2rem;
-		height: 2rem;
-		border-radius: 100%;
-		cursor: pointer;
-		z-index: 7;
-	}
-	.pl-image .bar button#shutter {
-		width: 3rem;
-		height: 3rem;
-		margin: -1.5rem auto .2rem auto;
-	}
-
-	.pl-image video.takepicture {
-		animation: pictureflash 200ms linear;
-	}
-
-	@keyframes pictureflash {
-		0% {
-			filter: grayscale(1.0) contrast(2.0);
-		}
-
-		100% {
-			filter: grayscale(0.0) contrast(1.0);
-		}
-	}
-</style>
-
-	<div id="video-container">
-		<div id="top" class="bar">
-			<button id="stop" title="Stop video">✖</button>
-			<button id="pop-out" title="Pop out/pop in">⏏</button>
-		</div>
-		<video playsinline autoplay></video>
-		<div id="bottom" class="bar">
-		<button id="shutter" title="Click to take a picture">📷</button>
-		</div>
-	</div>
-		
-	<div id="prompt">
-		<span>
-		Enable webcam
-		</span>
-	</div>
-
-<script>
-	// based on https://github.com/fonsp/printi-static (by the same author)
-
-	const span = currentScript.parentElement
-	const video = span.querySelector("video")
-	const popout = span.querySelector("button#pop-out")
-	const stop = span.querySelector("button#stop")
-	const shutter = span.querySelector("button#shutter")
-	const prompt = span.querySelector(".pl-image #prompt")
-
-	const maxsize = $(max_size)
-
-	const send_source = (source, src_width, src_height) => {
-		const scale = Math.min(1.0, maxsize / src_width, maxsize / src_height)
-
-		const width = Math.floor(src_width * scale)
-		const height = Math.floor(src_height * scale)
-
-		const canvas = html`<canvas width=\${width} height=\${height}>`
-		const ctx = canvas.getContext("2d")
-		ctx.drawImage(source, 0, 0, width, height)
-
-		span.value = {
-			width: width,
-			height: height,
-			data: ctx.getImageData(0, 0, width, height).data,
-		}
-		span.dispatchEvent(new CustomEvent("input"))
-	}
-	
-	const clear_camera = () => {
-		window.stream.getTracks().forEach(s => s.stop());
-		video.srcObject = null;
-
-		span.classList.add("waiting-for-permission");
-	}
-
-	prompt.onclick = () => {
-		navigator.mediaDevices.getUserMedia({
-			audio: false,
-			video: {
-				facingMode: "environment",
-			},
-		}).then(function(stream) {
-
-			stream.onend = console.log
-
-			window.stream = stream
-			video.srcObject = stream
-			window.cameraConnected = true
-			video.controls = false
-			video.play()
-			video.controls = false
-
-			span.classList.remove("waiting-for-permission");
-
-		}).catch(function(error) {
-			console.log(error)
-		});
-	}
-	stop.onclick = () => {
-		clear_camera()
-	}
-	popout.onclick = () => {
-		span.classList.toggle("popped-out")
-	}
-
-	shutter.onclick = () => {
-		const cl = video.classList
-		cl.remove("takepicture")
-		void video.offsetHeight
-		cl.add("takepicture")
-		video.play()
-		video.controls = false
-		console.log(video)
-		send_source(video, video.videoWidth, video.videoHeight)
-	}
-	
-	
-	document.addEventListener("visibilitychange", () => {
-		if (document.visibilityState != "visible") {
-			clear_camera()
-		}
-	})
-
-
-	// Set a default image
-
-	const img = html`<img crossOrigin="anonymous">`
-
-	img.onload = () => {
-	console.log("helloo")
-		send_source(img, img.width, img.height)
-	}
-	img.src = "$(default_url)"
-	console.log(img)
-</script>
-</span>
-""" |> HTML
-end
-
-# ╔═╡ 20402780-426b-4caa-af8f-ff1e7787b7f9
-@bind cam_data camera_input()
-
-# ╔═╡ e15ad330-ee0d-11ea-25b6-1b1b3f3d7888
-
-function process_raw_camera_data(raw_camera_data)
-	# the raw image data is a long byte array, we need to transform it into something
-	# more "Julian" - something with more _structure_.
-	
-	# The encoding of the raw byte stream is:
-	# every 4 bytes is a single pixel
-	# every pixel has 4 values: Red, Green, Blue, Alpha
-	# (we ignore alpha for this notebook)
-	
-	# So to get the red values for each pixel, we take every 4th value, starting at 
-	# the 1st:
-	reds_flat = UInt8.(raw_camera_data["data"][1:4:end])
-	greens_flat = UInt8.(raw_camera_data["data"][2:4:end])
-	blues_flat = UInt8.(raw_camera_data["data"][3:4:end])
-	
-	# but these are still 1-dimensional arrays, nicknamed 'flat' arrays
-	# We will 'reshape' this into 2D arrays:
-	
-	width = raw_camera_data["width"]
-	height = raw_camera_data["height"]
-	
-	# shuffle and flip to get it in the right shape
-	reds = reshape(reds_flat, (width, height))' / 255.0
-	greens = reshape(greens_flat, (width, height))' / 255.0
-	blues = reshape(blues_flat, (width, height))' / 255.0
-	
-	# we have our 2D array for each color
-	# Let's create a single 2D array, where each value contains the R, G and B value of 
-	# that pixel
-	
-	RGB.(reds, greens, blues)
-end
-
-# ╔═╡ ed9fb2ac-2680-42b7-9b00-591e45a5e105
-cam_image = process_raw_camera_data(cam_data)
-
-# ╔═╡ d38c6958-9300-4f7a-89cf-95ca9e899c13
-mean_color(cam_image)
-
-# ╔═╡ 82f1e006-60fe-4ad1-b9cb-180fafdeb4da
-invert.(cam_image)
-
-# ╔═╡ 54c83589-b8c6-422a-b5e9-d8e0ee72a224
-quantize(cam_image)
-
-# ╔═╡ 18e781f8-66f3-4216-bc84-076a08f9f3fb
-noisify(cam_image, .5)
-
-# ╔═╡ ebf3193d-8c8d-4425-b252-45067a5851d9
-[
-	invert.(cam_image)      quantize(cam_image)
-	noisify(cam_image, .5)  custom_filter(cam_image)
-]
-
-# ╔═╡ 8917529e-fa7a-412b-8aea-54f92f6270fa
-custom_filter(cam_image)
-
-# ╔═╡ 83eb9ca0-ed68-11ea-0bc5-99a09c68f867
-md"_homework 1, version 9_"
+# ╔═╡ a5234680-8b02-11eb-2574-15489d0d49ea
+bigbreak
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
-HypertextLiteral = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
-ImageMagick = "6218d12a-5da1-5696-b52f-db25d2ecc6d1"
-Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-HypertextLiteral = "~0.9.4"
-ImageMagick = "~1.2.2"
-Images = "~0.25.2"
 PlutoUI = "~0.7.48"
 """
 
@@ -1255,80 +1103,21 @@ PlutoUI = "~0.7.48"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-[[AbstractFFTs]]
-deps = ["ChainRulesCore", "LinearAlgebra"]
-git-tree-sha1 = "69f7020bd72f069c219b5e8c236c1fa90d2cb409"
-uuid = "621f4979-c628-5d54-868e-fcf4e3e8185c"
-version = "1.2.1"
-
 [[AbstractPlutoDingetjes]]
 deps = ["Pkg"]
 git-tree-sha1 = "8eaf9f1b4921132a4cff3f36a1d9ba923b14a481"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
 version = "1.1.4"
 
-[[Adapt]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "195c5505521008abea5aee4f96930717958eac6f"
-uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
-version = "3.4.0"
-
 [[ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
 version = "1.1.1"
 
-[[ArnoldiMethod]]
-deps = ["LinearAlgebra", "Random", "StaticArrays"]
-git-tree-sha1 = "62e51b39331de8911e4a7ff6f5aaf38a5f4cc0ae"
-uuid = "ec485272-7323-5ecc-a04f-4719b315124d"
-version = "0.2.0"
-
 [[Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 
-[[AxisAlgorithms]]
-deps = ["LinearAlgebra", "Random", "SparseArrays", "WoodburyMatrices"]
-git-tree-sha1 = "66771c8d21c8ff5e3a93379480a2307ac36863f7"
-uuid = "13072b0f-2c55-5437-9ae7-d433b7a33950"
-version = "1.0.1"
-
-[[AxisArrays]]
-deps = ["Dates", "IntervalSets", "IterTools", "RangeArrays"]
-git-tree-sha1 = "1dd4d9f5beebac0c03446918741b1a03dc5e5788"
-uuid = "39de3d68-74b9-583c-8d2d-e117c070f3a9"
-version = "0.4.6"
-
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
-
-[[CEnum]]
-git-tree-sha1 = "eb4cb44a499229b3b8426dcfb5dd85333951ff90"
-uuid = "fa961155-64e5-5f13-b03f-caf6b980ea82"
-version = "0.4.2"
-
-[[CatIndices]]
-deps = ["CustomUnitRanges", "OffsetArrays"]
-git-tree-sha1 = "a0f80a09780eed9b1d106a1bf62041c2efc995bc"
-uuid = "aafaddc9-749c-510e-ac4f-586e18779b91"
-version = "0.2.2"
-
-[[ChainRulesCore]]
-deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "e7ff6cadf743c098e08fca25c91103ee4303c9bb"
-uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "1.15.6"
-
-[[ChangesOfVariables]]
-deps = ["ChainRulesCore", "LinearAlgebra", "Test"]
-git-tree-sha1 = "38f7a08f19d8810338d4f5085211c7dfa5d5bdd8"
-uuid = "9e997f8a-9a97-42d5-a9f1-ce6bfc15e2c0"
-version = "0.1.4"
-
-[[Clustering]]
-deps = ["Distances", "LinearAlgebra", "NearestNeighbors", "Printf", "Random", "SparseArrays", "Statistics", "StatsBase"]
-git-tree-sha1 = "64df3da1d2a26f4de23871cd1b6482bb68092bd5"
-uuid = "aaaa29a8-35af-508c-8bc3-b662a17a0fe5"
-version = "0.14.3"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -1336,104 +1125,19 @@ git-tree-sha1 = "eb7f0f8307f71fac7c606984ea5fb2817275d6e4"
 uuid = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
 version = "0.11.4"
 
-[[ColorVectorSpace]]
-deps = ["ColorTypes", "FixedPointNumbers", "LinearAlgebra", "SpecialFunctions", "Statistics", "TensorCore"]
-git-tree-sha1 = "d08c20eef1f2cbc6e60fd3612ac4340b89fea322"
-uuid = "c3611d14-8923-5661-9e6a-0046d554d3a4"
-version = "0.9.9"
-
-[[Colors]]
-deps = ["ColorTypes", "FixedPointNumbers", "Reexport"]
-git-tree-sha1 = "417b0ed7b8b838aa6ca0a87aadf1bb9eb111ce40"
-uuid = "5ae59095-9a9b-59fe-a467-6f913c188581"
-version = "0.12.8"
-
-[[Compat]]
-deps = ["Dates", "LinearAlgebra", "UUIDs"]
-git-tree-sha1 = "3ca828fe1b75fa84b021a7860bd039eaea84d2f2"
-uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "4.3.0"
-
 [[CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
 version = "1.0.1+0"
 
-[[ComputationalResources]]
-git-tree-sha1 = "52cb3ec90e8a8bea0e62e275ba577ad0f74821f7"
-uuid = "ed09eef8-17a6-5b46-8889-db040fac31e3"
-version = "0.3.2"
-
-[[CoordinateTransformations]]
-deps = ["LinearAlgebra", "StaticArrays"]
-git-tree-sha1 = "681ea870b918e7cff7111da58791d7f718067a19"
-uuid = "150eb455-5306-5404-9cee-2592286d6298"
-version = "0.6.2"
-
-[[CustomUnitRanges]]
-git-tree-sha1 = "1a3f97f907e6dd8983b744d2642651bb162a3f7a"
-uuid = "dc8bdbbb-1ca9-579f-8c36-e416f6a65cce"
-version = "1.0.2"
-
-[[DataAPI]]
-git-tree-sha1 = "46d2680e618f8abd007bce0c3026cb0c4a8f2032"
-uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
-version = "1.12.0"
-
-[[DataStructures]]
-deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
-git-tree-sha1 = "d1fff3a548102f48987a52a2e0d114fa97d730f0"
-uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
-version = "0.18.13"
-
 [[Dates]]
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
-
-[[Distances]]
-deps = ["LinearAlgebra", "SparseArrays", "Statistics", "StatsAPI"]
-git-tree-sha1 = "3258d0659f812acde79e8a74b11f17ac06d0ca04"
-uuid = "b4f34e82-e78d-54a5-968a-f98e89d6e8f7"
-version = "0.10.7"
-
-[[Distributed]]
-deps = ["Random", "Serialization", "Sockets"]
-uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
-
-[[DocStringExtensions]]
-deps = ["LibGit2"]
-git-tree-sha1 = "c36550cb29cbe373e95b3f40486b9a4148f89ffd"
-uuid = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
-version = "0.9.2"
 
 [[Downloads]]
 deps = ["ArgTools", "FileWatching", "LibCURL", "NetworkOptions"]
 uuid = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 version = "1.6.0"
-
-[[FFTViews]]
-deps = ["CustomUnitRanges", "FFTW"]
-git-tree-sha1 = "cbdf14d1e8c7c8aacbe8b19862e0179fd08321c2"
-uuid = "4f61f5a4-77b1-5117-aa51-3ab5ef4ef0cd"
-version = "0.3.2"
-
-[[FFTW]]
-deps = ["AbstractFFTs", "FFTW_jll", "LinearAlgebra", "MKL_jll", "Preferences", "Reexport"]
-git-tree-sha1 = "90630efff0894f8142308e334473eba54c433549"
-uuid = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
-version = "1.5.0"
-
-[[FFTW_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "c6033cc3892d0ef5bb9cd29b7f2f0331ea5184ea"
-uuid = "f5851436-0d7a-5f13-b9de-f02708fd171a"
-version = "3.3.10+0"
-
-[[FileIO]]
-deps = ["Pkg", "Requires", "UUIDs"]
-git-tree-sha1 = "7be5f99f7d15578798f338f5433b6c432ea8037b"
-uuid = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
-version = "1.16.0"
 
 [[FileWatching]]
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
@@ -1443,18 +1147,6 @@ deps = ["Statistics"]
 git-tree-sha1 = "335bfdceacc84c5cdf16aadc768aa5ddfc5383cc"
 uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
 version = "0.8.4"
-
-[[Graphics]]
-deps = ["Colors", "LinearAlgebra", "NaNMath"]
-git-tree-sha1 = "d61890399bc535850c4bf08e4e0d3a7ad0f21cbd"
-uuid = "a2bd30eb-e257-5431-a919-1863eab51364"
-version = "1.1.2"
-
-[[Graphs]]
-deps = ["ArnoldiMethod", "Compat", "DataStructures", "Distributed", "Inflate", "LinearAlgebra", "Random", "SharedArrays", "SimpleTraits", "SparseArrays", "Statistics"]
-git-tree-sha1 = "ba2d094a88b6b287bd25cfa86f301e7693ffae2f"
-uuid = "86223c79-3864-5bf0-83f7-82e725a168b6"
-version = "1.7.4"
 
 [[Hyperscript]]
 deps = ["Test"]
@@ -1474,206 +1166,15 @@ git-tree-sha1 = "f7be53659ab06ddc986428d3a9dcc95f6fa6705a"
 uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
 version = "0.2.2"
 
-[[ImageAxes]]
-deps = ["AxisArrays", "ImageBase", "ImageCore", "Reexport", "SimpleTraits"]
-git-tree-sha1 = "c54b581a83008dc7f292e205f4c409ab5caa0f04"
-uuid = "2803e5a7-5153-5ecf-9a86-9b4c37f5f5ac"
-version = "0.6.10"
-
-[[ImageBase]]
-deps = ["ImageCore", "Reexport"]
-git-tree-sha1 = "b51bb8cae22c66d0f6357e3bcb6363145ef20835"
-uuid = "c817782e-172a-44cc-b673-b171935fbb9e"
-version = "0.1.5"
-
-[[ImageContrastAdjustment]]
-deps = ["ImageCore", "ImageTransformations", "Parameters"]
-git-tree-sha1 = "0d75cafa80cf22026cea21a8e6cf965295003edc"
-uuid = "f332f351-ec65-5f6a-b3d1-319c6670881a"
-version = "0.3.10"
-
-[[ImageCore]]
-deps = ["AbstractFFTs", "ColorVectorSpace", "Colors", "FixedPointNumbers", "Graphics", "MappedArrays", "MosaicViews", "OffsetArrays", "PaddedViews", "Reexport"]
-git-tree-sha1 = "acf614720ef026d38400b3817614c45882d75500"
-uuid = "a09fc81d-aa75-5fe9-8630-4744c3626534"
-version = "0.9.4"
-
-[[ImageDistances]]
-deps = ["Distances", "ImageCore", "ImageMorphology", "LinearAlgebra", "Statistics"]
-git-tree-sha1 = "b1798a4a6b9aafb530f8f0c4a7b2eb5501e2f2a3"
-uuid = "51556ac3-7006-55f5-8cb3-34580c88182d"
-version = "0.2.16"
-
-[[ImageFiltering]]
-deps = ["CatIndices", "ComputationalResources", "DataStructures", "FFTViews", "FFTW", "ImageBase", "ImageCore", "LinearAlgebra", "OffsetArrays", "Reexport", "SparseArrays", "StaticArrays", "Statistics", "TiledIteration"]
-git-tree-sha1 = "8b251ec0582187eff1ee5c0220501ef30a59d2f7"
-uuid = "6a3955dd-da59-5b1f-98d4-e7296123deb5"
-version = "0.7.2"
-
-[[ImageIO]]
-deps = ["FileIO", "IndirectArrays", "JpegTurbo", "LazyModules", "Netpbm", "OpenEXR", "PNGFiles", "QOI", "Sixel", "TiffImages", "UUIDs"]
-git-tree-sha1 = "342f789fd041a55166764c351da1710db97ce0e0"
-uuid = "82e4d734-157c-48bb-816b-45c225c6df19"
-version = "0.6.6"
-
-[[ImageMagick]]
-deps = ["FileIO", "ImageCore", "ImageMagick_jll", "InteractiveUtils"]
-git-tree-sha1 = "ca8d917903e7a1126b6583a097c5cb7a0bedeac1"
-uuid = "6218d12a-5da1-5696-b52f-db25d2ecc6d1"
-version = "1.2.2"
-
-[[ImageMagick_jll]]
-deps = ["JpegTurbo_jll", "Libdl", "Libtiff_jll", "Pkg", "Zlib_jll", "libpng_jll"]
-git-tree-sha1 = "1c0a2295cca535fabaf2029062912591e9b61987"
-uuid = "c73af94c-d91f-53ed-93a7-00f77d67a9d7"
-version = "6.9.10-12+3"
-
-[[ImageMetadata]]
-deps = ["AxisArrays", "ImageAxes", "ImageBase", "ImageCore"]
-git-tree-sha1 = "36cbaebed194b292590cba2593da27b34763804a"
-uuid = "bc367c6b-8a6b-528e-b4bd-a4b897500b49"
-version = "0.9.8"
-
-[[ImageMorphology]]
-deps = ["ImageCore", "LinearAlgebra", "Requires", "TiledIteration"]
-git-tree-sha1 = "e7c68ab3df4a75511ba33fc5d8d9098007b579a8"
-uuid = "787d08f9-d448-5407-9aad-5290dd7ab264"
-version = "0.3.2"
-
-[[ImageQualityIndexes]]
-deps = ["ImageContrastAdjustment", "ImageCore", "ImageDistances", "ImageFiltering", "LazyModules", "OffsetArrays", "Statistics"]
-git-tree-sha1 = "0c703732335a75e683aec7fdfc6d5d1ebd7c596f"
-uuid = "2996bd0c-7a13-11e9-2da2-2f5ce47296a9"
-version = "0.3.3"
-
-[[ImageSegmentation]]
-deps = ["Clustering", "DataStructures", "Distances", "Graphs", "ImageCore", "ImageFiltering", "ImageMorphology", "LinearAlgebra", "MetaGraphs", "RegionTrees", "SimpleWeightedGraphs", "StaticArrays", "Statistics"]
-git-tree-sha1 = "36832067ea220818d105d718527d6ed02385bf22"
-uuid = "80713f31-8817-5129-9cf8-209ff8fb23e1"
-version = "1.7.0"
-
-[[ImageShow]]
-deps = ["Base64", "FileIO", "ImageBase", "ImageCore", "OffsetArrays", "StackViews"]
-git-tree-sha1 = "b563cf9ae75a635592fc73d3eb78b86220e55bd8"
-uuid = "4e3cecfd-b093-5904-9786-8bbb286a6a31"
-version = "0.3.6"
-
-[[ImageTransformations]]
-deps = ["AxisAlgorithms", "ColorVectorSpace", "CoordinateTransformations", "ImageBase", "ImageCore", "Interpolations", "OffsetArrays", "Rotations", "StaticArrays"]
-git-tree-sha1 = "8717482f4a2108c9358e5c3ca903d3a6113badc9"
-uuid = "02fcd773-0e25-5acc-982a-7f6622650795"
-version = "0.9.5"
-
-[[Images]]
-deps = ["Base64", "FileIO", "Graphics", "ImageAxes", "ImageBase", "ImageContrastAdjustment", "ImageCore", "ImageDistances", "ImageFiltering", "ImageIO", "ImageMagick", "ImageMetadata", "ImageMorphology", "ImageQualityIndexes", "ImageSegmentation", "ImageShow", "ImageTransformations", "IndirectArrays", "IntegralArrays", "Random", "Reexport", "SparseArrays", "StaticArrays", "Statistics", "StatsBase", "TiledIteration"]
-git-tree-sha1 = "03d1301b7ec885b266c0f816f338368c6c0b81bd"
-uuid = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
-version = "0.25.2"
-
-[[Imath_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "87f7662e03a649cffa2e05bf19c303e168732d3e"
-uuid = "905a6f67-0a94-5f89-b386-d35d92009cd1"
-version = "3.1.2+0"
-
-[[IndirectArrays]]
-git-tree-sha1 = "012e604e1c7458645cb8b436f8fba789a51b257f"
-uuid = "9b13fd28-a010-5f03-acff-a1bbcff69959"
-version = "1.0.0"
-
-[[Inflate]]
-git-tree-sha1 = "5cd07aab533df5170988219191dfad0519391428"
-uuid = "d25df0c9-e2be-5dd7-82c8-3ad0b3e990b9"
-version = "0.1.3"
-
-[[IntegralArrays]]
-deps = ["ColorTypes", "FixedPointNumbers", "IntervalSets"]
-git-tree-sha1 = "be8e690c3973443bec584db3346ddc904d4884eb"
-uuid = "1d092043-8f09-5a30-832f-7509e371ab51"
-version = "0.1.5"
-
-[[IntelOpenMP_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "d979e54b71da82f3a65b62553da4fc3d18c9004c"
-uuid = "1d5cc7b8-4909-519e-a0f8-d0f5ad9712d0"
-version = "2018.0.3+2"
-
 [[InteractiveUtils]]
 deps = ["Markdown"]
 uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
-
-[[Interpolations]]
-deps = ["Adapt", "AxisAlgorithms", "ChainRulesCore", "LinearAlgebra", "OffsetArrays", "Random", "Ratios", "Requires", "SharedArrays", "SparseArrays", "StaticArrays", "WoodburyMatrices"]
-git-tree-sha1 = "842dd89a6cb75e02e85fdd75c760cdc43f5d6863"
-uuid = "a98d9a8b-a2ab-59e6-89dd-64a1c18fca59"
-version = "0.14.6"
-
-[[IntervalSets]]
-deps = ["Dates", "Random", "Statistics"]
-git-tree-sha1 = "3f91cd3f56ea48d4d2a75c2a65455c5fc74fa347"
-uuid = "8197267c-284f-5f27-9208-e0e47529a953"
-version = "0.7.3"
-
-[[InverseFunctions]]
-deps = ["Test"]
-git-tree-sha1 = "49510dfcb407e572524ba94aeae2fced1f3feb0f"
-uuid = "3587e190-3f89-42d0-90ee-14403ec27112"
-version = "0.1.8"
-
-[[IrrationalConstants]]
-git-tree-sha1 = "7fd44fd4ff43fc60815f8e764c0f352b83c49151"
-uuid = "92d709cd-6900-40b7-9082-c6be49f344b6"
-version = "0.1.1"
-
-[[IterTools]]
-git-tree-sha1 = "fa6287a4469f5e048d763df38279ee729fbd44e5"
-uuid = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
-version = "1.4.0"
-
-[[JLD2]]
-deps = ["FileIO", "MacroTools", "Mmap", "OrderedCollections", "Pkg", "Printf", "Reexport", "TranscodingStreams", "UUIDs"]
-git-tree-sha1 = "1c3ff7416cb727ebf4bab0491a56a296d7b8cf1d"
-uuid = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
-version = "0.4.25"
-
-[[JLLWrappers]]
-deps = ["Preferences"]
-git-tree-sha1 = "abc9885a7ca2052a736a600f7fa66209f96506e1"
-uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
-version = "1.4.1"
 
 [[JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
 git-tree-sha1 = "3c837543ddb02250ef42f4738347454f95079d4e"
 uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 version = "0.21.3"
-
-[[JpegTurbo]]
-deps = ["CEnum", "FileIO", "ImageCore", "JpegTurbo_jll", "TOML"]
-git-tree-sha1 = "a77b273f1ddec645d1b7c4fd5fb98c8f90ad10a5"
-uuid = "b835a17e-a41a-41e7-81f0-2f016b05efe0"
-version = "0.1.1"
-
-[[JpegTurbo_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "b53380851c6e6664204efb2e62cd24fa5c47e4ba"
-uuid = "aacddb02-875f-59d6-b918-886e6ef4fbf8"
-version = "2.1.2+0"
-
-[[LERC_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "bf36f528eec6634efc60d7ec062008f171071434"
-uuid = "88015f11-f218-50d7-93a8-a6af411a945d"
-version = "3.0.0+1"
-
-[[LazyArtifacts]]
-deps = ["Artifacts", "Pkg"]
-uuid = "4af54fe1-eca0-43a8-85a7-787d91b784e3"
-
-[[LazyModules]]
-git-tree-sha1 = "a560dd966b386ac9ae60bdd3a3d3a326062d3c3e"
-uuid = "8cdb02fc-e678-4876-92c5-9defec4f444e"
-version = "0.3.1"
 
 [[LibCURL]]
 deps = ["LibCURL_jll", "MozillaCACerts_jll"]
@@ -1697,21 +1198,9 @@ version = "1.10.2+0"
 [[Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
-[[Libtiff_jll]]
-deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "LERC_jll", "Libdl", "Pkg", "Zlib_jll", "Zstd_jll"]
-git-tree-sha1 = "3eb79b0ca5764d4799c06699573fd8f533259713"
-uuid = "89763e89-9b03-5906-acba-b20f662cd828"
-version = "4.4.0+0"
-
 [[LinearAlgebra]]
 deps = ["Libdl", "libblastrampoline_jll"]
 uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
-
-[[LogExpFunctions]]
-deps = ["ChainRulesCore", "ChangesOfVariables", "DocStringExtensions", "InverseFunctions", "IrrationalConstants", "LinearAlgebra"]
-git-tree-sha1 = "94d9c52ca447e23eac0c0f074effbcd38830deb5"
-uuid = "2ab3a3ac-af41-5b50-aa03-7779005ae688"
-version = "0.3.18"
 
 [[Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
@@ -1720,23 +1209,6 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 git-tree-sha1 = "65f28ad4b594aebe22157d6fac869786a255b7eb"
 uuid = "6c6e2e6c-3030-632d-7369-2d6c69616d65"
 version = "0.1.4"
-
-[[MKL_jll]]
-deps = ["Artifacts", "IntelOpenMP_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "Pkg"]
-git-tree-sha1 = "2ce8695e1e699b68702c03402672a69f54b8aca9"
-uuid = "856f044c-d86e-5d09-b602-aeab76dc8ba7"
-version = "2022.2.0+0"
-
-[[MacroTools]]
-deps = ["Markdown", "Random"]
-git-tree-sha1 = "42324d08725e200c23d4dfb549e0d5d89dede2d2"
-uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
-version = "0.5.10"
-
-[[MappedArrays]]
-git-tree-sha1 = "e8b359ef06ec72e8c030463fe02efe5527ee5142"
-uuid = "dbb5928d-eab1-5f90-85c2-b9b0edb7c900"
-version = "0.4.1"
 
 [[Markdown]]
 deps = ["Base64"]
@@ -1747,109 +1219,21 @@ deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
 version = "2.28.0+0"
 
-[[MetaGraphs]]
-deps = ["Graphs", "JLD2", "Random"]
-git-tree-sha1 = "2af69ff3c024d13bde52b34a2a7d6887d4e7b438"
-uuid = "626554b9-1ddb-594c-aa3c-2596fe9399a5"
-version = "0.7.1"
-
-[[Missings]]
-deps = ["DataAPI"]
-git-tree-sha1 = "bf210ce90b6c9eed32d25dbcae1ebc565df2687f"
-uuid = "e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28"
-version = "1.0.2"
-
 [[Mmap]]
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
-
-[[MosaicViews]]
-deps = ["MappedArrays", "OffsetArrays", "PaddedViews", "StackViews"]
-git-tree-sha1 = "b34e3bc3ca7c94914418637cb10cc4d1d80d877d"
-uuid = "e94cdb99-869f-56ef-bcf0-1ae2bcbe0389"
-version = "0.3.3"
 
 [[MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
 version = "2022.2.1"
 
-[[NaNMath]]
-deps = ["OpenLibm_jll"]
-git-tree-sha1 = "a7c3d1da1189a1c2fe843a3bfa04d18d20eb3211"
-uuid = "77ba4419-2d1f-58cd-9bb1-8ffee604a2e3"
-version = "1.0.1"
-
-[[NearestNeighbors]]
-deps = ["Distances", "StaticArrays"]
-git-tree-sha1 = "440165bf08bc500b8fe4a7be2dc83271a00c0716"
-uuid = "b8a86587-4115-5ab1-83bc-aa920d37bbce"
-version = "0.4.12"
-
-[[Netpbm]]
-deps = ["FileIO", "ImageCore"]
-git-tree-sha1 = "18efc06f6ec36a8b801b23f076e3c6ac7c3bf153"
-uuid = "f09324ee-3d7c-5217-9330-fc30815ba969"
-version = "1.0.2"
-
 [[NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 version = "1.2.0"
-
-[[OffsetArrays]]
-deps = ["Adapt"]
-git-tree-sha1 = "f71d8950b724e9ff6110fc948dff5a329f901d64"
-uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
-version = "1.12.8"
 
 [[OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 version = "0.3.20+0"
-
-[[OpenEXR]]
-deps = ["Colors", "FileIO", "OpenEXR_jll"]
-git-tree-sha1 = "327f53360fdb54df7ecd01e96ef1983536d1e633"
-uuid = "52e1d378-f018-4a11-a4be-720524705ac7"
-version = "0.3.2"
-
-[[OpenEXR_jll]]
-deps = ["Artifacts", "Imath_jll", "JLLWrappers", "Libdl", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "923319661e9a22712f24596ce81c54fc0366f304"
-uuid = "18a262bb-aa17-5467-a713-aee519bc75cb"
-version = "3.1.1+0"
-
-[[OpenLibm_jll]]
-deps = ["Artifacts", "Libdl"]
-uuid = "05823500-19ac-5b8b-9628-191a04bc5112"
-version = "0.8.1+0"
-
-[[OpenSpecFun_jll]]
-deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "13652491f6856acfd2db29360e1bbcd4565d04f1"
-uuid = "efe28fd5-8261-553b-a9e1-b2916fc3738e"
-version = "0.5.5+0"
-
-[[OrderedCollections]]
-git-tree-sha1 = "85f8e6578bf1f9ee0d11e7bb1b1456435479d47c"
-uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.4.1"
-
-[[PNGFiles]]
-deps = ["Base64", "CEnum", "ImageCore", "IndirectArrays", "OffsetArrays", "libpng_jll"]
-git-tree-sha1 = "f809158b27eba0c18c269cf2a2be6ed751d3e81d"
-uuid = "f57f5aa1-a3ce-4bc8-8ab9-96f992907883"
-version = "0.3.17"
-
-[[PaddedViews]]
-deps = ["OffsetArrays"]
-git-tree-sha1 = "03a7a85b76381a3d04c7a1656039197e70eda03d"
-uuid = "5432bcbf-9aad-5242-b902-cca2824c8663"
-version = "0.5.11"
-
-[[Parameters]]
-deps = ["OrderedCollections", "UnPack"]
-git-tree-sha1 = "34c0e9ad262e5f7fc75b10a9952ca7692cfc5fbe"
-uuid = "d96e819e-fc66-5662-9728-84c9c7592b0a"
-version = "0.12.3"
 
 [[Parsers]]
 deps = ["Dates"]
@@ -1862,45 +1246,15 @@ deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markd
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
 version = "1.8.0"
 
-[[PkgVersion]]
-deps = ["Pkg"]
-git-tree-sha1 = "f6cf8e7944e50901594838951729a1861e668cb8"
-uuid = "eebad327-c553-4316-9ea0-9fa01ccd7688"
-version = "0.3.2"
-
 [[PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
 git-tree-sha1 = "efc140104e6d0ae3e7e30d56c98c4a927154d684"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 version = "0.7.48"
 
-[[Preferences]]
-deps = ["TOML"]
-git-tree-sha1 = "47e5f437cc0e7ef2ce8406ce1e7e24d44915f88d"
-uuid = "21216c6a-2e73-6563-6e65-726566657250"
-version = "1.3.0"
-
 [[Printf]]
 deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
-
-[[ProgressMeter]]
-deps = ["Distributed", "Printf"]
-git-tree-sha1 = "d7a7aef8f8f2d537104f170139553b14dfe39fe9"
-uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
-version = "1.7.2"
-
-[[QOI]]
-deps = ["ColorTypes", "FileIO", "FixedPointNumbers"]
-git-tree-sha1 = "18e8f4d1426e965c7b532ddd260599e1510d26ce"
-uuid = "4b34888f-f399-49d4-9bb3-47ed5cae4e65"
-version = "1.0.0"
-
-[[Quaternions]]
-deps = ["LinearAlgebra", "Random"]
-git-tree-sha1 = "fcebf40de9a04c58da5073ec09c1c1e95944c79b"
-uuid = "94ee1d12-ae83-5a48-8b1c-48b8ff168ae0"
-version = "0.6.1"
 
 [[REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
@@ -1910,39 +1264,10 @@ uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 deps = ["SHA", "Serialization"]
 uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
-[[RangeArrays]]
-git-tree-sha1 = "b9039e93773ddcfc828f12aadf7115b4b4d225f5"
-uuid = "b3c3ace0-ae52-54e7-9d0b-2c1406fd6b9d"
-version = "0.3.2"
-
-[[Ratios]]
-deps = ["Requires"]
-git-tree-sha1 = "dc84268fe0e3335a62e315a3a7cf2afa7178a734"
-uuid = "c84ed2f1-dad5-54f0-aa8e-dbefe2724439"
-version = "0.4.3"
-
 [[Reexport]]
 git-tree-sha1 = "45e428421666073eab6f2da5c9d310d99bb12f9b"
 uuid = "189a3867-3050-52da-a836-e630ba90ab69"
 version = "1.2.2"
-
-[[RegionTrees]]
-deps = ["IterTools", "LinearAlgebra", "StaticArrays"]
-git-tree-sha1 = "4618ed0da7a251c7f92e869ae1a19c74a7d2a7f9"
-uuid = "dee08c22-ab7f-5625-9660-a9af2021b33f"
-version = "0.3.2"
-
-[[Requires]]
-deps = ["UUIDs"]
-git-tree-sha1 = "838a3a4188e2ded87a4f9f184b4b0d78a1e91cb7"
-uuid = "ae029012-a4dd-5104-9daa-d747884805df"
-version = "1.3.0"
-
-[[Rotations]]
-deps = ["LinearAlgebra", "Quaternions", "Random", "StaticArrays", "Statistics"]
-git-tree-sha1 = "793b6ef92f9e96167ddbbd2d9685009e200eb84f"
-uuid = "6038ab10-8711-5258-84ad-4b1120ba62dc"
-version = "1.3.3"
 
 [[SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
@@ -1951,79 +1276,16 @@ version = "0.7.0"
 [[Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 
-[[SharedArrays]]
-deps = ["Distributed", "Mmap", "Random", "Serialization"]
-uuid = "1a1011a3-84de-559e-8e89-a11a2f7dc383"
-
-[[SimpleTraits]]
-deps = ["InteractiveUtils", "MacroTools"]
-git-tree-sha1 = "5d7e3f4e11935503d3ecaf7186eac40602e7d231"
-uuid = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
-version = "0.9.4"
-
-[[SimpleWeightedGraphs]]
-deps = ["Graphs", "LinearAlgebra", "Markdown", "SparseArrays", "Test"]
-git-tree-sha1 = "a6f404cc44d3d3b28c793ec0eb59af709d827e4e"
-uuid = "47aef6b3-ad0c-573a-a1e2-d07658019622"
-version = "1.2.1"
-
-[[Sixel]]
-deps = ["Dates", "FileIO", "ImageCore", "IndirectArrays", "OffsetArrays", "REPL", "libsixel_jll"]
-git-tree-sha1 = "8fb59825be681d451c246a795117f317ecbcaa28"
-uuid = "45858cf5-a6b0-47a3-bbea-62219f50df47"
-version = "0.1.2"
-
 [[Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
-
-[[SortingAlgorithms]]
-deps = ["DataStructures"]
-git-tree-sha1 = "b3363d7460f7d098ca0912c69b082f75625d7508"
-uuid = "a2af1166-a08f-5f64-846c-94a0d3cef48c"
-version = "1.0.1"
 
 [[SparseArrays]]
 deps = ["LinearAlgebra", "Random"]
 uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
-[[SpecialFunctions]]
-deps = ["ChainRulesCore", "IrrationalConstants", "LogExpFunctions", "OpenLibm_jll", "OpenSpecFun_jll"]
-git-tree-sha1 = "d75bda01f8c31ebb72df80a46c88b25d1c79c56d"
-uuid = "276daf66-3868-5448-9aa4-cd146d93841b"
-version = "2.1.7"
-
-[[StackViews]]
-deps = ["OffsetArrays"]
-git-tree-sha1 = "46e589465204cd0c08b4bd97385e4fa79a0c770c"
-uuid = "cae243ae-269e-4f55-b966-ac2d0dc13c15"
-version = "0.1.1"
-
-[[StaticArrays]]
-deps = ["LinearAlgebra", "Random", "StaticArraysCore", "Statistics"]
-git-tree-sha1 = "f86b3a049e5d05227b10e15dbb315c5b90f14988"
-uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.5.9"
-
-[[StaticArraysCore]]
-git-tree-sha1 = "6b7ba252635a5eff6a0b0664a41ee140a1c9e72a"
-uuid = "1e83bf80-4336-4d27-bf5d-d5a4f845583c"
-version = "1.4.0"
-
 [[Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
 uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
-
-[[StatsAPI]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "f9af7f195fb13589dd2e2d57fdb401717d2eb1f6"
-uuid = "82ae8749-77ed-4fe6-ae5f-f523153014b0"
-version = "1.5.0"
-
-[[StatsBase]]
-deps = ["DataAPI", "DataStructures", "LinearAlgebra", "LogExpFunctions", "Missings", "Printf", "Random", "SortingAlgorithms", "SparseArrays", "Statistics", "StatsAPI"]
-git-tree-sha1 = "d1bf48bfcc554a3761a133fe3a9bb01488e06916"
-uuid = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
-version = "0.33.21"
 
 [[TOML]]
 deps = ["Dates"]
@@ -2035,33 +1297,9 @@ deps = ["ArgTools", "SHA"]
 uuid = "a4e569a6-e804-4fa4-b0f3-eef7a1d5b13e"
 version = "1.10.1"
 
-[[TensorCore]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "1feb45f88d133a655e001435632f019a9a1bcdb6"
-uuid = "62fd8b95-f654-4bbd-a8a5-9c27f68ccd50"
-version = "0.1.1"
-
 [[Test]]
 deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
-
-[[TiffImages]]
-deps = ["ColorTypes", "DataStructures", "DocStringExtensions", "FileIO", "FixedPointNumbers", "IndirectArrays", "Inflate", "Mmap", "OffsetArrays", "PkgVersion", "ProgressMeter", "UUIDs"]
-git-tree-sha1 = "70e6d2da9210371c927176cb7a56d41ef1260db7"
-uuid = "731e570b-9d59-4bfa-96dc-6df516fadf69"
-version = "0.6.1"
-
-[[TiledIteration]]
-deps = ["OffsetArrays"]
-git-tree-sha1 = "5683455224ba92ef59db72d10690690f4a8dc297"
-uuid = "06e1c1a7-607b-532d-9fad-de7d9aa2abac"
-version = "0.3.1"
-
-[[TranscodingStreams]]
-deps = ["Random", "Test"]
-git-tree-sha1 = "8a75929dcd3c38611db2f8d08546decb514fcadf"
-uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.9.9"
 
 [[Tricks]]
 git-tree-sha1 = "6bac775f2d42a611cdfcd1fb217ee719630c4175"
@@ -2077,47 +1315,18 @@ version = "1.4.0"
 deps = ["Random", "SHA"]
 uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
-[[UnPack]]
-git-tree-sha1 = "387c1f73762231e86e0c9c5443ce3b4a0a9a0c2b"
-uuid = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
-version = "1.0.2"
-
 [[Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
-
-[[WoodburyMatrices]]
-deps = ["LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "de67fa59e33ad156a590055375a30b23c40299d3"
-uuid = "efce3f68-66dc-5838-9240-27a6d6f5f9b6"
-version = "0.5.5"
 
 [[Zlib_jll]]
 deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
 version = "1.2.12+3"
 
-[[Zstd_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "e45044cd873ded54b6a5bac0eb5c971392cf1927"
-uuid = "3161d3a3-bdf6-5164-811a-617609db77b4"
-version = "1.5.2+0"
-
 [[libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl", "OpenBLAS_jll"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
 version = "5.1.1+0"
-
-[[libpng_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "94d180a6d2b5e55e447e2d27a29ed04fe79eb30c"
-uuid = "b53b4c65-9356-5827-b1ea-8c7a1a84506f"
-version = "1.6.38+0"
-
-[[libsixel_jll]]
-deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Pkg", "libpng_jll"]
-git-tree-sha1 = "d4f63314c8aa1e48cd22aa0c17ed76cd1ae48c3c"
-uuid = "075b6546-f08a-558a-be8f-8157d0f608a5"
-version = "1.10.3+0"
 
 [[nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -2131,156 +1340,150 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─ac8ff080-ed61-11ea-3650-d9df06123e1f
-# ╟─5f95e01a-ee0a-11ea-030c-9dba276aba92
-# ╠═65780f00-ed6b-11ea-1ecf-8b35523a7ac0
-# ╟─54056a02-ee0a-11ea-101f-47feb6623bec
-# ╟─540ccfcc-ee0a-11ea-15dc-4f8120063397
-# ╟─467856dc-eded-11ea-0f83-13d939021ef3
-# ╠═56ced344-eded-11ea-3e81-3936e9ad5777
-# ╟─ad6a33b0-eded-11ea-324c-cfabfd658b56
-# ╠═f51333a6-eded-11ea-34e6-bfbb3a69bcb0
-# ╟─b18e2c54-edf1-11ea-0cbf-85946d64b6a2
-# ╟─397941fc-edee-11ea-33f2-5d46c759fbf7
-# ╟─b1d5ca28-edf6-11ea-269e-75a9fb549f1d
-# ╟─5da8cbe8-eded-11ea-2e43-c5b7cc71e133
-# ╟─77adb065-bfd4-4680-9c2a-ad4d92689dbf
-# ╠═bd907ee1-5253-4cae-b5a5-267dac24362a
-# ╠═6640110a-d171-4b32-8d12-26979a36b718
-# ╟─e0bfc973-2808-4f84-b065-fb3d05401e30
-# ╟─24090306-7395-4f2f-af31-34f7486f3945
-# ╟─cf738088-eded-11ea-2915-61735c2aa990
-# ╠═0ffa8354-edee-11ea-2883-9d5bfea4a236
-# ╠═1f104ce4-ee0e-11ea-2029-1d9c817175af
-# ╟─38dc80a0-edef-11ea-10e9-615255a4588c
-# ╟─1f229ca4-edee-11ea-2c56-bb00cc6ea53c
-# ╠═2a391708-edee-11ea-124e-d14698171b68
-# ╟─2b1ccaca-edee-11ea-34b0-c51659f844d0
-# ╟─e2863d4c-edef-11ea-1d67-332ddca03cc4
-# ╟─ea8d92f8-159c-4161-8c54-bab7bc00f290
-# ╠═ec5efe8c-edef-11ea-2c6f-afaaeb5bc50c
-# ╟─d6ddafdd-1a44-48c7-b49a-554073cdf331
-# ╟─29e10640-edf0-11ea-0398-17dbf4242de3
-# ╠═1267e961-5b75-4b55-8080-d45316a03b9b
-# ╠═38155b5a-edf0-11ea-3e3f-7163da7433fb
-# ╟─adf476d8-a334-4b35-81e8-cc3b37de1f28
-# ╟─a5f8bafe-edf0-11ea-0da3-3330861ae43a
-# ╠═b6b65b94-edf0-11ea-3686-fbff0ff53d08
-# ╠═4a5e9d2c-dd90-4bb0-9e31-3f5c834406b4
-# ╟─d862fb16-edf1-11ea-36ec-615d521e6bc0
-# ╟─aa1ff74a-4e78-4ef1-8b8d-3a60a168cf6d
-# ╟─e3394c8a-edf0-11ea-1bb8-619f7abb6881
-# ╟─e083b3e8-ed61-11ea-2ec9-217820b0a1b4
-# ╠═59414833-a108-4b1e-9a34-0f31dc907c6e
-# ╠═c5484572-ee05-11ea-0424-f37295c3072d
-# ╠═c8ecfe5c-ee05-11ea-322b-4b2714898831
-# ╟─e86ed944-ee05-11ea-3e0f-d70fc73b789c
-# ╠═6ccd8902-0dd9-4335-a11a-ee7f9a1a6c09
-# ╟─15088baa-c337-405d-8885-19a6e2bfd6aa
-# ╠═7ad4f6bc-588e-44ab-8ca9-c87cd1048442
-# ╟─a55bb5ca-600b-4aa0-b95f-7ece20845c9b
-# ╠═c5dc0cc8-9305-47e6-8b20-a9f8ef867799
-# ╠═de772e21-0bea-4fd2-868a-9a7d32550bc9
-# ╟─21bdc692-91ee-474d-ae98-455913a2342e
-# ╠═2ae3f379-96ce-435d-b863-deba4586ec71
-# ╟─c49ba901-d798-489a-963c-4cc113c7abfd
-# ╠═93451c37-77e1-4d4f-9788-c2a3da1401ee
-# ╟─f52e4914-2926-4a42-9e45-9caaace9a7db
-# ╠═a8b2270a-600c-4f83-939e-dc5ab35f4735
-# ╠═c320b39d-4cea-4fa1-b1ce-053c898a67a6
-# ╟─09102183-f9fb-4d89-b4f9-5d76af7b8e90
-# ╟─d8cf9bd5-dbf7-4841-acf9-eef7e7cabab3
-# ╠═ebe1d05c-f6aa-437d-83cb-df0ba30f20bf
-# ╠═c427554a-6f6a-43f1-b03b-f83239887cee
-# ╟─63ac142e-6d9d-4109-9286-030a02c900b4
-# ╟─50e2b0fb-b06d-4ac1-bdfb-eab833466736
-# ╟─4fd07e01-2f8b-4ec9-9f4f-8a9e5ff56fb6
-# ╠═97c15896-6d99-4292-b7d7-4fcd2353656f
-# ╠═cbb9bf41-4c21-42c7-b0e0-fc1ce29e0eb1
-# ╟─3f1a670b-44c2-4cab-909c-65f4ae9ed14b
-# ╠═21ba6e75-55a2-4614-9b5d-ea6378bf1d98
-# ╟─f7825c18-ff28-4e23-bf26-cc64f2f5049a
-# ╠═d994e178-78fd-46ab-a1bc-a31485423cad
-# ╟─c54ccdea-ee05-11ea-0365-23aaf053b7d7
-# ╠═f6898df6-ee07-11ea-2838-fde9bc739c11
-# ╠═5be9b144-ee0d-11ea-2a8d-8775de265a1d
-# ╟─4d0158d0-ee0d-11ea-17c3-c169d4284acb
-# ╟─5f6635b4-63ed-4a62-969c-bd4084a8202f
-# ╟─f6cc03a0-ee07-11ea-17d8-013991514d42
-# ╠═63e8d636-ee0b-11ea-173d-bd3327347d55
-# ╟─80a4cb23-49c9-4446-a3ec-b2203128dc27
-# ╟─2cc2f84e-ee0d-11ea-373b-e7ad3204bb00
-# ╠═b8f26960-ee0a-11ea-05b9-3f4bc1099050
-# ╠═5de3a22e-ee0b-11ea-230f-35df4ca3c96d
-# ╠═4e21e0c4-ee0b-11ea-3d65-b311ae3f98e9
-# ╠═6dbf67ce-ee0b-11ea-3b71-abc05a64dc43
-# ╟─846b1330-ee0b-11ea-3579-7d90fafd7290
-# ╠═943103e2-ee0b-11ea-33aa-75a8a1529931
-# ╟─55b138b7-19fb-4da1-9eb1-1e8304528251
-# ╟─f68d4a36-ee07-11ea-0832-0360530f102e
-# ╠═fbd1638d-8d7a-4d12-aff9-9c160cc3fd74
-# ╠═f6a655f8-ee07-11ea-13b6-43ca404ddfc7
-# ╟─c905b73e-ee1a-11ea-2e36-23b8e73bfdb6
-# ╟─7720740e-2d2b-47f7-98fd-500ed3eee479
-# ╠═90421bca-0804-4d6b-8bd0-3ddbd54cc5fe
-# ╠═b2329e4c-6204-453e-8998-2414b869b808
-# ╟─23fcd65f-0182-41f3-80ec-d85b05136c47
-# ╠═5055b74c-b98d-41fa-a0d8-cb36200d82cc
-# ╠═8db17b2b-0cf9-40ba-8f6f-2e53be7b6355
-# ╟─a8a597e0-a01c-40cd-9902-d56430afd938
-# ╟─f6b218c0-ee07-11ea-2adb-1968c4fd473a
-# ╠═04e6b486-ceb7-45fe-a6ca-733703f16357
-# ╟─a6d9635b-85ed-4590-ad09-ca2903ea8f1d
-# ╟─f6bf64da-ee07-11ea-3efb-05af01b14f67
-# ╠═13e9ec8d-f615-4833-b1cf-0153010ccb65
-# ╟─25dad7ce-ee0b-11ea-3e20-5f3019dd7fa3
-# ╠═9751586e-ee0c-11ea-0cbb-b7eda92977c9
-# ╟─f6d6c71a-ee07-11ea-2b63-d759af80707b
-# ╠═f38b198d-39cf-456f-a841-1ba08f206010
-# ╠═1ea53f41-b791-40e2-a0f8-04e13d856829
-# ╟─31ef3710-e4c9-4aa7-bd8f-c69cc9a977ee
-# ╟─f6ef2c2e-ee07-11ea-13a8-2512e7d94426
-# ╟─f6fc1312-ee07-11ea-39a0-299b67aee3d8
-# ╠═db4bad9f-df1c-4640-bb34-dd2fe9bdce18
-# ╟─0000b7f8-4c43-4dd8-8665-0dfe59e74c0a
-# ╠═774b4ce6-ee1b-11ea-2b48-e38ee25fc89b
-# ╠═7e4aeb70-ee1b-11ea-100f-1952ba66f80f
-# ╟─48de5bc2-72d3-11eb-3fd9-eff2b686cb75
-# ╠═8e848279-1b3e-4f32-8c0c-45693d12de96
-# ╟─f70823d2-ee07-11ea-2bb3-01425212aaf9
-# ╠═21a5885d-00ab-428b-96c3-c28c98c4ca6d
-# ╟─d896b7fd-20db-4aa9-bbcf-81b1cd44ec46
-# ╠═e70a84d4-ee0c-11ea-0640-bf78653ba102
-# ╠═ac15e0d0-ee0c-11ea-1eaf-d7f88b5df1d7
-# ╟─9604bc44-ee1b-11ea-28f8-7f7af8d0cbb2
-# ╟─f714699e-ee07-11ea-08b6-5f5169861b57
-# ╠═bdc2df7c-ee0c-11ea-2e9f-7d2c085617c1
-# ╟─4139ee66-ee0a-11ea-2282-15d63bcca8b8
-# ╠═20402780-426b-4caa-af8f-ff1e7787b7f9
-# ╟─ed9fb2ac-2680-42b7-9b00-591e45a5e105
-# ╟─e87e0d14-43a5-490d-84d9-b14ece472061
-# ╠═d38c6958-9300-4f7a-89cf-95ca9e899c13
-# ╠═82f1e006-60fe-4ad1-b9cb-180fafdeb4da
-# ╠═54c83589-b8c6-422a-b5e9-d8e0ee72a224
-# ╠═18e781f8-66f3-4216-bc84-076a08f9f3fb
-# ╠═ebf3193d-8c8d-4425-b252-45067a5851d9
-# ╟─87dabfd2-461e-4769-ad0f-132cb2370b88
-# ╠═8917529e-fa7a-412b-8aea-54f92f6270fa
-# ╠═ee5f21fb-1076-42b6-8926-8bbb6ed0ad67
-# ╠═9e5a08dd-332a-486b-94ab-15c49e72e522
-# ╟─91f4778e-ee20-11ea-1b7e-2b0892bd3c0f
-# ╟─756d150a-b7bf-4bf5-b372-5b0efa80d987
-# ╟─4bc94bec-da39-4f8a-82ee-9953ed73b6a4
-# ╟─8ce6ad06-819c-4af5-bed7-56ecc08c97be
-# ╟─dfa40e89-03fc-4a7a-825e-92d67ee217b2
-# ╟─086ec1ff-b62d-4566-9973-5b2cc3353409
-# ╟─2f6fb3a6-bb5d-4c7a-9297-84dd4b16c7c3
-# ╟─c22f688b-dc04-4a94-b541-fe06266c5446
-# ╟─ab3d1b70-88e8-4118-8d3e-601a8a68f72d
-# ╟─8cb0aee8-5774-4490-9b9e-ada93416c089
-# ╟─115ded8c-ee0a-11ea-3493-89487315feb7
-# ╟─dfb7c6be-ee0d-11ea-194e-9758857f7b20
-# ╟─e15ad330-ee0d-11ea-25b6-1b1b3f3d7888
-# ╟─83eb9ca0-ed68-11ea-0bc5-99a09c68f867
+# ╟─eadb174e-2c1d-48c8-9de2-99cdc2b38d32
+# ╟─082542fe-f89d-4774-be20-1e1a78f21291
+# ╟─aaa41509-a62d-417b-bca7-a120e3a5e5b2
+# ╠═8c8388cf-9891-423c-8db2-d40d870bb38e
+# ╟─4ce0e43d-63d6-4cb2-88b8-8ba80e17012a
+# ╟─ac35c6b3-a142-4b7a-921b-a2bfe1d84713
+# ╠═ea28bf57-ba62-41ce-8be6-d38ca2c5caa3
+# ╟─a759c4d5-ca00-4dda-b39c-1093ba9bef0e
+# ╟─a5901f93-007f-4a30-97fc-29b367ec47c6
+# ╠═8efcaaeb-4900-404b-ae59-65db0bde8790
+# ╠═a5be0775-68de-41ce-95cd-1465723d099b
+# ╠═4abec609-09cd-4f86-8d86-a7d02325cc7b
+# ╠═32e073bb-943f-4fa9-b15f-5ec18feecf15
+# ╟─7d1e1724-cd1a-483b-af40-f24ae5301849
+# ╠═d221c61c-a4ab-4a82-b89d-52735d957cae
+# ╠═c3d49b98-a9c1-4aba-becc-7fa84f4bbc75
+# ╠═7b33c09c-2ef2-4b97-b5a5-5fdf9268f76b
+# ╟─224acb51-c0db-4f04-b865-8349d6a28e98
+# ╟─a7e9ab20-8501-11eb-2a7a-af8fd495b21e
+# ╟─8ce8c4bc-8505-11eb-2357-c50a70b8745c
+# ╠═615b88b6-8505-11eb-0a7c-294ee5ae7474
+# ╟─e9a53ca0-86f2-11eb-2970-5d0996d1603e
+# ╟─9f534aa0-8505-11eb-3476-4d326fb19d42
+# ╠═b0db7388-850c-11eb-0915-597f1fa5ab93
+# ╟─30e5a813-9ea1-48d9-9039-012b8b267256
+# ╟─7aac43b3-49ce-46ea-854b-d292ac0591c7
+# ╠═2dfc2ef9-3efa-4b82-960f-f2ef0171e9eb
+# ╠═ead4c008-0e7e-4414-aced-d4a576423bd3
+# ╠═d4a0baea-cc02-4d91-a938-8181dea7b47a
+# ╟─ce6e648c-ade5-4882-9f92-1ae3f878a5a3
+# ╠═7adbcbab-66e7-4b58-b197-5c220ba1e9a2
+# ╟─87fce3d8-765c-410c-a059-4dd51bd97254
+# ╟─e86d8ab6-8505-11eb-1995-137dfbff0191
+# ╠═fada4734-8505-11eb-3f2b-d1f1ef391ba4
+# ╠═0b7c6cbe-57de-419d-adcb-8724791f9c89
+# ╟─06040694-b324-4e6b-8314-3bffc7b8010f
+# ╟─545a5916-8506-11eb-1a31-078957d791f8
+# ╠═590dfe1a-8506-11eb-0069-d7cd91f02a65
+# ╠═fe6df9bf-6059-4b76-af39-385d395ece72
+# ╟─4ba8a0f2-850b-11eb-1c09-b7bba1763ed7
+# ╟─b9cb6192-8505-11eb-3d2c-790654bbc9a1
+# ╠═941b6b10-8ae9-11eb-3bf8-b732f5f60af3
+# ╟─1b3cc404-9da8-4acd-9df5-5815ce167c34
+# ╠═a243a400-8af3-11eb-0637-cf8f80aae86d
+# ╟─4e926bfe-8734-11eb-1355-e1d1d9b36929
+# ╠═c7a15c5e-8505-11eb-3af2-2fa84b74b590
+# ╟─9eb846c0-8737-11eb-101b-0191f715d8c9
+# ╠═b0a0b9a4-850b-11eb-30f1-11f5270efe02
+# ╟─cd02acd0-8af4-11eb-3726-d7a360b98433
+# ╟─5e85ac82-8734-11eb-2f69-cda569326f68
+# ╟─a75f3c76-8506-11eb-1d83-cf5781b656a3
+# ╠═b577420c-8501-11eb-267a-719125315fe1
+# ╟─1d16e228-850e-11eb-1dca-41df85b706da
+# ╠═eb612772-8b06-44bb-a36a-827435cbb2ee
+# ╠═d3e7c8d1-4b4a-47b6-9c96-150333078f42
+# ╟─7493be50-8738-11eb-37e7-990f1656998a
+# ╟─3ed18ba0-850b-11eb-3e90-f188c54d9ce9
+# ╠═f2d8b45c-8501-11eb-1c6a-5f819c240d9d
+# ╠═ed72e880-8afa-11eb-3a4a-175a838188d9
+# ╠═7b3fb0ef-9a9e-401c-8c09-e5615134a4ad
+# ╠═5a6dd3bc-af85-4e7d-b03c-b8c1bc88d850
+# ╠═52451232-2c3d-4425-a94a-da1a955cf784
+# ╟─111a8db4-a808-4f37-a75e-08d418bdfc98
+# ╟─47f17b30-d87b-4d71-abf1-7a8b7f938095
+# ╟─91b1125a-850b-11eb-1a21-c7af293332fd
+# ╠═fc962c72-8501-11eb-2821-cbb7a52d5f61
+# ╟─8f5c7c9c-850b-11eb-3d97-bf9c6b5d7d2e
+# ╟─248ab23e-850c-11eb-396f-5ba365f0f743
+# ╠═0887ee78-0e8a-41c7-90e7-44237acc1477
+# ╠═1705dc7b-9f93-440b-acbb-ecb362d08125
+# ╟─8cab8d7d-32fc-4b43-bd54-fb0c78fa5d00
+# ╟─6a08cb74-8510-11eb-2212-2f1f676f3d5d
+# ╟─61cbfc80-86f5-11eb-316f-6307cac7cbbb
+# ╠═ee58251a-8511-11eb-074c-5b1e27c4ebd4
+# ╟─3e72f920-8739-11eb-1354-57b18fa53103
+# ╟─36a63540-8739-11eb-21b2-a9d5ee60a0e5
+# ╟─4864e4d6-850c-11eb-210c-0318b8660a9a
+# ╟─58ce8d2a-850c-11eb-29e9-3fc966e129b1
+# ╟─9d4d943e-8502-11eb-31cb-e11824b2dce0
+# ╠═ba3cb45a-8502-11eb-2141-6369b0e08807
+# ╟─92a91904-850c-11eb-010e-c58ae218f541
+# ╠═f5a95dd8-850d-11eb-2aa7-2dcb1868577f
+# ╟─dc714540-8afa-11eb-205b-7770074771c8
+# ╠═c784e02c-8502-11eb-3efa-7f4c45f4274c
+# ╠═0bab818e-8503-11eb-02b3-178098599847
+# ╟─0d81b3d3-cfb4-4c27-bb00-18a55e00ab7a
+# ╟─2e2f503f-c1ad-4d7f-8c0d-cd41fad1f334
+# ╟─aca709f0-8503-11eb-1144-1fc01cb85c39
+# ╠═b6717812-8503-11eb-2729-39bfdc1fd2f9
+# ╟─6e280730-8b00-11eb-04b7-615a389e792f
+# ╠═c49e350e-8503-11eb-15de-7308dd03dc08
+# ╠═dd27f508-8503-11eb-36b9-33f5f99f78b0
+# ╠═93a75ea0-8b0c-11eb-3946-3d5d92487fb5
+# ╟─84d7bc07-e211-4296-98e6-f03723481e37
+# ╟─4ed7c189-3130-4f6a-b57b-5322fdd4cef6
+# ╟─1083d5ee-8512-11eb-0fdc-ab3987f94bc5
+# ╠═3fed837a-8512-11eb-1fdd-c1b72b48d07b
+# ╟─863f4490-8b06-11eb-352b-61cec188ae57
+# ╟─f7fb3b32-8b00-11eb-0c0e-8f8d68f849a6
+# ╟─2d65bd1a-8512-11eb-1bd2-0313588dfa0e
+# ╠═f9556098-8504-11eb-08a0-39fbe00892da
+# ╟─35d22fd9-9cfc-47c5-8adb-a01f14586be3
+# ╟─295acdac-880a-402e-9f7e-19b0fc801130
+# ╠═54778212-3702-467d-8a96-4fa18b3ccd63
+# ╟─3ba3ae50-b9ed-416e-bb47-a14f82eb4e19
+# ╠═bdf3954e-2a05-4a0d-899b-1f6f59119550
+# ╠═167b9580-fa18-4248-8643-a0fde723ecc4
+# ╟─a58c1c54-4f17-4ca4-ac78-22773b526dfb
+# ╠═210392ff-0a22-4e55-be08-9f58804282cf
+# ╟─bec548dd-e2b9-4057-b0ac-1ab4e5b441d4
+# ╟─0d1dac23-bdbd-4a90-ab13-e4c33d83777e
+# ╟─bb649c89-709c-49c8-8111-53044e8e682a
+# ╠═6f78b3bb-5440-4f34-849a-fa8e21972fa8
+# ╠═bbc4a595-a63e-4a12-9690-f39a23b30ae1
+# ╟─44b8fbf1-411f-4ce4-b5d7-e12f2d6be51b
+# ╠═6c9ae344-084e-459c-841c-8377451507fd
+# ╠═9ae28bc5-d9cb-479d-8c22-7c9248cd5fa0
+# ╟─29db89d6-ac40-4121-b996-e083555bc5db
+# ╟─0cf29d7e-bd83-4c5f-bd41-e8e7c2587188
+# ╠═ed4b7ea5-3266-466d-a817-7ab2cc82ac9c
+# ╟─5c6aee48-017b-49ff-af1a-a31af30a45a9
+# ╠═a2b7f0c3-488b-4ce9-aed6-b8ccddac6a57
+# ╠═d3420859-d558-47cb-aaf7-d51a5e2d1f6e
+# ╠═207d2f4c-cbe8-4828-ab3f-100809bb93e9
+# ╟─2f5eadb0-4fdb-45b6-83fd-116dd4c1f9be
+# ╟─7fdc110a-a3e3-44e5-a547-b75e03e0d21e
+# ╠═01b12200-2e7e-4f19-96b9-5b6d6cb03233
+# ╠═e1e1067b-93ba-40df-bd09-7599538e6181
+# ╟─1276103b-8c58-4757-ae80-5ffb7f870d09
+# ╟─00f5bea8-b808-483a-ad70-332f521481f5
+# ╠═a6bb92f9-0cb2-4fdd-8b67-f286edbbdcb6
+# ╠═57c19601-122b-414f-bc99-56f98c794e61
+# ╠═9813e9f9-9970-4a8b-b3ca-e6a699e6fda4
+# ╠═c8829a12-917a-4ff4-87c9-fe2b25aaa99c
+# ╟─a5234680-8b02-11eb-2574-15489d0d49ea
+# ╟─5aabbec1-a079-4936-9cd1-9c25fe5700e6
+# ╟─42d6b87d-b4c3-4ccb-aceb-d1b020135f47
+# ╟─8fd9e34c-8f20-4979-8f8a-e3e2ae7d6c65
+# ╟─d375c52d-2126-4594-b819-aba9d34fe77f
+# ╟─2d7565d4-88da-4e41-aad6-958ed6b3b2e0
+# ╟─d7f45d51-f426-4353-af58-858395295ce0
+# ╟─9b2aa95d-4583-40ec-893c-9fc751ea22a1
+# ╟─5dca2bb3-24e6-49ae-a6fc-d3912da4f82a
+# ╟─ddf2a828-7823-4fc0-b944-72b60b391247
+# ╟─a7feaaa4-618b-4afe-8050-4bf7cc609c17
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
