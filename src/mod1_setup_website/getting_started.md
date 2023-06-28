@@ -29,7 +29,7 @@ When downloading this template, you will get the following material:
 - **`installation.md`**: this page contains instructions on how to install Julia and Pluto. If you find it useful, you may keep it as is, or edit to match your wanted installation instructions.
 - **`cheatsheets.md`**: contains a list of julia related resources. Again, you can keep it or remove it.
 - **`logistics.md`**: empty markdown page, where you can describe the logistics of your class
-- **`index.jlmd`**: this is used to render the homepage. **Do not remove or modify this!**.
+- **`index.jlmd`**: this is used to render the homepage. **Do not remove or modify this!**
 - **`search.md`**: this is used to render the search tab on the sidebar, do not modify or remove this file.
 
 The remaining folders
