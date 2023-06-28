@@ -1,7 +1,7 @@
 ---
 title: "Class logistics"
 tags: ["welcome"]
-order: 3
+order: 1
 layout: "md.jlmd"
 ---
 

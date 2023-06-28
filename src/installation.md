@@ -1,7 +1,7 @@
 ---
 title: "Software installation"
 tags: ["welcome"]
-order: 1
+order: 2
 layout: "md.jlmd"
 youtube_id: "OOjKEgbt8AI"
 ---

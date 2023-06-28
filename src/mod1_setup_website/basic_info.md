@@ -1,45 +1,73 @@
 ---
-title: "Setting up your class website"
-order: 1
+title: "Fill course basic information"
+order: 2
 chapter: 1
-section: 1
+section: 2
 layout: "md.jlmd"
+image: "https://user-images.githubusercontent.com/49938764/249464984-ae268773-b804-459a-9c33-ed2839802ad8.png"
 tags: ["module1", "track_setup", "teaching", "metadata"]
 ---
 
-## Fork the template
+## Add basic information
 
-Go to the [template repository](https://github.com/juliapluto/computational-thinking-template) and click `Use this template` on the top-right corner. This will fork the repository under your github profile.
+If you look at the homepage of the template website, you will see it has a bunch of placeholder text, such as "name of your course", "a short catchy phrase" etc.
 
-## Folder structure
+To customize this, you will need to customize the *metadata* of the website. That is, add basic info for your class.
 
-Let us have a look at what this repository looks like. The most important folder, where you will be mainly working is `src`. Here you will place all your lecture materials. So let us take a closer look at this.
+To do so, you will need to fill the info in the files under the `src/_data` folder. Let us analyze these one by one.
 
-Opening the `src` folder, you will see the following
+## course_info.jl
 
-- `_data` folder: here you will place metadata about your website (university name, class semester, define track, etc.), more on this before.
-- `_include`: This folder contains the layout templates that are used to generate the final pages on your website. Unless you want to tweak the layout, you will not need to modify this.
-- `assets`: in this folder you will place all attachements, such as your university logo and other pictures. The folder also contains the CSS and scripts used to render the website.
+This file contains a julia `Dict` with the basic info of the class. For each key (`course_name`, `course_subtitle`, etc.) replace the corresponding placeholder with an appropriate text for your class.
 
-That was for the "infrastructure part" of the website, the rest is content! Adding new pages to your website is simply putting them under the `src` folder. You can group them in subfolders, as done in this template, but that is not a strict requirement.
+When filling the `institution_logo` data with the name of your university logo file, do not forget to actually put the file under `src/assets`.
 
-When downloading this template, you will get the following material:
+Authors are listed as a vector of pairs, where the first element is the author name and the second is their homepage address. If you dont have a homepage address for the author, put an empty string `""`.
 
-- `installation.md`: this page contains instructions on how to install Julia and Pluto. If you find it useful, you may keep it as is, or edit to match your wanted installation instructions.
-- `cheatsheets.md`: contains a list of julia related resources. Again, you can keep it or remove it.
-- `logistics.md`: empty markdown page, where you can describe the logistics of your class
-- `index.jlmd`: this is used to render the homepage. **Do not remove or modify this!**.
-- `search.md`: this is used to render the search tab on the sidebar, do not modify or remove this file.
+## `homepage.jl`
 
-The remaining folders
+This file contains metadata for the info displayed in the homepage, particularly
 
-- `mod1_setup_website`
-- `mod2_add_material`
-- `mod3_publish_website`
-- `homework`
+- **`title`**: the title displayed on top of the homepage
+- **`disclaimer`**: the discalimer displayed below the title. If you don't want a disclaimer, you can remove this entry.
+- **`highlights`**: in this entry you can specify the highlights of your class, which will be displayed on the homepage. This entry should be a vector of highlights. Each entry in the vector should be a dict with the following fields
+  - **`name`**: the title of the highlight
+  - **`text`**: short description of the highlight
+  - **`img`**: link to an image summarizing the highlight
 
-Are placeholder materials that serve two purposes:
+## `sidebar.jl`
 
-1. Demonstrate what the website will look like when filled
-2. Contains the documentation of this template, explaining how to use it. You can read it and see what the final result looks like on the [template webpage](https://juliapluto.github.io/computational-thinking-template)
+In this file you can specify the sidebar of the website. All lecture materials will be grouped in *modules* in the sidebar, which are defined in this file.
 
+The modules in the file are specified as a vector of pairs, in the form
+
+```julia
+module_id => module_title
+```
+
+for example
+
+```julia
+"module1" => "Week 1: Introduction to the class"
+```
+
+To link a file to a module, you will need to add the module identifier in the page tags. For more info about this, see [Add frontmatter](https://juliapluto.github.io/computational-thinking-template/add_markdown)
+
+## `tracks.jl`
+
+In this file you will specify tracks. Tracks can be used to group lectures across modules, e.g. if they have a commmon theme. When a track is selected in the sidebar, only the pages
+belonging to that track will be highlighted in the sidebar.
+
+Similar to modules, tracks are a vector of pairs in the form
+
+```julia
+track_id => track_title
+```
+
+for example
+
+```julia
+"julia" => "💻 Julia programming"
+```
+
+To link a file to a track, you will need to add the track id, prefixed with `track_`, to the tags of the page. For example, to add a lesson to the julia track defined above, you would add the tag `track_julia` to the tags of that lesson file.

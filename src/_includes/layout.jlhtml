@@ -165,7 +165,7 @@ $(pluto_head)
         </div>
         </nav>
         <div id="pages-content">
-           <div class="lecture-header" >
+           $(isempty(f("title", "")) ? nothing : @htl("""<div class="lecture-header" >
                 $(if !isempty(f("homework_number", ""))
                 @htl("""<p class="number">Homework $(f("homework_number", ""))</p>""")
                 elseif !isempty(f("chapter", "")) && !isempty(f("section", ""))
@@ -186,7 +186,7 @@ $(pluto_head)
                     </div>
                 </div>
                 """) : nothing)
-            </div>
+            </div>"""))
         $(content)
         </div>
     </div>

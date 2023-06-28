@@ -6,7 +6,7 @@
 #> homework_number = 1
 #> title = "Example homework"
 #> layout = "layout.jlhtml"
-#> tags = ["module2", "track_julia", "homeworks", "pluto", "PlutoTeachingTools.jl"]
+#> tags = ["module2", "track_julia", "track_material", "homeworks", "pluto", "PlutoTeachingTools.jl"]
 
 using Markdown
 using InteractiveUtils

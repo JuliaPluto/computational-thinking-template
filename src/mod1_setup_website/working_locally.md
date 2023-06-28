@@ -1,9 +1,10 @@
 ---
 title: "Working locally"
-order: 2
+order: 3
 chapter: 1
-section: 2
+section: 3
 layout: "md.jlmd"
+image: "https://user-images.githubusercontent.com/49938764/249456721-2ff021b2-326d-443d-a3ac-b433692647e0.png"
 tags: ["module1", "track_setup", "track_julia", "PlutoSliderServer", "pluto"]
 ---
 

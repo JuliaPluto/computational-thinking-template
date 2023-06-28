@@ -1,7 +1,7 @@
 ---
 title: "Cheatsheets"
 tags: ["welcome"]
-order: 7
+order: 3
 layout: "md.jlmd"
 ---
 

@@ -28,4 +28,4 @@ If you want interactivity to work on the webpage, you can either
 
 or
 
-2. [Run your own server](http://localhost:40641/mod3_publish_website/setup_server/)
+2. [Run your own server](https://juliapluto.github.io/computational-thinking-template/mod3_publish_website/setup_server/)
