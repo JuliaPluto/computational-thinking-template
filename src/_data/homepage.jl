@@ -12,7 +12,7 @@ Dict(
         Dict("name" => "Easy to customise", 
              "text" => md"Let the template automate all of the website development and infrastructure, so that you can focus on the most important thing:
              **easily develop your lesson materials!**",
-             "img" => "https://user-images.githubusercontent.com/6933510/136199652-0a1275ad-8452-4c9b-ac68-d33ed22f1d17.gif"
+             "img" => "https://user-images.githubusercontent.com/6933510/168320383-a401459b-97f5-41df-bc7b-ebe76e4886cc.png"
         ),
         Dict("name" => "Revolutionary interactivity with Pluto.jl",
              "text" => md"""

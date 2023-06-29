@@ -165,13 +165,19 @@ $(pluto_head)
         </div>
         </nav>
         <div id="pages-content">
-           $(any(contains("lecture"), f("tags", String[])) ? @htl("""
-           <div class="lecture-header" >
-                <p class="number">Section $(f("chapter", "-")).$(f("section", "-"))</p>
+           $(isempty(f("title", "")) ? nothing : @htl("""<div class="lecture-header" >
+                $(if !isempty(f("homework_number", ""))
+                @htl("""<p class="number">Homework $(f("homework_number", ""))</p>""")
+                elseif !isempty(f("chapter", "")) && !isempty(f("section", ""))
+                @htl("""<p class="number">Section $(f("chapter", "-")).$(f("section", "-"))</p>""")
+                else
+                nothing
+                end)
                 <h1>$(
                     f("title", basename(page.input.relative_path))
                 )</h1>
                 
+                $(!isempty(f("youtube_id", "")) ? @htl("""
                 <div class="video">
 
                     <h4>Lecture Video</h4>
@@ -179,8 +185,8 @@ $(pluto_head)
                         <lite-youtube videoid=$(f("youtube_id", "notfound")) params="modestbranding=1&rel=0"></lite-youtube>
                     </div>
                 </div>
-            </div>
-            """) : nothing)
+                """) : nothing)
+            </div>"""))
         $(content)
         </div>
     </div>

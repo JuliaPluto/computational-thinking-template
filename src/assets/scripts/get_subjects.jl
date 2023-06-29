@@ -28,7 +28,7 @@ let
         for (section_id, section_name) in sections
     ]
 
-    @htl("""<div class="wide subjectscontainer">
+    isempty(sections) ? nothing : @htl("""<div class="wide subjectscontainer">
     <h1>Subjects</h1>
     <div class="subjects">
       $(sections)
