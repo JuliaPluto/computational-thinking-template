@@ -14,7 +14,7 @@ If you look at the homepage of the template website, you will see it has a bunch
 
 To customize this, you will need to customize the *metadata* of the website. That is, add basic info for your class.
 
-To do so, you will need to fill the info in the files under the `src/_data` folder. Let us analyze these one by one.
+To do so, you will need to fill the info in the files under the folder `src/_data`. Let us analyze these one by one.
 
 ## course_info.jl
 
@@ -29,7 +29,7 @@ Authors are listed as a vector of pairs, where the first element is the author n
 This file contains metadata for the info displayed in the homepage, particularly
 
 - **`title`**: the title displayed on top of the homepage
-- **`disclaimer`**: the discalimer displayed below the title. If you don't want a disclaimer, you can remove this entry.
+- **`disclaimer`**: the disclaimer displayed below the title. If you don't want a disclaimer, you can remove this entry.
 - **`highlights`**: in this entry you can specify the highlights of your class, which will be displayed on the homepage. This entry should be a vector of highlights. Each entry in the vector should be a dict with the following fields
   - **`name`**: the title of the highlight
   - **`text`**: short description of the highlight
@@ -55,10 +55,10 @@ To link a file to a module, you will need to add the module identifier in the pa
 
 ## `tracks.jl`
 
-In this file you will specify tracks. Tracks can be used to group lectures across modules, e.g. if they have a commmon theme. When a track is selected in the sidebar, only the pages
-belonging to that track will be highlighted in the sidebar.
+In this file you will specify tracks. Tracks can be used to group lectures across modules, e.g. if they have a commmon theme. When a track is selected on the sidebar, only the pages
+belonging to that track will be highlighted.
 
-Similar to modules, tracks are a vector of pairs in the form
+Similar to modules, tracks are stored in a vector of pairs in the form
 
 ```julia
 track_id => track_title

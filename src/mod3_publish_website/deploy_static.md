@@ -14,6 +14,9 @@ Deploying your website as static page with github pages is a breeze.
 
 Whenever you push to main, the website will be deployed to a branch called `gh-pages`. All you need to do is go to your repository and from `Settings > Pages` choose to deploy from `gh-pages` branch, as the following picture shows.
 
+
+![](https://user-images.githubusercontent.com/49938764/249790280-d9c46b7f-eecd-42aa-8e51-ce44dfdfce58.png)
+
 After that, the website will be available at
 
 ```
