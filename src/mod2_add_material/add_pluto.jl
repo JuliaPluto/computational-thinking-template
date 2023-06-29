@@ -5,16 +5,19 @@
 #> chapter = 2
 #> section = 2
 #> order = 2
+#> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
 #> title = "Add Pluto notebooks"
 #> tags = ["module2", "track_julia", "track_material", "Pluto", "PlutoUI"]
 #> layout = "layout.jlhtml"
-#> image = "https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif"
 
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ 055ef0df-8ab8-4e54-a476-89d521f29ee0
-using PlutoTeachingTools
+using PlutoTeachingTools, PlutoUI
+
+# ╔═╡ 4f643fd4-1e8d-4304-961b-a30a37a58de3
+TableOfContents()
 
 # ╔═╡ acdd466e-14f5-11ee-1921-93e6c67d7ec4
 md"""
@@ -32,7 +35,7 @@ This will launch a Pluto session, where you can write your notebook.
 
 To add the front-matter, you can use Plut FrontmatterGUI, as the following short video clip shows.
 
-$(danger(md"For pluto notebooks, you will need to set layout to layout.jlhtm"))
+$(danger(md"For pluto notebooks, you will need to set layout to layout.jlhtml"))
 """
 
 # ╔═╡ 832a1b2f-42dc-4a5d-9389-9f8f35a1759b
@@ -44,25 +47,105 @@ html"""
 # ╔═╡ 8656f15c-a603-45f6-8ac6-4941580830e8
 md"""## Pluto 101
 
-COMING SOON
+Pluto is a notebook for Julia! It is **reactive**, **lightweight** and has **powerful interactivity tools**. This will allow you to make your lesson material more engaging for students. Here are a few highlights of Pluto. 
+
+$(tip(md" To learn more, check out [Pluto featured notebooks](https://featured.plutojl.org/), the JuliaCon video at the beginning of this notebook, or the presentations at [PlutoCon 2021](https://www.youtube.com/playlist?list=PLP8iPy9hna6T5sNOTeGdiqygHe_09geEW)."))
+### Writing code in Pluto
+
+In Pluto code is written in cells, to add some code, simply create a new cell and type in. Each cell should contain 1 julia expression (function definition, if-statement, variable assignment, etc.).
+
+```julia
+if rand() > 0.5
+  "hi"
+else
+  "there"
+end
+```
+
+or
+
+```julia
+a = 1
+```
+
+or
+
+```julia
+function f()
+ return rand() ^ 2
+end
+```
+
+**However**, multiple expressions in the same cell are not allowed, for example
+
+```julia
+a = 1
+b = 2
+a + b
+```
+
+cannot be written in the same cell. You have two alternatives
+
+1. Split it into multiple cells (recommended to make reactivity better).
+2. Wrap your staments inside a `begin ... end` or `let ... end` block. The difference is that the latter introduces a local scope, hence variables defined inside `let` are not visibles from outside.
+
+### Reactivity
+
+Pluto is reactive! This means that if you define a variable `a` in a cell, when you edit the variable value, all cells depending on that variable are automatically re-evaluated. A few notes
+
+1. As mentioned above, better to have a single variable assignment per cell, this will make the dependency graph slimmer and reactivity smoother.
+2. Code modifying a given variable should be in the same cell, i.e. you cannot have two cells modifying the same variable.
+
+Here is a summarizing demo
+
+"""
+
+# ╔═╡ ba9f13cc-bf18-4589-9e89-3d5c869e158f
+Resource("https://raw.githubusercontent.com/fonsp/Pluto.jl/580ab811f13d565cc81ebfa70ed36c84b125f55d/demo/plutodemo.gif", :width => 350)
+
+# ╔═╡ d97ae81e-fd53-4b0a-a990-abf173b0c1ab
+md"""
+### Built-in environment
+
+Pluto is designed with reproducibility in mind! 
+
+To use packages registered in the Julia general registry, just type `using MyPackage` in some cells, as done at the beginning of this notebook. Pluto will automatically download the package!
+
+The `Project.toml` and `Manifest.toml` (what Julia uses to record all libraries, their versions and dependencies) are stored inside the notebook, making it fully batteries included!
+
+$(Resource("https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif", :width => 400))
+"""
+
+# ╔═╡ 177b8901-68ad-4319-b4fa-28fb30f3a731
+md"""
+### Interactivity
+
+Pluto has great support to make your notebooks interactive! It allows you to associate variables with sliders and buttons that you can use to interactively change the result of the code.
+
+![](https://user-images.githubusercontent.com/6933510/136196607-16207911-53be-4abb-b90e-d46c946e6aaf.gif)
+
+
+The easiest way to harness the power of Pluto interactivity is to use [PlutoUI.jl](https://github.com/juliapluto/PlutoUI.jl), which is showcased in the [next lecture](https://juliapluto.github.io/mod2_add_material/plutoui_showcase/).
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
+PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
 PlutoTeachingTools = "~0.2.11"
+PlutoUI = "~0.7.51"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.8.5"
+julia_version = "1.9.1"
 manifest_format = "2.0"
-project_hash = "b2b181dace3d4f9a3b6760c172f90d3ef9e1ae98"
+project_hash = "525dcfd80d74b547385aa255d2a38f1acddad3f3"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -95,7 +178,7 @@ version = "0.11.4"
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
-version = "1.0.1+0"
+version = "1.0.2+0"
 
 [[deps.Dates]]
 deps = ["Printf"]
@@ -170,6 +253,18 @@ git-tree-sha1 = "8c57307b5d9bb3be1ff2da469063628631d4d51e"
 uuid = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
 version = "0.15.21"
 
+    [deps.Latexify.extensions]
+    DataFramesExt = "DataFrames"
+    DiffEqBiologicalExt = "DiffEqBiological"
+    ParameterizedFunctionsExt = "DiffEqBase"
+    SymEngineExt = "SymEngine"
+
+    [deps.Latexify.weakdeps]
+    DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+    DiffEqBase = "2b5f629d-d688-5b77-993f-72d75c75574e"
+    DiffEqBiological = "eb300fae-53e8-50a0-950c-e21f52c2b7e0"
+    SymEngine = "123dc426-2d89-5057-bbad-38513e3affd8"
+
 [[deps.LibCURL]]
 deps = ["LibCURL_jll", "MozillaCACerts_jll"]
 uuid = "b27032c2-a3e7-50c8-80cd-2d36dbcbfd21"
@@ -193,7 +288,7 @@ version = "1.10.2+0"
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
 [[deps.LinearAlgebra]]
-deps = ["Libdl", "libblastrampoline_jll"]
+deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
 uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[deps.Logging]]
@@ -223,14 +318,14 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 [[deps.MbedTLS_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
-version = "2.28.0+0"
+version = "2.28.2+0"
 
 [[deps.Mmap]]
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[deps.MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
-version = "2022.2.1"
+version = "2022.10.11"
 
 [[deps.NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
@@ -239,7 +334,7 @@ version = "1.2.0"
 [[deps.OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
-version = "0.3.20+0"
+version = "0.3.21+4"
 
 [[deps.OrderedCollections]]
 git-tree-sha1 = "d321bf2de576bf25ec4d3e4360faca399afca282"
@@ -253,9 +348,9 @@ uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
 version = "2.7.1"
 
 [[deps.Pkg]]
-deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
+deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.8.0"
+version = "1.9.0"
 
 [[deps.PlutoHooks]]
 deps = ["InteractiveUtils", "Markdown", "UUIDs"]
@@ -333,22 +428,28 @@ uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
 
 [[deps.SparseArrays]]
-deps = ["LinearAlgebra", "Random"]
+deps = ["Libdl", "LinearAlgebra", "Random", "Serialization", "SuiteSparse_jll"]
 uuid = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[deps.Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
 uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+version = "1.9.0"
+
+[[deps.SuiteSparse_jll]]
+deps = ["Artifacts", "Libdl", "Pkg", "libblastrampoline_jll"]
+uuid = "bea87d4a-7f5b-5778-9afe-8cc45184846c"
+version = "5.10.1+6"
 
 [[deps.TOML]]
 deps = ["Dates"]
 uuid = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
-version = "1.0.0"
+version = "1.0.3"
 
 [[deps.Tar]]
 deps = ["ArgTools", "SHA"]
 uuid = "a4e569a6-e804-4fa4-b0f3-eef7a1d5b13e"
-version = "1.10.1"
+version = "1.10.0"
 
 [[deps.Test]]
 deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
@@ -374,12 +475,12 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 [[deps.Zlib_jll]]
 deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
-version = "1.2.12+3"
+version = "1.2.13+0"
 
 [[deps.libblastrampoline_jll]]
-deps = ["Artifacts", "Libdl", "OpenBLAS_jll"]
+deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
-version = "5.1.1+0"
+version = "5.8.0+0"
 
 [[deps.nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -393,9 +494,13 @@ version = "17.4.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─055ef0df-8ab8-4e54-a476-89d521f29ee0
+# ╠═055ef0df-8ab8-4e54-a476-89d521f29ee0
+# ╠═4f643fd4-1e8d-4304-961b-a30a37a58de3
 # ╟─acdd466e-14f5-11ee-1921-93e6c67d7ec4
 # ╟─832a1b2f-42dc-4a5d-9389-9f8f35a1759b
 # ╟─8656f15c-a603-45f6-8ac6-4941580830e8
+# ╟─ba9f13cc-bf18-4589-9e89-3d5c869e158f
+# ╟─d97ae81e-fd53-4b0a-a990-abf173b0c1ab
+# ╟─177b8901-68ad-4319-b4fa-28fb30f3a731
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

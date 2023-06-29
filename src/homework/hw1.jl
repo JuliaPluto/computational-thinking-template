@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.26
+# v0.19.25
 
 #> [frontmatter]
 #> homework_number = "1"
@@ -13,7 +13,7 @@ using Markdown
 using InteractiveUtils
 
 # ╔═╡ 75b9bee9-7d03-4c90-b828-43e9e946517b
-using PlutoTeachingTools
+using PlutoTeachingTools, PlutoUI
 
 # ╔═╡ e022e3ce-15d1-11ee-2c26-a506ce7d9895
 md"""
@@ -55,7 +55,7 @@ Replace missing with the value `1`.
 """
 
 # ╔═╡ 0d208bc6-88fa-43b8-9b33-a6453ec23a71
-x = 1
+x = missing
 
 # ╔═╡ 60c02a2a-1ea6-4629-842e-a00e45673ef1
 if ismissing(x)
@@ -76,9 +76,10 @@ end
 # ╔═╡ 110bcb95-04c2-4e5c-94ef-3c402eabf235
 md"""
 here is a short demo of how it looks like when the student tries to solve the exercise
-
-![]()
 """
+
+# ╔═╡ 18014fde-b056-42f1-9dc8-f0b935a8630c
+Resource("https://user-images.githubusercontent.com/49938764/249749643-8cc12de3-2b50-4182-b95d-686c2c18332c.mov", :width => 500, :autoplay => "", :loop => "")
 
 # ╔═╡ 9f1cc6fd-d3ac-41a1-a761-897f421ce2f0
 md"""
@@ -115,13 +116,23 @@ else
 	keep_working(md"Evaluated expression y = $y is incorrect.")
 end
 
+# ╔═╡ 9e18fc7b-758a-4a63-8550-e04296cbea04
+md"""
+and here is a quick demo of the exercise in action
+"""
+
+# ╔═╡ 2fde68f8-7705-4e6f-84e4-27d720e7ab95
+Resource("https://user-images.githubusercontent.com/49938764/249748007-d0b2d773-6b21-49d4-89db-ad737af510fe.mov", :width => 500, :autoplay => "", :loop => "")
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 PlutoTeachingTools = "661c6b06-c737-4d37-b85c-46df65de6f69"
+PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
 PlutoTeachingTools = "~0.2.11"
+PlutoUI = "~0.7.51"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -130,7 +141,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.1"
 manifest_format = "2.0"
-project_hash = "b2b181dace3d4f9a3b6760c172f90d3ef9e1ae98"
+project_hash = "525dcfd80d74b547385aa255d2a38f1acddad3f3"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -491,9 +502,12 @@ version = "17.4.0+0"
 # ╟─f31da618-dd0c-4adb-a8ba-924a5722848c
 # ╠═0d208bc6-88fa-43b8-9b33-a6453ec23a71
 # ╠═60c02a2a-1ea6-4629-842e-a00e45673ef1
-# ╠═110bcb95-04c2-4e5c-94ef-3c402eabf235
+# ╟─110bcb95-04c2-4e5c-94ef-3c402eabf235
+# ╟─18014fde-b056-42f1-9dc8-f0b935a8630c
 # ╟─9f1cc6fd-d3ac-41a1-a761-897f421ce2f0
 # ╠═d56b3483-c1c8-4f31-929f-3d6e2b1124f4
 # ╠═10fc3ffd-e4ec-40ab-b645-769d376794fe
+# ╟─9e18fc7b-758a-4a63-8550-e04296cbea04
+# ╟─2fde68f8-7705-4e6f-84e4-27d720e7ab95
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
