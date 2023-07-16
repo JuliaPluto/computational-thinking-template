@@ -709,7 +709,7 @@ function template_handler(
 			slider_server_url=$(pluto_deploy_settings.Export.slider_server_url)
 			binder_url=$(pluto_deploy_settings.Export.binder_url)
 			disable_ui
-		>
+		></pluto-editor>
 		"""
 
 		frontmatter = Pluto.frontmatter(input.absolute_path)
