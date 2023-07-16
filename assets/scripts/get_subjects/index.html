@@ -1,0 +1,38 @@
+<!DOCTYPE html><pre class="language-julia"><code>let
+    sections = metadata[&quot;sidebar&quot;]
+    sections = [
+        @htl(&quot;&quot;&quot;
+        $([
+            let
+                input = other_page.input
+                output = other_page.output
+                
+                name = get(output.frontmatter, &quot;title&quot;, basename(input.relative_path))
+                desc = get(output.frontmatter, &quot;description&quot;, nothing)
+                tags = get(output.frontmatter, &quot;tags&quot;, String[])
+                
+                image = get(output.frontmatter, &quot;image&quot;, nothing)
+                
+                class = [
+                    &quot;no-decoration&quot;,
+                    (&quot;tag_$(replace(x, &quot; &quot;=>&quot;_&quot;))&quot; for x in tags)...,
+                ]
+                
+                image === nothing || isempty(image) ? nothing : @htl(&quot;&quot;&quot;&lt;a title=$(desc) class=$(class) href=$(root_url * &quot;/&quot; * other_page.url)>
+                    &lt;h3>$(name)&lt;/h3>
+                    &lt;img src=$(image)>
+                &lt;/a>&quot;&quot;&quot;)
+            end for other_page in collections[section_id].pages
+        ])
+        &quot;&quot;&quot;)
+        for (section_id, section_name) in sections
+    ]
+
+    isempty(sections) ? nothing : @htl(&quot;&quot;&quot;&lt;div class=&quot;wide subjectscontainer&quot;>
+    &lt;h1>Subjects&lt;/h1>
+    &lt;div class=&quot;subjects&quot;>
+      $(sections)
+    &lt;/div>
+    &lt;/div>
+    &quot;&quot;&quot;)
+end</code></pre>

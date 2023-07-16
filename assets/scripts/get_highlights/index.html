@@ -1,0 +1,26 @@
+<!DOCTYPE html><pre class="language-julia"><code>if isempty(get(metadata[&quot;homepage&quot;], &quot;highlights&quot;, []))
+    nothing
+else
+    highlights = [
+      @htl(&quot;&quot;&quot;
+      &lt;section>
+      &lt;div class=&quot;content&quot;>
+          &lt;h2>$(x[&quot;name&quot;])&lt;/h2>
+          &lt;p>$(x[&quot;text&quot;])&lt;/p>
+      &lt;/div>
+      &lt;div class=&quot;preview&quot;>
+          &lt;img src=&quot;$(x[&quot;img&quot;])&quot;>
+      &lt;/div>
+      &lt;/section>
+      &quot;&quot;&quot;) for x in metadata[&quot;homepage&quot;][&quot;highlights&quot;]
+    ]
+
+    @htl(&quot;&quot;&quot;
+    &lt;div class=&quot;subjectscontainer wide&quot;>
+      &lt;h1>Highlights&lt;/h1>
+      &lt;div class=&quot;contain&quot;>
+      $(highlights)      
+      &lt;/div>
+    &lt;/div>
+    &quot;&quot;&quot;)
+end</code></pre>
