@@ -71,3 +71,19 @@ for example
 ```
 
 To link a file to a track, you will need to add the track id, prefixed with `track_`, to the tags of the page. For example, to add a lesson to the julia track defined above, you would add the tag `track_julia` to the tags of that lesson file.
+
+## License
+
+Choosing an appropriate license is important to make your material properly reusable.
+
+- For text, popular licenses are [Creative Commons](https://creativecommons.org/about/cclicenses/), for example [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+- For code, an [OSI open source license](https://opensource.org/licenses/) is recommended. For example [MIT](https://opensource.org/license/mit/) or [Apache 2.0](https://opensource.org/license/apache-2-0/) license.
+
+To add the license, open the file `LICENSE.md` and replace the text
+
+```
+<insert license for your material judge>
+```
+
+with your license(s).
