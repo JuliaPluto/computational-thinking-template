@@ -99,6 +99,7 @@ main {
     max-width: 86rem;
     z-index: -1;
     margin: 3em auto 0 auto;
+    padding-bottom: 5rem !important;
 }
 main > div {
     z-index: 4;
@@ -291,10 +292,6 @@ section > div.preview {
 
 section > div.preview > img {
     width: 100%;
-}
-
-.github-logo {
-    width: 1em;
 }
 
 .homepage,
