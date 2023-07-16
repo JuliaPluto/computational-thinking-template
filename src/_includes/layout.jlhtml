@@ -188,6 +188,12 @@ $(pluto_head)
                 """) : nothing)
             </div>"""))
         $(content)
+        <div class="page-foot">
+            <div class="copyright">
+                <a href="$(metadata["course_info"]["repo"])"><b>Edit this page on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a><br>
+                Website based on the MIT course <a href="https://computationalthinking.mit.edu"><em><b>Computational Thinking</b>, a live online Julia/Pluto textbook</em></a> and built with <a href="https://plutojl.org/">Pluto.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+            </div>
+        </div>
         </div>
     </div>
 </body>
