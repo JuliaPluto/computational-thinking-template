@@ -7,7 +7,7 @@
 
 # -fonsi
 
-FROM julia:1.8.2
+FROM julia:1.9.4
 
 # HTTP port
 EXPOSE 1234
@@ -24,6 +24,9 @@ COPY --chown=pluto . ${HOME}
 
 # Initialize the julia project environment that will be used to run the bind server.
 RUN julia --project=${HOME}/pluto-deployment-environment -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
+
+# Will create the HTML in _site
+RUN julia --project=${HOME}/pluto-deployment-environment generate.jl
 
 # The "default command" for this docker thing.
 CMD ["julia", "--project=/home/pluto/pluto-deployment-environment", "-e", "import PlutoSliderServer; PlutoSliderServer.run_directory(\".\"; SliderServer_port=1234 , SliderServer_host=\"0.0.0.0\")"]

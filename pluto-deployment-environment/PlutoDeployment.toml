@@ -2,6 +2,7 @@
 baked_state = false
 baked_notebookfile = false
 offer_binder = true
+slider_server_url = "http://localhost:1234/"
 ignore_cache = [
     "index.jl",
 ]

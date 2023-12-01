@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.25
+# v0.19.32
 
 using Markdown
 using InteractiveUtils
@@ -182,7 +182,7 @@ md"""
 """
 
 # ╔═╡ bb905046-59b7-4da6-97ad-dbb9055d823a
-const pluto_deploy_settings = PlutoSliderServer.get_configuration(PlutoSliderServer.default_config_path())
+const pluto_deploy_settings = PlutoSliderServer.get_configuration("$(@__DIR__)/pluto-deployment-environment/PlutoDeployment.toml")
 
 # ╔═╡ b638df55-fd74-4ae8-bdbd-ec7b18214b40
 function prose_from_code(s::String)::String
