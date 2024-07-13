@@ -41,7 +41,7 @@ jobs:
               run: julia --project=pluto-deployment-environment -e '
                   import Pkg;
                   Pkg.instantiate();
-
+                  @show pwd()
                   using PlutoPages;
                   PlutoPages.generate(pwd())'
 
