@@ -571,7 +571,7 @@ version = "0.1.6"
 
 [[deps.PlutoPages]]
 deps = ["BetterFileWatching", "CommonMark", "Gumbo", "HypertextLiteral", "InteractiveUtils", "JSON", "LiveServer", "Logging", "Malt", "Markdown", "MarkdownLiteral", "Pkg", "Pluto", "PlutoHooks", "PlutoLinks", "PlutoSliderServer", "PlutoUI", "ProgressLogging", "RelocatableFolders", "SHA", "ThreadsX", "Unicode", "YAML"]
-git-tree-sha1 = "7d809f70c806bf2a84bb80d311bcaa6d106a45d6"
+git-tree-sha1 = "b063957255fffd4ba2db2d4cbc22576758371bd2"
 repo-rev = "lf-template-updates"
 repo-url = "https://github.com/JuliaPluto/PlutoPages.jl.git"
 uuid = "d5dc3dd1-4774-47c7-8860-0a1ad9e34b8c"
