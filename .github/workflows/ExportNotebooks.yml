@@ -20,8 +20,6 @@ jobs:
 
             - name: 🙌 Install Julia
               uses: julia-actions/setup-julia@v1
-              with:
-                  version: "1.8"
 
             - name: ⏱ Cache notebook states
               uses: actions/cache@v2
@@ -43,8 +41,8 @@ jobs:
               run: julia --project=pluto-deployment-environment -e '
                   import Pkg;
                   Pkg.instantiate();
-
-                  include("./generate.jl")'
+                  using PlutoPages;
+                  PlutoPages.generate(pwd())'
 
             
             - name: 📰 Upload site generation report

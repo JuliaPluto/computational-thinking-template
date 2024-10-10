@@ -6,7 +6,7 @@
         {
             "label": "PlutoPages: run development server",
             "type": "shell",
-            "command": "julia develop.jl",
+            "command": "julia --project=pluto-deployment-environment -e 'using PlutoPages; PlutoPages.develop(pwd())'",
             "group": "build"
         }
     ]
