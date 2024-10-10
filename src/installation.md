@@ -142,7 +142,8 @@ After working on your notebook (your code is autosaved when you run it), you wil
 const run = f => f();
 run(async () => {
 const versions = await (await fetch(`https://julialang-s3.julialang.org/bin/versions.json`)).json()
-const version_names = Object.keys(versions).sort().reverse()
+const sortby = v => v.split("-")[0].split(".").map(parseFloat).reduce((a,b) => a*10000 + b)
+const version_names = Object.keys(versions).sort((a,b) => sortby(a) - sortby(b)).reverse()
 const stable = version_names.find(v => versions[v].stable)
 console.log({stable})
 const pkg_stable = /\\d+\\.\\d+/.exec(stable)[0]
