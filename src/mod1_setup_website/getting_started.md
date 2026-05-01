@@ -20,7 +20,7 @@ Let us have a look at what this repository looks like. The most important folder
 
 Opening the `src` folder, you will see the following
 
-- `_data` folder: here you will place metadata about your website (university name, class semester, define tracks, etc.), more on this in the next lesson.
+- `_data` folder: here you will place global data about your website (university name, class semester, define tracks, etc.), more on this in the next lesson.
 - `_include`: This folder contains the layout templates that are used to generate the final pages on your website. Unless you want to tweak the layout, you will not need to modify this.
 - `assets`: in this folder you can place all attachements, such as your university logo and other pictures. The folder also contains the CSS and scripts used to render the website.
 
