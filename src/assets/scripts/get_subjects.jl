@@ -1,5 +1,5 @@
 let
-    sections = metadata["sidebar"]
+    sections = sidebar
     sections = [
         @htl("""
         $([
