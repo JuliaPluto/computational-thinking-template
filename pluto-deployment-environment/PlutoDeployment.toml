@@ -9,7 +9,6 @@ create_index = false
 exclude = [
     # these are in the repo but not used on the website
     "tools/*",
-    "PlutoPages.jl",
 ]
 
 [SliderServer]
@@ -18,7 +17,6 @@ host = "0.0.0.0"
 exclude=[
     # these are in the repo but not used on the website
     "tools/*",
-    "PlutoPages.jl",
     
     # notebooks not interactive
 

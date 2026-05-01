@@ -7,9 +7,10 @@ layout: "md.jlmd"
 tags: ["module2", "track_material", "markdown", "frontmatter"]
 ---
 
-## Add markdown files
+# Markdown content
 
-If your lecture does not need to run code or use interactivity. You can write it as a markdown file.
+Markdown files are best for pages that do not need to run code or use interactivity. They are a bit faster to process (especially on the first run with an empty cache) and the page loads faster (not Pluto UI needed). This template tries to style Pluto and Markdown pages as similarly as possible, so you can mix and match them as you like.
+
 
 As an extra twist, you can evaluate julia code inside a `\$` symbol. For example,
 
@@ -20,9 +21,9 @@ will become
 
 $(1 + 1)
 
-## Add Front-matter
+## Add Frontmatter
 
-For each file, markdown or pluto, you will need to add a *front-matter*, which specifies the page metadata. For markdown files, the front-matter is specified at the top of the file between three dashes `---`. For example, the front-matter of this file is
+For each file, markdown or pluto, you will need to add a *frontmatter*, which specifies the page metadata. For markdown files, the frontmatter is specified at the top of the file between three dashes `---`. For example, the frontmatter of this file is
 
 ```
 ---
@@ -41,7 +42,7 @@ You will need to specify the following attributes
 - **`order`**: the position of the page in the module on the sidebar. **Hint!**: You can also use fractional numbers, e.g. `1.5`. This can be handy for homeworks, so you can include the homework between the first and second lesson without messing up lessons counting.
 - **`layout`**: set to `"md.jlmd"`, unless you are using some custom layout
 - **`chapter`** and **`section`** (optional): used to number the page. If for example `chapter=1` and `section=2`, the page will be displayed as `1.2` on the sidebar and page header.
-- **`image`** (optional): link to summarizing image to display in the `subjects` section on the homepage. If left empty, the page wont be included in the subjects section. If no page has an `image` field in the front-matter, the subjects section is not displayed.
+- **`image`** (optional): link to summarizing image to display in the `subjects` section on the homepage. If left empty, the page wont be included in the subjects section. If no page has an `image` field in the frontmatter, the subjects section is not displayed.
 - **`description`** (optional): short description of the notebook
 - **`youtube_id`** (optional): youtube id of the video associated with the page. If included, the page header will embed the youtube video.
 - **`homework_number`**: needed only for homeworks, the number of the homework
@@ -81,9 +82,9 @@ For example the link to the mardown tutorial above was typed as
 for example
 
 ```
-![](https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-logo-color.png)
+![Julia logo](https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-logo-color.png)
 ```
 
 will give
 
-![](https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-logo-color.png)
+![Julia logo](https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-logo-color.png)

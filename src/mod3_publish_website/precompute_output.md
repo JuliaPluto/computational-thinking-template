@@ -1,5 +1,5 @@
 ---
-title: "Precompute the pluto notebooks"
+title: "Precompute the pluto notebooks – OPTIONAL"
 order: 2
 chapter: 3
 section: 2
@@ -7,4 +7,4 @@ layout: "md.jlmd"
 tags: ["module3", "track_setup", "track_julia", "deploy", "precompute", "Pluto", "PlutoSliderServer"]
 ---
 
-COMING SOON
+This is a feature of PlutoSliderServer.jl that is still in development. Check out the [Pull Request](https://github.com/JuliaPluto/PlutoSliderServer.jl/pull/29).

@@ -14,7 +14,7 @@ Open this repository in VS Code, and install the recommended extensions.
 
 ### Running from VSCode
 
-To start running the development server, open the VS Code *command palette* (press `Cmd+Shift+P`), and search for **`Tasks: Run Task`**, then **`PlutoPages: run development server`**. The first run can take some time, as it builds up the notebook outputs cache. Leave it running.
+To start running the development server, open the VS Code *command palette* (press `Cmd+Shift+P`), and search for **`Tasks: Run Task`**, then **`🌳 PlutoPages: run development server`**. The first run can take some time, as it builds up the notebook outputs cache. Leave it running.
 
 This will start two things in parallel: the PlutoPages.jl notebook (which generates the website), and a static file server (with Deno_jll). It will open two tabs in your browser: one is the generation dashboard (PlutoPages), the other is the current site preview (Deno_jll).
  
@@ -26,12 +26,6 @@ Whenever you edit a file, PlutoPages will automatically regenerate! Refresh your
 
 If you are not using VS code, you can start the development mode from the terminal with
 
-```
-julia --project=pluto-deployment-environment
-```
-
-and then
-
-```julia
-julia> using PlutoPages; PlutoPages.develop(pwd())
+```bash
+julia develop.jl
 ```

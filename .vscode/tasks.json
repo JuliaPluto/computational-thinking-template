@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "PlutoPages: run development server",
+            "label": "🌳 PlutoPages: run development server",
             "type": "shell",
-            "command": "julia --project=pluto-deployment-environment -e 'using PlutoPages; PlutoPages.develop(pwd())'",
+            "command": "julia +1.10 develop.jl",
             "group": "build"
         }
     ]
