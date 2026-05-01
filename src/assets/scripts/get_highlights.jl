@@ -1,4 +1,4 @@
-if isempty(get(metadata["homepage"], "highlights", []))
+if isempty(get(homepage, "highlights", []))
     nothing
 else
     highlights = [
@@ -12,7 +12,7 @@ else
           <img src="$(x["img"])">
       </div>
       </section>
-      """) for x in metadata["homepage"]["highlights"]
+      """) for x in homepage["highlights"]
     ]
 
     @htl("""
