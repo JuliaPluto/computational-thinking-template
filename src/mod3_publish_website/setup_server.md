@@ -1,8 +1,8 @@
 ---
 title: "Setup a server for your website – OPTIONAL"
-order: 3
+order: 2
 chapter: 3
-section: 3
+section: 2
 layout: "md.jlmd"
 tags: ["module3", "track_setup", "deploy", "server", "dynamic", "droplet"]
 ---
