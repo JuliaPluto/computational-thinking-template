@@ -128,13 +128,13 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Module 2: Adding course material</h3>
 <ul>
-<li class='active lecture tag_module2 tag_track_material tag_markdown tag_frontmatter'><a href='../../mod2_add_material/add_markdown/'><span class="entry-number">2.1</span> Add markdown files</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../mod2_add_material/add_pluto/'><span class="entry-number">2.2</span> Add Pluto notebooks</a></li><li class=' homework tag_module2 tag_track_julia tag_track_material tag_homeworks tag_pluto tag_PlutoTeachingTools'><a href='../../homework/hw1/' title='sample howework'><span class="entry-number">Homework 1:</span> sample homework</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../../mod2_add_material/plutoui_showcase/'><span class="entry-number">2.3</span> PlutoUI showcase</a></li>
+<li class='active lecture tag_module2 tag_track_material tag_markdown tag_frontmatter'><a href='../../mod2_add_material/add_markdown/'><span class="entry-number">2.1</span> Add markdown files</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../../mod2_add_material/add_pluto/'><span class="entry-number">2.2</span> Add Pluto notebooks</a></li><li class=' homework tag_module2 tag_track_julia tag_track_material tag_homeworks tag_pluto tag_PlutoTeachingTools'><a href='../../homework/hw1/' title='sample howework'><span class="entry-number">Homework 1:</span> sample homework</a></li>
 </ul>
 </li>
 <li>
 <h3>Module 3: Publishing your website</h3>
 <ul>
-<li class=' lecture tag_module3 tag_track_setup tag_deploy tag_netlify tag_github_actions tag_github_pages'><a href='../../mod3_publish_website/deploy_static/'><span class="entry-number">3.1</span> Deploy your website as static</a></li><li class=' lecture tag_module3 tag_track_setup tag_track_julia tag_deploy tag_precompute tag_Pluto tag_PlutoSliderServer'><a href='../../mod3_publish_website/precompute_output/'><span class="entry-number">3.2</span> Precompute the pluto notebooks – OPTIONAL</a></li><li class=' lecture tag_module3 tag_track_setup tag_deploy tag_server tag_dynamic tag_droplet'><a href='../../mod3_publish_website/setup_server/'><span class="entry-number">3.3</span> Setup a server for your website – OPTIONAL</a></li>
+<li class=' lecture tag_module3 tag_track_setup tag_deploy tag_netlify tag_github_actions tag_github_pages'><a href='../../mod3_publish_website/deploy_static/'><span class="entry-number">3.1</span> Deploy your website as static</a></li><li class=' lecture tag_module3 tag_track_setup tag_deploy tag_server tag_dynamic tag_droplet'><a href='../../mod3_publish_website/setup_server/'><span class="entry-number">3.2</span> Setup a server for your website – OPTIONAL</a></li><li class=' lecture tag_module3 tag_track_setup tag_track_julia tag_deploy tag_precompute tag_Pluto tag_PlutoSliderServer'><a href='../../mod3_publish_website/precompute_output/'><span class="entry-number">3.3</span> Precompute the pluto notebooks – OPTIONAL</a></li>
 </ul>
 </li>
 
@@ -164,8 +164,14 @@ window.pluto_recording_audio_url = undefined;
     
     
 </div>
-        <div class="pages-markdown">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
 <main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
 <h1 id="markdown-content"><a href="#markdown-content" class="anchor"></a>Markdown content</h1>
 <p>Markdown files are best for pages that do not need to run code or use interactivity. They are a bit faster to process (especially on the first run with an empty cache) and the page loads faster (not Pluto UI needed). This template tries to style Pluto and Markdown pages as similarly as possible, so you can mix and match them as you like.</p>
 <p>As an extra twist, you can evaluate julia code inside a <code>$</code> symbol. For example,</p>
@@ -223,8 +229,14 @@ tags: [&quot;module2&quot;, &quot;track_material&quot;, &quot;markdown&quot;, &q
 </code></pre>
 <p>will give</p>
 <p><img src="https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia-logo-color.png" alt="Julia logo" /></p>
-</main>
+
 </div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         <div class="page-foot">
             <div class="copyright">

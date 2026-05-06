@@ -128,13 +128,13 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Module 2: Adding course material</h3>
 <ul>
-<li class=' lecture tag_module2 tag_track_material tag_markdown tag_frontmatter'><a href='../mod2_add_material/add_markdown/'><span class="entry-number">2.1</span> Add markdown files</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../mod2_add_material/add_pluto/'><span class="entry-number">2.2</span> Add Pluto notebooks</a></li><li class=' homework tag_module2 tag_track_julia tag_track_material tag_homeworks tag_pluto tag_PlutoTeachingTools'><a href='../homework/hw1/' title='sample howework'><span class="entry-number">Homework 1:</span> sample homework</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI tag_interactivity'><a href='../mod2_add_material/plutoui_showcase/'><span class="entry-number">2.3</span> PlutoUI showcase</a></li>
+<li class=' lecture tag_module2 tag_track_material tag_markdown tag_frontmatter'><a href='../mod2_add_material/add_markdown/'><span class="entry-number">2.1</span> Add markdown files</a></li><li class=' lecture tag_module2 tag_track_julia tag_track_material tag_Pluto tag_PlutoUI'><a href='../mod2_add_material/add_pluto/'><span class="entry-number">2.2</span> Add Pluto notebooks</a></li><li class=' homework tag_module2 tag_track_julia tag_track_material tag_homeworks tag_pluto tag_PlutoTeachingTools'><a href='../homework/hw1/' title='sample howework'><span class="entry-number">Homework 1:</span> sample homework</a></li>
 </ul>
 </li>
 <li>
 <h3>Module 3: Publishing your website</h3>
 <ul>
-<li class=' lecture tag_module3 tag_track_setup tag_deploy tag_netlify tag_github_actions tag_github_pages'><a href='../mod3_publish_website/deploy_static/'><span class="entry-number">3.1</span> Deploy your website as static</a></li><li class=' lecture tag_module3 tag_track_setup tag_track_julia tag_deploy tag_precompute tag_Pluto tag_PlutoSliderServer'><a href='../mod3_publish_website/precompute_output/'><span class="entry-number">3.2</span> Precompute the pluto notebooks – OPTIONAL</a></li><li class=' lecture tag_module3 tag_track_setup tag_deploy tag_server tag_dynamic tag_droplet'><a href='../mod3_publish_website/setup_server/'><span class="entry-number">3.3</span> Setup a server for your website – OPTIONAL</a></li>
+<li class=' lecture tag_module3 tag_track_setup tag_deploy tag_netlify tag_github_actions tag_github_pages'><a href='../mod3_publish_website/deploy_static/'><span class="entry-number">3.1</span> Deploy your website as static</a></li><li class=' lecture tag_module3 tag_track_setup tag_deploy tag_server tag_dynamic tag_droplet'><a href='../mod3_publish_website/setup_server/'><span class="entry-number">3.2</span> Setup a server for your website – OPTIONAL</a></li><li class=' lecture tag_module3 tag_track_setup tag_track_julia tag_deploy tag_precompute tag_Pluto tag_PlutoSliderServer'><a href='../mod3_publish_website/precompute_output/'><span class="entry-number">3.3</span> Precompute the pluto notebooks – OPTIONAL</a></li>
 </ul>
 </li>
 
@@ -171,8 +171,14 @@ window.pluto_recording_audio_url = undefined;
 </div>
 
 </div>
-        <div class="pages-markdown">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
 <main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
 <h1 id="first-time-setup-install-julia--pluto"><a href="#first-time-setup-install-julia--pluto" class="anchor"></a>First-time setup: Install Julia &amp; Pluto</h1>
 <p><br />
 <br />
@@ -191,8 +197,9 @@ window.pluto_recording_audio_url = undefined;
 <p>To install Pluto, we want to run a <em>package manager command</em>. To switch from <em>Julia</em> mode to <em>Pkg</em> mode, type <code>]</code> (closing square bracket) at the <code>julia&gt;</code> prompt:</p>
 <pre><code>
 julia> ]
-<p>(@v<auto-julia-version short>1.8</auto-julia-version>) pkg&gt;
-</code></pre></p>
+
+(&#64;v<auto-julia-version short>1.8</auto-julia-version>) pkg>
+</code></pre>
 <p>The line turns blue and the prompt changes to <code>pkg&gt;</code>, telling you that you are now in <em>package manager mode</em>. This mode allows you to do operations on <strong>packages</strong> (also called libraries).</p>
 <p>To install Pluto, run the following (case sensitive) command to <em>add</em> (install) the package to your system by downloading it from the internet.
 You should only need to do this <em>once</em> for each installation of Julia:</p>
@@ -209,8 +216,9 @@ You should only need to do this <em>once</em> for each installation of Julia:</p
 <h2 id="step-1-start-pluto"><a href="#step-1-start-pluto" class="anchor"></a>Step 1: Start Pluto</h2>
 <p>Start the Julia REPL, like you did during the setup. In the REPL, type:</p>
 <pre><code class="language-julia">julia&gt; using Pluto
-<p>julia&gt; Pluto.run()
-</code></pre></p>
+
+julia&gt; Pluto.run()
+</code></pre>
 <p><img src="https://user-images.githubusercontent.com/6933510/91441094-eb01d080-e86f-11ea-856f-e667fdd9b85c.png" alt="image" /></p>
 <p>The terminal tells us to go to <code>http://localhost:1234/</code> (or a similar URL). Let’s open Firefox or Chrome and type that into the address bar.</p>
 <p><img src="https://user-images.githubusercontent.com/6933510/199279574-4b1d0494-2783-49a0-acca-7b6284bede44.png" alt="image" /></p>
@@ -264,8 +272,14 @@ document.querySelectorAll("auto-julia-version").forEach(el => {
 })
 });
 </script>
-</main>
+
 </div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         <div class="page-foot">
             <div class="copyright">

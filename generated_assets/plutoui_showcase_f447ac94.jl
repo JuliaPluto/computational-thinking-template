@@ -2,13 +2,17 @@
 # v0.20.24
 
 #> [frontmatter]
-#> chapter = "2"
+#> license_url = "https://github.com/JuliaPluto/featured/blob/2a6a9664e5428b37abe4957c1dca0994f4a8b7fd/LICENSES/Unlicense"
 #> image = "https://user-images.githubusercontent.com/6933510/174067690-50c8128d-748b-4f50-8a76-2ce18166642b.png"
 #> order = "3"
-#> section = "3"
-#> title = "PlutoUI showcase"
-#> tags = ["module2", "track_julia", "track_material", "Pluto", "PlutoUI", "interactivity"]
-#> layout = "layout.jlhtml"
+#> title = "Interactivity"
+#> tags = ["basic", "interactivity", "classic"]
+#> license = "Unlicense"
+#> description = "Sliders, buttons, dropdowns, and more using PlutoUI.jl!"
+#> 
+#>     [[frontmatter.author]]
+#>     name = "Pluto.jl"
+#>     url = "https://github.com/JuliaPluto"
 
 using Markdown
 using InteractiveUtils
@@ -30,6 +34,151 @@ using PlutoUI
 
 # ╔═╡ d24696d2-6232-4759-90a9-3b2998b08e22
 using HypertextLiteral
+
+# ╔═╡ 364ba81e-7266-4951-a615-7350a068a34a
+
+
+# ╔═╡ 20302145-1b61-4e25-8083-c3805338a836
+function wow(z)
+	sleep(z)
+	z
+end
+
+# ╔═╡ e039a1a4-8312-4079-a1d1-6f302355371a
+x = 1
+
+# ╔═╡ 9f96dd82-530e-463b-b77b-2066a6c4cfc5
+y = wow(x)
+
+# ╔═╡ cdd9aa87-bf54-4a11-bc15-d2d7d0c2c730
+z = wow(y)
+
+# ╔═╡ 1408cf81-9ff4-47c8-9329-dd0072333963
+asdf = x + z
+
+# ╔═╡ 7521c7f2-e656-4b97-8331-8624c138e84c
+
+
+# ╔═╡ 4769d575-0105-4d0d-b9d0-6be92189ecfd
+123123123
+
+# ╔═╡ 09c5fa74-c9b3-48e6-8414-efd3c481bdd5
+13212
+
+# ╔═╡ 45ad91ff-213a-45f6-b352-35d7debabc40
+123123312312
+
+# ╔═╡ 1765a346-2374-4c78-a6c4-7a1bdd4c64b5
+123123123123
+
+# ╔═╡ 3bc34f6a-7742-427e-8c4e-59f63b1ab778
+12312312
+
+# ╔═╡ 90fc663d-962b-42c5-81b3-9ffa99ab9a9c
+123123123123213
+
+# ╔═╡ 24d49aa9-47b2-4e6b-b536-dfda74a0ba7c
+1231231212
+
+# ╔═╡ ec1dbb46-e368-4fac-a142-7cb96df97563
+
+
+# ╔═╡ 0a311a8c-aec1-4401-90e7-5a01532b3486
+
+
+# ╔═╡ 1fd18ba0-5800-403f-bb65-fdffcde2fed6
+
+
+# ╔═╡ 462cdf62-b4f6-4a30-9c08-bf42b94bf38d
+
+
+# ╔═╡ 0257a672-a537-4d7f-a9d2-07066eb897d0
+
+
+# ╔═╡ eedcd764-c524-4da9-9db8-a9139eeb7898
+123
+
+# ╔═╡ ee3428a0-b8c5-4286-b895-2041dae13022
+123312
+
+# ╔═╡ b9efcdfc-69bc-4cdf-a322-39311aa5c6f5
+12312213123
+
+# ╔═╡ 5200ba96-3440-4b32-bc79-b208ede4073c
+asdfasdfasdf
+
+# ╔═╡ 20d7c573-a9bb-45c3-a533-52d6b6e04b83
+asdfasdfasdfasd
+
+# ╔═╡ c1ac852e-d5b8-480c-ad4d-330dda3b0503
+
+
+# ╔═╡ 7fd04dff-7873-43b8-aeb4-541f9afbefa9
+
+
+# ╔═╡ 848395b1-4e6d-4c14-b7fc-e5c8e8eb7ff2
+
+
+# ╔═╡ 98606e43-f3a6-494b-9319-51750217f235
+
+
+# ╔═╡ 40fe1a00-6c71-4293-94e0-f5dd8bed7034
+123
+
+# ╔═╡ ffe44b9b-98e4-4676-b6e6-055884de805f
+
+
+# ╔═╡ c22888d0-847f-463b-8757-00b946224e24
+
+
+# ╔═╡ 7e960dc5-1154-4ae0-97a6-ecfc0efc3f1b
+123123123
+
+# ╔═╡ 6e64b1c3-fc1e-4573-b57c-df6992729ccd
+1231
+
+# ╔═╡ 192d904b-a0fb-4f8f-9064-6324dfe2afac
+123123123
+
+# ╔═╡ 5ff71e3e-1702-43f4-9631-4e4145b9fbda
+2
+
+# ╔═╡ 41d03876-0272-4e28-b132-f9ae774b4a46
+12323
+
+# ╔═╡ fafb7f3f-6f66-482a-b489-099165ad7ab9
+123123
+
+
+# ╔═╡ 41a8118d-1cd6-4cd5-84da-b41aabc64fd3
+1231231
+
+# ╔═╡ 92bc40b3-d1d4-4339-b7d5-8dce02602c85
+123
+
+# ╔═╡ 161421e0-b8e8-4a5b-99d9-1ce1710922cc
+123123
+
+# ╔═╡ 36c32135-7b7c-4b7d-ada2-322a20d0b0ef
+
+
+# ╔═╡ 2b9bc27a-d6b6-45df-ba76-f46b85f96014
+
+
+# ╔═╡ 9a3979c0-72ca-45c6-8f98-a9a673b3971e
+123
+
+# ╔═╡ a44382b5-e9f3-4fe4-8153-eaeaf2b58fea
+
+
+# ╔═╡ 82b4dfc8-ee13-4690-a80b-27677695eee3
+123123
+
+# ╔═╡ da14a63d-99c4-4e66-ba37-a4ee6e73c953
+
+
+# ╔═╡ 6c59b649-2794-4dcc-8a69-86062005bc55
+
 
 # ╔═╡ 19e2625e-d311-4c45-8567-fdd910bea8b5
 md"""
@@ -68,7 +217,10 @@ md"""
 md"## Slider"
 
 # ╔═╡ 34ebf81e-c760-11ea-05bb-376173e7ed10
+# ╠═╡ disabled = true
+#=╠═╡
 @bind x Slider(5:15)
+  ╠═╡ =#
 
 # ╔═╡ a4488984-c760-11ea-2930-871f6b400ef5
 x
@@ -79,7 +231,10 @@ Using keyword arguments, you can set the **default value**, and you can ask to *
 """
 
 # ╔═╡ d3811ac2-c760-11ea-0811-131d9f1d3910
+# ╠═╡ disabled = true
+#=╠═╡
 @bind y Slider(20:0.1:30; default=25, show_value=true)
+  ╠═╡ =#
 
 # ╔═╡ dfe10b6c-c760-11ea-2f77-79cc4cfa8dc4
 y
@@ -94,7 +249,7 @@ The first argument is range, but it can also be a Vector (not necessarily in inc
 """
 
 # ╔═╡ 6b1152cc-7c2c-40b3-8bac-fe8fd99486bb
-@bind which_function Slider([sin, cos, sqrt])
+@bind which_function Slider([cos, sin, cos, sqrt])
 
 # ╔═╡ b7788c4c-feb6-45cd-87ca-ae28c5ba3d07
 which_function(π)
@@ -161,7 +316,10 @@ A `Boolean` input.
 """
 
 # ╔═╡ 4f8e4e1e-c761-11ea-1787-419cab59bb12
+# ╠═╡ disabled = true
+#=╠═╡
 @bind z Switch()
+  ╠═╡ =#
 
 # ╔═╡ b787ead6-c761-11ea-3b17-41c0a5434f9b
 z
@@ -266,6 +424,36 @@ md"You can also create a **multi-line** text box!"
 
 # ╔═╡ 3dcd7002-c765-11ea-323d-a1fb49409011
 split(poem, "\n")
+
+# ╔═╡ c964591a-62a3-465c-926f-628bfa4b987a
+12
+
+# ╔═╡ 628cd9af-4225-44de-91a3-9876a811d9db
+1232
+
+# ╔═╡ db4bbefb-7b66-4d42-ac6a-fd904f689cc0
+
+
+# ╔═╡ 40a281b2-6d0f-4642-bdce-ef334c19e8f3
+
+
+# ╔═╡ afca79cd-1880-45f5-84d1-eeabb5a706dc
+
+
+# ╔═╡ ce267cf6-c8cc-4fa0-95f7-97eac54a8302
+
+
+# ╔═╡ 3a704c2d-0a79-43de-a1c9-5c72430fe34f
+
+
+# ╔═╡ b09a8fe7-d9bc-4569-8a07-42969b90c844
+
+
+# ╔═╡ 73b86f02-4124-4327-a29a-6e7b29c81643
+
+
+# ╔═╡ b8c45598-3599-403a-9186-019c43f2aaee
+
 
 # ╔═╡ 0aa3c85e-cc4f-11ea-2fba-4bdd513d9217
 
@@ -1229,6 +1417,53 @@ version = "17.6.1+0"
 """
 
 # ╔═╡ Cell order:
+# ╠═364ba81e-7266-4951-a615-7350a068a34a
+# ╠═20302145-1b61-4e25-8083-c3805338a836
+# ╠═e039a1a4-8312-4079-a1d1-6f302355371a
+# ╠═9f96dd82-530e-463b-b77b-2066a6c4cfc5
+# ╠═cdd9aa87-bf54-4a11-bc15-d2d7d0c2c730
+# ╠═1408cf81-9ff4-47c8-9329-dd0072333963
+# ╠═7521c7f2-e656-4b97-8331-8624c138e84c
+# ╠═4769d575-0105-4d0d-b9d0-6be92189ecfd
+# ╠═09c5fa74-c9b3-48e6-8414-efd3c481bdd5
+# ╠═45ad91ff-213a-45f6-b352-35d7debabc40
+# ╠═1765a346-2374-4c78-a6c4-7a1bdd4c64b5
+# ╠═3bc34f6a-7742-427e-8c4e-59f63b1ab778
+# ╠═90fc663d-962b-42c5-81b3-9ffa99ab9a9c
+# ╠═24d49aa9-47b2-4e6b-b536-dfda74a0ba7c
+# ╠═ec1dbb46-e368-4fac-a142-7cb96df97563
+# ╠═0a311a8c-aec1-4401-90e7-5a01532b3486
+# ╠═1fd18ba0-5800-403f-bb65-fdffcde2fed6
+# ╠═462cdf62-b4f6-4a30-9c08-bf42b94bf38d
+# ╠═0257a672-a537-4d7f-a9d2-07066eb897d0
+# ╠═eedcd764-c524-4da9-9db8-a9139eeb7898
+# ╠═ee3428a0-b8c5-4286-b895-2041dae13022
+# ╠═b9efcdfc-69bc-4cdf-a322-39311aa5c6f5
+# ╠═5200ba96-3440-4b32-bc79-b208ede4073c
+# ╠═20d7c573-a9bb-45c3-a533-52d6b6e04b83
+# ╠═c1ac852e-d5b8-480c-ad4d-330dda3b0503
+# ╠═7fd04dff-7873-43b8-aeb4-541f9afbefa9
+# ╠═848395b1-4e6d-4c14-b7fc-e5c8e8eb7ff2
+# ╠═98606e43-f3a6-494b-9319-51750217f235
+# ╠═40fe1a00-6c71-4293-94e0-f5dd8bed7034
+# ╠═ffe44b9b-98e4-4676-b6e6-055884de805f
+# ╠═c22888d0-847f-463b-8757-00b946224e24
+# ╠═7e960dc5-1154-4ae0-97a6-ecfc0efc3f1b
+# ╠═6e64b1c3-fc1e-4573-b57c-df6992729ccd
+# ╠═192d904b-a0fb-4f8f-9064-6324dfe2afac
+# ╠═5ff71e3e-1702-43f4-9631-4e4145b9fbda
+# ╠═41d03876-0272-4e28-b132-f9ae774b4a46
+# ╠═fafb7f3f-6f66-482a-b489-099165ad7ab9
+# ╠═41a8118d-1cd6-4cd5-84da-b41aabc64fd3
+# ╠═92bc40b3-d1d4-4339-b7d5-8dce02602c85
+# ╠═161421e0-b8e8-4a5b-99d9-1ce1710922cc
+# ╠═36c32135-7b7c-4b7d-ada2-322a20d0b0ef
+# ╠═2b9bc27a-d6b6-45df-ba76-f46b85f96014
+# ╠═9a3979c0-72ca-45c6-8f98-a9a673b3971e
+# ╠═a44382b5-e9f3-4fe4-8153-eaeaf2b58fea
+# ╠═82b4dfc8-ee13-4690-a80b-27677695eee3
+# ╠═da14a63d-99c4-4e66-ba37-a4ee6e73c953
+# ╠═6c59b649-2794-4dcc-8a69-86062005bc55
 # ╟─19e2625e-d311-4c45-8567-fdd910bea8b5
 # ╟─bc532cd2-c75b-11ea-313f-8b5e771c9227
 # ╟─3eff9592-cc63-11ea-2b61-4170d1a7656a
@@ -1290,6 +1525,16 @@ version = "17.6.1+0"
 # ╟─0136af80-c762-11ea-2f1a-9dccff334a11
 # ╠═0e6f0508-c762-11ea-0352-09bd694a9b35
 # ╠═3dcd7002-c765-11ea-323d-a1fb49409011
+# ╠═c964591a-62a3-465c-926f-628bfa4b987a
+# ╠═628cd9af-4225-44de-91a3-9876a811d9db
+# ╠═db4bbefb-7b66-4d42-ac6a-fd904f689cc0
+# ╠═40a281b2-6d0f-4642-bdce-ef334c19e8f3
+# ╠═afca79cd-1880-45f5-84d1-eeabb5a706dc
+# ╠═ce267cf6-c8cc-4fa0-95f7-97eac54a8302
+# ╠═3a704c2d-0a79-43de-a1c9-5c72430fe34f
+# ╠═b09a8fe7-d9bc-4569-8a07-42969b90c844
+# ╠═73b86f02-4124-4327-a29a-6e7b29c81643
+# ╠═b8c45598-3599-403a-9186-019c43f2aaee
 # ╟─9d68baef-fb1d-441b-b973-37ca1054d5c9
 # ╟─0aa3c85e-cc4f-11ea-2fba-4bdd513d9217
 # ╟─5833f7f4-c763-11ea-0b95-9b21a40192a9

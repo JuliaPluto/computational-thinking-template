@@ -8,6 +8,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@400;500;700;900&display=swap'); */
 
+/* default to border-box */
+html {
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
 *,
 *:before,
 *:after {
@@ -15,8 +21,9 @@
 }
 
 :root {
-    --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol", system-ui, sans-serif;
+    --system-fonts:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", system-ui,
+        sans-serif;
     --system-fonts-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     --fg: #000;
@@ -47,11 +54,9 @@
 
 /* adjust typography defaults */
 body {
+    font-family: var(--system-fonts);
     margin: 0;
     padding: 0;
-    /*   font-family: Noto; */
-    /*   font-family: sans-serif; */
-    /*   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; */
     width: 100vw;
     overflow-x: hidden;
     background: hsl(235deg 19% 16%);
@@ -63,23 +68,21 @@ body {
     word-break: break-word;
 }
 
-.pages-markdown p,
-.pages-markdown ol {
+p,
+ol,
+ul {
     line-height: 1.5;
 }
 
-.pages-markdown h1,
-.pages-markdown h2 {
+h1,
+h2 {
     font-weight: 800;
+    color: var(--black);
 }
 
-.pages-markdown h1,
-.pages-markdown h2,
-.pages-markdown h3,
-.pages-markdown h4,
-.pages-markdown h5,
-.pages-markdown h6 {
-    color: var(--pluto-output-h-color);
+h2 {
+    margin-block-start: 2em;
+    margin-block-end: 0;
 }
 
 pre {
@@ -91,6 +94,8 @@ pre {
 pre,
 code {
     font-family: var(--system-fonts-mono);
+    font-size: 0.9em;
+    /* font-weight: 500; */
 }
 
 /* images and videos max out at full width */
@@ -102,10 +107,9 @@ video {
 
 a {
     font-weight: 500;
-    text-decoration: none;
 }
-.pages-markdown a,
-.pages-markdown a:visited {
+a,
+a:visited {
     color: #4674bc;
 }
 a:hover {
@@ -117,6 +121,9 @@ h3 a {
     font-weight: inherit;
 }
 
+a.arrow {
+    font-weight: 700;
+}
 a.arrow::after {
     content: " →";
 }
@@ -188,6 +195,10 @@ a.pluto_home_link {
     font-style: italic;
     opacity: 0.8;
     margin-block-start: 0.2em;
+}
+
+#pages-sidebar :is(p, ol, ul) {
+    line-height: 1.15;
 }
 
 .authors {
